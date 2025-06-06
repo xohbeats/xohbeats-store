@@ -2,87 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>XoH! Beats Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XoH! Beats | Official Beat Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #111;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #007AC1;
       color: #fff;
-      font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 2rem;
     }
-
+    header {
+      text-align: center;
+    }
     h1 {
       font-size: 2.5rem;
-      color: #ff00aa;
+      margin-bottom: 0.5rem;
     }
-
-    ul {
-      list-style: none;
-      padding: 0;
+    p {
+      color: #aaa;
+      margin-top: 0;
     }
-
-    li {
+    .beat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      width: 100%;
+      max-width: 1100px;
+    }
+    .beat-card {
+      background: #1a1a1a;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .beat-card h2 {
       margin: 0.5rem 0;
-      cursor: pointer;
-      color: #ccc;
     }
-
-    li.active {
-      color: #ff00aa;
-      font-weight: bold;
-    }
-
-    audio {
+    .beat-card audio {
       width: 100%;
+      border-radius: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .buy-btn {
       margin-top: 1rem;
+      display: inline-block;
+      background: #ff4f8b;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: background 0.3s;
     }
-
-    .player {
-      max-width: 500px;
-      width: 100%;
-      margin: 2rem auto;
-      text-align: center;
+    .buy-btn:hover {
+      background: #ff2d70;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>XoH! Beats</h1>
+    <p>Melodic | Emo-Rap | Rage | Boom Bap | Trap</p>
+  </header>
 
-  <h1>XoH! Beats Player</h1>
-
-  <div class="player">
-    <ul id="playlist">
-      <li data-src="beat1.mp3">🔥 Juice WRLD Type Beat - "Falling Stars"</li>
-      <li data-src="beat2.mp3">💔 Melodic Trap - "Cold Season"</li>
-      <li data-src="beat3.mp3">⚡ Rage Type - "Warped Reality"</li>
-    </ul>
-
-    <audio id="audioPlayer" controls></audio>
-  </div>
-
-  <script>
-    const playlist = document.getElementById('playlist');
-    const audioPlayer = document.getElementById('audioPlayer');
-    const tracks = playlist.querySelectorAll('li');
-
-    tracks.forEach((track, index) => {
-      track.addEventListener('click', () => {
-        tracks.forEach(t => t.classList.remove('active'));
-        track.classList.add('active');
-        audioPlayer.src = track.getAttribute('data-src');
-        audioPlayer.play();
-      });
-
-      // Play the first track by default
-      if (index === 0) {
-        track.classList.add('active');
-        audioPlayer.src = track.getAttribute('data-src');
-      }
-    });
-  </script>
-
+  <section class="beat-grid">
+    <div class="beat-card">
+      <h2>"Heartbreak Loop"</h2>
+      <audio controls>
+        <source src="your-beat1.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <a class="buy-btn" href="#">Buy License</a>
+    </div>
+    <div class="beat-card">
+      <h2>"Skybound"</h2>
+      <audio controls>
+        <source src="your-beat2.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <a class="buy-btn" href="#">Buy License</a>
+    </div>
+    <div class="beat-card">
+      <h2>"Night Crawler"</h2>
+      <audio controls>
+        <source src="your-beat3.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <a class="buy-btn" href="#">Buy License</a>
+    </div>
+  </section>
 </body>
 </html>
