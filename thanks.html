@@ -10,30 +10,76 @@
       color: #39ff14;
       font-family: 'Arial Black', sans-serif;
       text-align: center;
-      padding: 50px;
+      padding: 40px 20px;
     }
-    a.button {
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #ccc;
+      font-weight: normal;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .button {
       display: inline-block;
       background-color: #39ff14;
       color: black;
-      padding: 15px 25px;
+      padding: 14px 24px;
       border-radius: 8px;
       font-size: 18px;
-      text-decoration: none;
       font-weight: bold;
-      margin-top: 20px;
+      text-decoration: none;
+      margin: 20px 10px;
+      transition: background 0.3s ease;
     }
-    p { color: #ccc; font-weight: normal; }
+    .button:hover {
+      background-color: #2ecc40;
+      color: #fff;
+    }
+    .social-links a {
+      color: #39ff14;
+      margin: 0 10px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .social-links {
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
   <h1>🔥 You’re In! Welcome to the XoH! Beats Fam.</h1>
   <p>Your exclusive free beat is on its way to your inbox.</p>
-  <a href="/downloads/heartbreak-loop.zip" class="button">🎧 Download Free Beat</a>
-  <p style="margin-top: 40px;">Follow me for more drops:<br>
-    <a href="https://instagram.com/xohbeats" style="color:#39ff14;">Instagram</a> • 
-    <a href="https://youtube.com/@xohbeats" style="color:#39ff14;">YouTube</a> • 
-    <a href="https://xohbeats.com" style="color:#39ff14;">Main Site</a>
-  </p>
+
+  <!-- ✅ Download Button -->
+  <a href="https://www.mediafire.com/file/lhldop0n7w85alt/%2528FREE%2529_2023_Young_Thug_Type_Beat_-_Big_Spender_-.wav/file"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="button">
+     🎧 Download Free Beat
+  </a>
+
+  <!-- ✅ Copy Link Button -->
+  <button id="copyLinkBtn" class="button">Copy Beat Link</button>
+
+  <script>
+    document.getElementById('copyLinkBtn').addEventListener('click', () => {
+      const downloadUrl = 'https://www.mediafire.com/file/lhldop0n7w85alt/%2528FREE%2529_2023_Young_Thug_Type_Beat_-_Big_Spender_-.wav/file';
+      navigator.clipboard.writeText(downloadUrl).then(() => {
+        alert('✅ Beat link copied to clipboard!');
+      });
+    });
+  </script>
+
+  <!-- ✅ Social Follow Section -->
+  <div class="social-links">
+    <p>Follow me for more drops:</p>
+    <a href="https://instagram.com/xohbeats" target="_blank">Instagram</a> •
+    <a href="https://youtube.com/@xohbeats" target="_blank">YouTube</a> •
+    <a href="https://xohbeats.com" target="_blank">Main Site</a>
+  </div>
 </body>
 </html>
+
