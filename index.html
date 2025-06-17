@@ -2,124 +2,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>XoH! Beats | Official Beat Store</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+    }
     body {
-  background-image: url('skullzNplanets.png') !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-  background-size: cover !important;
-  background-attachment: fixed !important;
-}
+      margin: 0;
+      font-family: 'Inter', sans-serif;
       color: #fff;
+      background-image: url('skullzNplanets.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem;
+      padding: 2rem 1rem;
+      position: relative;
+      z-index: 0;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+    /* Dark overlay on background for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: -1;
     }
 
-    p {
-      color: #aaa;
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      max-width: 700px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.1em;
+      color: #ff4f8b;
+      text-shadow: 0 0 6px #ff4f8baa;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      color: #eee;
+      font-weight: 500;
+      letter-spacing: 0.05em;
       margin-top: 0;
+      text-shadow: 0 0 4px #0008;
     }
 
-    .beat-grid {
+    /* Beat Grid Section */
+    section.beat-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
       width: 100%;
       max-width: 1100px;
+      margin-bottom: 3rem;
     }
 
     .beat-card {
-      background: #1a1a1a;
-      padding: 1rem;
+      background: rgba(26, 26, 26, 0.85);
       border-radius: 1rem;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      padding: 1.5rem 1.25rem;
+      box-shadow: 0 0 15px rgba(255, 79, 139, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+
+    .beat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(255, 79, 139, 0.7);
     }
 
     .beat-card h2 {
-      margin: 0.5rem 0;
+      margin: 0 0 1rem 0;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #ff4f8b;
+      text-shadow: 0 0 6px #ff4f8bbb;
     }
 
     .beat-card iframe {
-      width: 100%;
       border-radius: 0.5rem;
-      margin-top: 0.5rem;
+      border: none;
+      height: 140px;
+      width: 100%;
     }
 
     .buy-btn {
       margin-top: 1rem;
-      display: inline-block;
       background: #ff4f8b;
-      color: white;
-      padding: 0.5rem 1rem;
+      color: #fff;
+      font-weight: 600;
+      padding: 0.6rem 1.3rem;
+      text-align: center;
       text-decoration: none;
       border-radius: 0.5rem;
-      transition: background 0.3s;
+      transition: background 0.3s ease;
+      align-self: flex-start;
+      user-select: none;
+      box-shadow: 0 3px 8px rgba(255, 79, 139, 0.6);
     }
-
     .buy-btn:hover {
       background: #ff2d70;
+      box-shadow: 0 4px 12px rgba(255, 45, 112, 0.8);
     }
-  </style>
-</head>
 
-<body>
-  <header>
-    <h1>XoH! Beats</h1>
-    <p>Melodic | Emo-Rap | Rage | Boom Bap | Trap</p>
-  </header>
+    /* Merch Section */
+    section.merch {
+      width: 100%;
+      max-width: 1100px;
+      margin-bottom: 3rem;
+    }
 
-  <section class="beat-grid">
-    <div class="beat-card">
-      <h2>"How Deep"</h2>
-      <iframe 
-        src="https://www.beatstars.com/embed/track/?id=22064805" 
-        height="140"
-        style="border: none;" 
-        scrolling="no" 
-        frameborder="no" 
-        allow="autoplay">
-      </iframe>
-      <a class="buy-btn" href="https://www.beatstars.com/xohbeats/tracks/22064805" target="_blank">Buy License</a>
-    </div>
-  </section>
-</body>
-</html>
-
-<!-- End Mailchimp Signup Form -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>XoH! Beats Merch</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-      margin: 0;
-      padding: 30px 10px;
-      color: #fff;
+    section.merch h2 {
+      font-size: 2.25rem;
+      margin-bottom: 1.5rem;
       text-align: center;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      letter-spacing: 2px;
-      color: #ff4b2b;
+      color: #ff4f8b;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 6px #ff4f8bbb;
     }
 
     .slider {
@@ -127,135 +143,226 @@
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
-      gap: 24px;
-      padding: 10px;
+      gap: 1.5rem;
+      padding: 0 0.5rem;
     }
 
     .slide {
-      flex: 0 0 80%;
+      flex: 0 0 280px;
       scroll-snap-align: center;
-      background: rgba(0, 0, 0, 0.6);
-      border: 2px solid #ff4b2b;
+      background: rgba(26, 26, 26, 0.8);
+      border: 2px solid #ff4f8b;
       border-radius: 16px;
-      padding: 16px;
-      box-shadow: 0 0 20px rgba(255, 75, 43, 0.3);
+      padding: 1rem;
+      box-shadow: 0 0 20px rgba(255, 79, 139, 0.3);
       transition: transform 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      user-select: none;
     }
 
     .slide:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 45, 112, 0.8);
     }
 
     .slide img {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 12px;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      margin-bottom: 1rem;
+      user-select: none;
     }
 
     .slide h3 {
-      margin: 15px 0 10px;
-      font-size: 1.3rem;
-      letter-spacing: 1px;
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      text-align: center;
+      color: #ff4f8b;
+      letter-spacing: 0.05em;
     }
 
     .slide a {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #ff4b2b;
+      background: #ff4f8b;
       color: #fff;
+      font-weight: 600;
+      padding: 0.6rem 1.3rem;
+      border-radius: 8px;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+      box-shadow: 0 3px 8px rgba(255, 79, 139, 0.6);
+      user-select: none;
       transition: background 0.3s ease;
+      text-align: center;
+      width: 100%;
     }
-
     .slide a:hover {
-      background: #ff3a1a;
+      background: #ff2d70;
+      box-shadow: 0 4px 12px rgba(255, 45, 112, 0.8);
     }
 
-    /* Scrollbar styles (optional) */
+    /* Scrollbar styles for slider */
     .slider::-webkit-scrollbar {
       height: 10px;
     }
-
     .slider::-webkit-scrollbar-track {
       background: transparent;
     }
-
     .slider::-webkit-scrollbar-thumb {
-      background: #ff4b2b;
+      background: #ff4f8b;
       border-radius: 10px;
+    }
+
+    /* Social Section */
+    section.social {
+      width: 100%;
+      max-width: 1100px;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #fff;
+    }
+
+    section.social h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #ff4f8b;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 6px #ff4f8bbb;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      user-select: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 8px rgba(0,0,0,0.3);
+      min-width: 140px;
+      justify-content: center;
+    }
+
+    /* Individual social backgrounds */
+    .social-facebook {
+      background: #3b5998;
+      box-shadow: 0 0 12px #3b5998aa;
+    }
+    .social-instagram {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      box-shadow: 0 0 12px #d6249faa;
+    }
+    .social-youtube {
+      background: #FF0000;
+      box-shadow: 0 0 12px #ff0000aa;
+    }
+    .social-beatstore {
+      background: #00c3ff;
+      box-shadow: 0 0 12px #00c3ffaa;
+    }
+
+    .social-link img {
+      width: 24px;
+      height: 24px;
+      filter: drop-shadow(0 0 1px rgba(0,0,0,0.5));
+      user-select: none;
+    }
+
+    .social-link:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 16px #ff4f8bcc;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      .slide {
+        flex: 0 0 90%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>🔥 XoH! Featured Merch</h1>
+  <header>
+    <h1>XoH! Beats</h1>
+    <p>Melodic | Emo-Rap | Rage | Boom Bap | Trap</p>
+  </header>
 
-  <div class="slider">
-    <div class="slide">
-      <img src="https://yourcdnlink.com/product1.jpg" alt="XOLLENT Crown Tee">
-      <h3>XOLLENT Crown Tee</h3>
-      <a href="https://printfulstore.com/product1" target="_blank">Buy Now</a>
+  <section class="beat-grid" aria-label="Featured beats">
+    <div class="beat-card">
+      <h2>"How Deep"</h2>
+      <iframe 
+        src="https://www.beatstars.com/embed/track/?id=22064805" 
+        scrolling="no" 
+        frameborder="no" 
+        allow="autoplay"
+        title="Beat: How Deep"
+      ></iframe>
+      <a class="buy-btn" href="https://www.beatstars.com/xohbeats/tracks/22064805" target="_blank" rel="noopener noreferrer">Buy License</a>
     </div>
-    <div class="slide">
-      <img src="https://yourcdnlink.com/product2.jpg" alt="Skull in Thorns Hoodie">
-      <h3>Skull in Thorns Hoodie</h3>
-      <a href="https://printfulstore.com/product2" target="_blank">Buy Now</a>
+    <!-- Add more beat cards here -->
+  </section>
+
+  <section class="merch" aria-label="Featured merchandise">
+    <h2>🔥 Featured Merch</h2>
+    <div class="slider" role="list">
+      <div class="slide" role="listitem">
+        <img src="https://yourcdnlink.com/product1.jpg" alt="XOLLENT Crown Tee" loading="lazy" />
+        <h3>XOLLENT Crown Tee</h3>
+        <a href="https://printfulstore.com/product1" target="_blank" rel="noopener noreferrer">Buy Now</a>
+      </div>
+      <div class="slide" role="listitem">
+        <img src="https://yourcdnlink.com/product2.jpg" alt="Skull in Thorns Hoodie" loading="lazy" />
+        <h3>Skull in Thorns Hoodie</h3>
+        <a href="https://printfulstore.com/product2" target="_blank" rel="noopener noreferrer">Buy Now</a>
+      </div>
+      <div class="slide" role="listitem">
+        <img src="https://yourcdnlink.com/product3.jpg" alt="Trippy Moon Poster" loading="lazy" />
+        <h3>Trippy Moon Poster</h3>
+        <a href="https://printfulstore.com/product3" target="_blank" rel="noopener noreferrer">Buy Now</a>
+      </div>
+      <!-- Add more slides as needed -->
     </div>
-    <div class="slide">
-      <img src="https://yourcdnlink.com/product3.jpg" alt="Trippy Moon Poster">
-      <h3>Trippy Moon Poster</h3>
-      <a href="https://printfulstore.com/product3" target="_blank">Buy Now</a>
+  </section>
+
+  <section class="social" aria-label="Follow XoH! Beats on social media">
+    <h2>🎧 Follow XoH! Beats</h2>
+    <div class="social-links">
+      <a href="https://facebook.com/yourpage" class="social-link social-facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook icon" />
+        Facebook
+      </a>
+      <a href="https://instagram.com/yourhandle" class="social-link social-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram icon" />
+        Instagram
+      </a>
+      <a href="https://youtube.com/@yourchannel" class="social-link social-youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube icon" />
+        YouTube
+      </a>
+      <a href="https://xohbeats.gumroad.com" class="social-link social-beatstore" target="_blank" rel="noopener noreferrer" aria-label="Beat Store">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25284.png" alt="Link icon" />
+        Beat Store
+      </a>
     </div>
-    <!-- You can copy and paste more slides below -->
-  </div>
+  </section>
 
 </body>
 </html>
-<!-- FOLLOW XOH! SOCIAL SECTION -->
-<section style="margin-top: 50px; padding: 20px; text-align: center; color: #fff;">
-  <h2 style="font-size: 2rem; margin-bottom: 20px; color: #ff4b2b;">🎧 Follow XoH! Beats</h2>
-
-  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
-
-    <!-- Facebook -->
-    <a href="https://facebook.com/yourpage" target="_blank" style="text-decoration: none;">
-      <div style="background: #3b5998; padding: 14px 24px; border-radius: 10px; transition: transform 0.3s ease; display: flex; align-items: center; gap: 10px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" width="24" height="24">
-        <span style="color: white; font-weight: bold;">Facebook</span>
-      </div>
-    </a>
-
-    <!-- Instagram -->
-    <a href="https://instagram.com/yourhandle" target="_blank" style="text-decoration: none;">
-      <div style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); padding: 14px 24px; border-radius: 10px; transition: transform 0.3s ease; display: flex; align-items: center; gap: 10px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="24" height="24">
-        <span style="color: white; font-weight: bold;">Instagram</span>
-      </div>
-    </a>
-
-    <!-- YouTube -->
-    <a href="https://youtube.com/@yourchannel" target="_blank" style="text-decoration: none;">
-      <div style="background: #FF0000; padding: 14px 24px; border-radius: 10px; transition: transform 0.3s ease; display: flex; align-items: center; gap: 10px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" width="24" height="24">
-        <span style="color: white; font-weight: bold;">YouTube</span>
-      </div>
-    </a>
-
-    <!-- External Link (Example: BeatStars, Gumroad, Website) -->
-    <a href="https://xohbeats.gumroad.com" target="_blank" style="text-decoration: none;">
-      <div style="background: #00c3ff; padding: 14px 24px; border-radius: 10px; transition: transform 0.3s ease; display: flex; align-items: center; gap: 10px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/25/25284.png" alt="Link" width="24" height="24">
-        <span style="color: white; font-weight: bold;">Beat Store</span>
-      </div>
-    </a>
-
-  </div>
-</section>
-
-<!-- Optional Hover Animation -->
-<style>
-  a div:hover {
-    transform: scale(1.05);
-  }
-</style>
