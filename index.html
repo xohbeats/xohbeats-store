@@ -1,9 +1,99 @@
-<iframe 
-    src="https://www.beatstars.com/xoh_beats/embed" 
-    width="100%" 
-    height="500" 
-    frameborder="0" 
-    allow="autoplay; encrypted-media" 
-    allowfullscreen
-    style="border:none; overflow:hidden;">
-</iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XoH! Beats - Beat Player</title>
+  <style>
+    /* Reset and basic styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #121212; /* dark background for beats vibe */
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+      user-select: none;
+    }
+
+    main {
+      flex-grow: 1;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Responsive iframe container */
+    .player-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 900px; /* max width for big screens */
+      height: 0;
+      padding-bottom: 70%; /* aspect ratio */
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #000; /* black background behind iframe */
+    }
+
+    .player-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    footer {
+      background-color: #1f1f1f;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      color: #666;
+      user-select: none;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.2rem;
+      }
+      .player-wrapper {
+        padding-bottom: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    XoH! Beats Player
+  </header>
+
+  <main>
+    <div class="player-wrapper">
+      <iframe
+        src="https://www.beatstars.com/xoh_beats/embed"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        loading="lazy"
+        title="XoH! Beats Player"
+      ></iframe>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 XoH! Beats — All Rights Reserved
+  </footer>
+</body>
+</html>
