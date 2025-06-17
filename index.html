@@ -112,3 +112,116 @@
   </form>
 </div>
 <!--End mc_embed_signup-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>XoH! Beats Merch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+      margin: 0;
+      padding: 30px 10px;
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+      color: #ff4b2b;
+    }
+
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 24px;
+      padding: 10px;
+    }
+
+    .slide {
+      flex: 0 0 80%;
+      scroll-snap-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid #ff4b2b;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 0 20px rgba(255, 75, 43, 0.3);
+      transition: transform 0.4s ease;
+    }
+
+    .slide:hover {
+      transform: scale(1.03);
+    }
+
+    .slide img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .slide h3 {
+      margin: 15px 0 10px;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+    }
+
+    .slide a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #ff4b2b;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .slide a:hover {
+      background: #ff3a1a;
+    }
+
+    /* Scrollbar styles (optional) */
+    .slider::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .slider::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .slider::-webkit-scrollbar-thumb {
+      background: #ff4b2b;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔥 XoH! Featured Merch</h1>
+
+  <div class="slider">
+    <div class="slide">
+      <img src="https://yourcdnlink.com/product1.jpg" alt="XOLLENT Crown Tee">
+      <h3>XOLLENT Crown Tee</h3>
+      <a href="https://printfulstore.com/product1" target="_blank">Buy Now</a>
+    </div>
+    <div class="slide">
+      <img src="https://yourcdnlink.com/product2.jpg" alt="Skull in Thorns Hoodie">
+      <h3>Skull in Thorns Hoodie</h3>
+      <a href="https://printfulstore.com/product2" target="_blank">Buy Now</a>
+    </div>
+    <div class="slide">
+      <img src="https://yourcdnlink.com/product3.jpg" alt="Trippy Moon Poster">
+      <h3>Trippy Moon Poster</h3>
+      <a href="https://printfulstore.com/product3" target="_blank">Buy Now</a>
+    </div>
+    <!-- You can copy and paste more slides below -->
+  </div>
+
+</body>
+</html>
