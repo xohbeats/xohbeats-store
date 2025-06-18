@@ -6,11 +6,12 @@
   <title>XoH! Beats | Official Beat Store & Merch</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 
-  <!-- 🔥 Navigation Bar Styles -->
+  <!-- ✅ GLOBAL STYLES INCLUDING NAVIGATION & MAIN LAYOUT -->
   <style>
     * {
       box-sizing: border-box;
     }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -25,6 +26,26 @@
       align-items: center;
       padding: 2rem 1rem 4rem;
       min-height: 100vh;
+    }
+
+    h1, h2 {
+      margin: 0 0 0.5rem 0;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #ff4b2b;
+    }
+
+    p {
+      margin: 0 0 1rem 0;
+      color: #aaa;
+      font-weight: 400;
     }
 
     /* === Navigation Bar === */
@@ -61,70 +82,15 @@
         flex-direction: column;
         align-items: center;
       }
+
       .tab-item {
         border-bottom: 1px solid #333;
         width: 100%;
         text-align: center;
       }
     }
-  </style>
-</head>
-<body>
-  <!-- 🔗 Navigation Bar -->
-  <header class="main-header">
-    <nav class="tab-nav">
-      <ul>
-        <li class="tab-item active" data-target="about">ABOUT</li>
-        <li class="tab-item" data-target="ebooks">EBOOKS</li>
-        <li class="tab-item" data-target="services">SERVICES</li>
-        <li class="tab-item" data-target="donations">DONATIONS</li>
-      </ul>
-    </nav>
-  </header>
-<section id="about" style="padding:100px 20px;"><h2>About</h2></section>
-<section id="ebooks" style="padding:100px 20px;"><h2>Ebooks</h2></section>
-<section id="services" style="padding:100px 20px;"><h2>Services</h2></section>
-<section id="donations" style="padding:100px 20px;"><h2>Donations</h2></section>
-  <script>
-    document.querySelectorAll('.tab-item').forEach(tab => {
-      tab.addEventListener('click', () => {
-        // Set active tab visually
-        document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
 
-        // Scroll to the corresponding section
-        const targetId = tab.dataset.target;
-        const section = document.getElementById(targetId);
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-  </script>
-</body>
-</html>
-
-    h1, h2 {
-      margin: 0 0 0.5rem 0;
-      font-weight: 700;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: #ff4b2b;
-    }
-
-    p {
-      margin: 0 0 1rem 0;
-      color: #aaa;
-      font-weight: 400;
-    }
-
-    /* Beat Grid */
+    /* ==== Beat Grid ==== */
     .beat-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -139,13 +105,6 @@
       padding: 1rem;
       border-radius: 1rem;
       box-shadow: 0 0 10px rgba(0,0,0,0.6);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .beat-card h3 {
-      margin-bottom: 0.5rem;
     }
 
     .beat-card iframe {
@@ -171,7 +130,7 @@
       background: #ff2d70;
     }
 
-    /* Merch Slider */
+    /* ==== Slider ==== */
     .slider {
       display: flex;
       overflow-x: auto;
@@ -191,10 +150,8 @@
       border: 2px solid #ff4b2b;
       border-radius: 16px;
       padding: 16px;
-      box-shadow: 0 0 20px rgba(255, 75, 43, 0.4);
-      transition: transform 0.3s ease;
       text-align: center;
-      color: white;
+      transition: transform 0.3s ease;
     }
 
     .slide:hover {
@@ -208,36 +165,12 @@
       object-fit: cover;
     }
 
-    .slide h3 {
-      font-size: 1.3rem;
-      margin-bottom: 12px;
-    }
-
-    .slide a {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #ff4b2b;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 700;
-      transition: background 0.3s ease;
-    }
-
-    .slide a:hover {
-      background: #ff3a1a;
-    }
-
-    /* Social Section */
+    /* ==== Social Links ==== */
     .social-section {
       text-align: center;
       max-width: 1100px;
       width: 100%;
       margin-bottom: 3rem;
-    }
-
-    .social-section h2 {
-      margin-bottom: 1rem;
     }
 
     .social-links {
@@ -268,7 +201,7 @@
     }
 
     .social-instagram {
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     }
 
     .social-youtube {
@@ -284,7 +217,7 @@
       height: 24px;
     }
 
-    /* Mailchimp Form */
+    /* === Mailchimp Form === */
     #mc_embed_signup {
       background: rgba(0,0,0,0.7);
       padding: 30px 20px;
@@ -296,43 +229,6 @@
       margin-bottom: 3rem;
     }
 
-    #mc_embed_signup h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: #ff4b2b;
-    }
-
-    #mc_embed_signup form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    #mc_embed_signup input[type="email"] {
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      box-sizing: border-box;
-    }
-
-    #mc_embed_signup input[type="submit"] {
-      background: #ff4b2b;
-      border: none;
-      padding: 12px;
-      color: white;
-      font-weight: 700;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    #mc_embed_signup input[type="submit"]:hover {
-      background: #ff3a1a;
-    }
-
-    /* Responsive tweaks */
     @media (max-width: 600px) {
       .slide {
         flex: 0 0 95%;
@@ -340,101 +236,86 @@
     }
   </style>
 </head>
-<body>
 
+<body>
+  <!-- 🔗 Sticky Navigation -->
+  <header class="main-header">
+    <nav class="tab-nav">
+      <ul>
+        <li class="tab-item active" data-target="about">ABOUT</li>
+        <li class="tab-item" data-target="ebooks">EBOOKS</li>
+        <li class="tab-item" data-target="services">SERVICES</li>
+        <li class="tab-item" data-target="donations">DONATIONS</li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Header -->
   <header>
     <h1>XoH! Beats</h1>
     <p>Melodic | Emo-Rap | Rage | Boom Bap | Trap</p>
   </header>
 
-  <!-- Beat Store Grid -->
+  <!-- Navigation Target Sections -->
+  <section id="about" style="padding:100px 20px;"><h2>About</h2></section>
+  <section id="ebooks" style="padding:100px 20px;"><h2>Ebooks</h2></section>
+  <section id="services" style="padding:100px 20px;"><h2>Services</h2></section>
+  <section id="donations" style="padding:100px 20px;"><h2>Donations</h2></section>
+
+  <!-- Beat Grid -->
   <section class="beat-grid">
     <div class="beat-card">
       <h3>"How Deep"</h3>
-      <iframe 
-        src="https://www.beatstars.com/embed/track/?id=22064805" 
-        scrolling="no" 
-        frameborder="no" 
-        allow="autoplay">
-      </iframe>
-      <a class="buy-btn" href="https://www.beatstars.com/xohbeats/tracks/22064805" target="_blank" rel="noopener noreferrer">Buy License</a>
+      <iframe src="https://www.beatstars.com/embed/track/?id=22064805" allow="autoplay"></iframe>
+      <a class="buy-btn" href="https://www.beatstars.com/xohbeats/tracks/22064805" target="_blank">Buy License</a>
     </div>
-    <!-- Add more beat cards here -->
   </section>
 
   <!-- Merch Slider -->
   <h2>🔥 XoH! Featured Merch</h2>
-  <div class="slider" aria-label="Featured merchandise slider">
+  <div class="slider">
+    <!-- Example Merch -->
     <div class="slide">
       <img src="https://yourcdnlink.com/product1.jpg" alt="XOLLENT Crown Tee" />
       <h3>XOLLENT Crown Tee</h3>
-      <a href="https://printfulstore.com/product1" target="_blank" rel="noopener noreferrer">Buy Now</a>
+      <a href="#">Buy Now</a>
     </div>
-    <div class="slide">
-      <img src="https://yourcdnlink.com/product2.jpg" alt="Skull in Thorns Hoodie" />
-      <h3>Skull in Thorns Hoodie</h3>
-      <a href="https://printfulstore.com/product2" target="_blank" rel="noopener noreferrer">Buy Now</a>
-    </div>
-    <div class="slide">
-      <img src="https://yourcdnlink.com/product3.jpg" alt="Trippy Moon Poster" />
-      <h3>Trippy Moon Poster</h3>
-      <a href="https://printfulstore.com/product3" target="_blank" rel="noopener noreferrer">Buy Now</a>
-    </div>
-    <!-- More merch slides here -->
   </div>
 
-<!-- XoH! Beats Mailchimp Signup -->
-<section id="mc_embed_signup" style="margin: 50px auto; text-align: center; color: #fff;">
-  <h2 style="color: #ff4b2b; font-size: 2rem;">Subscribe to the XOLLENT Community!</h2>
-  <p style="color: #ccc;">Be the first to know about new beats, merch drops, and giveaways.</p>
+  <!-- Mailchimp Signup -->
+  <section id="mc_embed_signup">
+    <h2>Subscribe to the XOLLENT Community!</h2>
+    <p>Be the first to know about new beats, merch drops, and giveaways.</p>
+    <form action="https://gmail.us4.list-manage.com/subscribe/post?u=e5d6b74ac9273d75bab607bcb&amp;id=957724485e&amp;f_id=00e7e9eaf0" method="post" target="_blank" novalidate>
+      <input type="email" name="EMAIL" placeholder="Enter your email" required />
+      <div style="position: absolute; left: -5000px;" aria-hidden="true">
+        <input type="text" name="b_e5d6b74ac9273d75bab607bcb_957724485e" tabindex="-1" value="">
+      </div>
+      <input type="submit" value="Subscribe" />
+    </form>
+  </section>
 
-  <form action="https://gmail.us4.list-manage.com/subscribe/post?u=e5d6b74ac9273d75bab607bcb&amp;id=957724485e&amp;f_id=00e7e9eaf0" 
-        method="post" 
-        id="mc-embedded-subscribe-form" 
-        name="mc-embedded-subscribe-form" 
-        target="_blank" 
-        novalidate
-        style="margin-top: 20px;">
-    
-    <input type="email" name="EMAIL" placeholder="Enter your email" required 
-           style="padding: 10px 15px; width: 250px; border: none; border-radius: 6px; margin-bottom: 10px;"/>
-
-    <!-- Honeypot field (spam protection) -->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true">
-      <input type="text" name="b_e5d6b74ac9273d75bab607bcb_957724485e" tabindex="-1" value="">
-    </div>
-
-    <br>
-    <input type="submit" value="Subscribe" 
-           name="subscribe" 
-           id="mc-embedded-subscribe" 
-           style="background: #ff4b2b; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer;" />
-  </form>
-</section>
-
-
-  <!-- Social Follow Section -->
+  <!-- Social Links -->
   <section class="social-section">
     <h2>🎧 Follow XoH! Beats</h2>
-    <div class="social-links" role="list">
-      <a href="https://facebook.com/XoHBeats" target="_blank" rel="noopener noreferrer" class="social-facebook" role="listitem" aria-label="Facebook">
-        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" />
-        Facebook
-      </a>
-      <a href="https://instagram.com/xohbeats" target="_blank" rel="noopener noreferrer" class="social-instagram" role="listitem" aria-label="Instagram">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" />
-        Instagram
-      </a>
-      <a href="https://youtube.com/@xohbeats" target="_blank" rel="noopener noreferrer" class="social-youtube" role="listitem" aria-label="YouTube">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
-        YouTube
-      </a>
-      <a href="https://xohbeats.gumroad.com" target="_blank" rel="noopener noreferrer" class="social-external" role="listitem" aria-label="Beat Store">
-        <img src="https://cdn-icons-png.flaticon.com/512/25/25284.png" alt="Beat Store" />
-        Beat Store
-      </a>
+    <div class="social-links">
+      <a href="#" class="social-facebook"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" />Facebook</a>
+      <a href="#" class="social-instagram"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" />Instagram</a>
+      <a href="#" class="social-youtube"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" />YouTube</a>
+      <a href="#" class="social-external"><img src="https://cdn-icons-png.flaticon.com/512/25/25284.png" />Beat Store</a>
     </div>
   </section>
 
+  <!-- Tab Scroll Behavior -->
+  <script>
+    document.querySelectorAll('.tab-item').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const section = document.getElementById(tab.dataset.target);
+        if (section) section.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>
