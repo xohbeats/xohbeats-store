@@ -1,0 +1,54 @@
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0d0d0d;
+  color: #fff;
+  line-height: 1.6;
+  padding-top: 80px;
+}
+
+/* Header & Navigation */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  padding: 15px 0;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+}
+
+.tab-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.tab-nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.tab-nav a:hover,
+.tab-item.active a {
+  background-color: #ff4b2b;
+}
+
+/* Page Content */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
