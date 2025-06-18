@@ -103,6 +103,52 @@ footer {
   box-shadow: 0 -2px 5px rgba(0,0,0,0.7);
   margin-top: auto;
 }
+/* Social Media Section */
+.social-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #111;
+}
+
+.social-section h2 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.social {
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.social.facebook {
+  background-color: #3b5998;
+}
+
+.social.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social.youtube {
+  background-color: #ff0000;
+}
+
+.social.beatstars {
+  background-color: #000;
+  border: 2px solid #fff;
+}
 
 /* Responsive */
 @media (max-width: 600px) {
