@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>XoH! Beats | Official Beat Store & Merch</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- 🔥 Navigation Bar Styles -->
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -20,8 +25,84 @@
       align-items: center;
       padding: 2rem 1rem 4rem;
       min-height: 100vh;
-      box-sizing: border-box;
     }
+
+    /* === Navigation Bar === */
+    .main-header {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .tab-nav ul {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .tab-item {
+      padding: 15px 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .tab-item:hover, .tab-item.active {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    @media (max-width: 600px) {
+      .tab-nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      .tab-item {
+        border-bottom: 1px solid #333;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 🔗 Navigation Bar -->
+  <header class="main-header">
+    <nav class="tab-nav">
+      <ul>
+        <li class="tab-item active" data-target="about">ABOUT</li>
+        <li class="tab-item" data-target="ebooks">EBOOKS</li>
+        <li class="tab-item" data-target="services">SERVICES</li>
+        <li class="tab-item" data-target="donations">DONATIONS</li>
+      </ul>
+    </nav>
+  </header>
+<section id="about" style="padding:100px 20px;"><h2>About</h2></section>
+<section id="ebooks" style="padding:100px 20px;"><h2>Ebooks</h2></section>
+<section id="services" style="padding:100px 20px;"><h2>Services</h2></section>
+<section id="donations" style="padding:100px 20px;"><h2>Donations</h2></section>
+  <script>
+    document.querySelectorAll('.tab-item').forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Set active tab visually
+        document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // Scroll to the corresponding section
+        const targetId = tab.dataset.target;
+        const section = document.getElementById(targetId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
 
     h1, h2 {
       margin: 0 0 0.5rem 0;
