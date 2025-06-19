@@ -1,167 +1,102 @@
-// File: vite.config.ts
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
-export default defineConfig({
-  plugins: [react()],
-  server: {
-    port: 3000,
-  },
-})
-
-// File: tsconfig.json
-{
-  "compilerOptions": {
-    "target": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": false,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
-  },
-  "include": ["src"]
-}
-
-// File: tailwind.config.ts
-import type { Config } from 'tailwindcss'
-
-const config: Config = {
-  content: ['./index.html', './src/**/*.{ts,tsx}'],
-  theme: {
-    extend: {
-      colors: {
-        neon: '#39ff14',
-        dark: '#0f0f0f',
-      },
-      animation: {
-        glitch: 'glitch 1s infinite',
-      },
-      keyframes: {
-        glitch: {
-          '0%': { transform: 'translate(0)' },
-          '20%': { transform: 'translate(-2px, 2px)' },
-          '40%': { transform: 'translate(-2px, -2px)' },
-          '60%': { transform: 'translate(2px, 2px)' },
-          '80%': { transform: 'translate(2px, -2px)' },
-          '100%': { transform: 'translate(0)' },
-        },
-      },
-    },
-  },
-  plugins: [],
-}
-export default config
-
-// File: postcss.config.js
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-}
-
-// File: index.html
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>XoH! Beats Marketplace</title>
-  </head>
-  <body class="bg-dark text-neon">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XoH! Beats — Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+  <style>
+    #mc_embed_signup {
+      background: #111;
+      clear: left;
+      font: 14px Helvetica, Arial, sans-serif;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      color: white;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    #mc_embed_signup h2 {
+      color: #fff;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+    #mc_embed_signup input[type="email"] {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 6px;
+    }
+    #mc-embedded-subscribe {
+      background-color: #ff4500;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>XoH! Beats</h1>
+    <p>Melodic | Emo-Rap | Rage | Boom Bap | Trap</p>
+  </header>
 
-    <!-- Messenger Chat plugin -->
-    <div id="fb-root"></div>
-    <div id="fb-customer-chat" class="fb-customerchat"></div>
-    <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "122287334657870634");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml: true,
-          version: 'v18.0'
-        });
-      };
+  <main>
+    <section class="links-section">
+      <a href="about.html" class="link-card">About</a>
+      <a href="ebook.html" class="link-card">Ebooks</a>
+      <a href="services.html" class="link-card">Services</a>
+      <a href="donations.html" class="link-card">Donations</a>
+    </section>
 
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
-  </body>
+    <section id="subscribe" class="subscription-section">
+      <h2>Subscribe to The XOLLENT Community</h2>
+      <div id="mc_embed_signup">
+        <form action="https://gmail.us4.list-manage.com/subscribe/post?u=e5d6b74ac9273d75bab607bcb&amp;id=957724485e&amp;f_id=00e7e9eaf0"
+              method="post" target="_blank" class="validate" novalidate>
+          <div id="mc_embed_signup_scroll">
+            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required>
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input type="text" name="b_e5d6b74ac9273d75bab607bcb_957724485e" tabindex="-1" value="">
+            </div>
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+<section class="social-section">
+  <h2>Follow XoH! Beats</h2>
+  <div class="social-icons">
+    <a href="https://www.facebook.com/XoHBeats" class="social facebook" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/xohbeats" class="social instagram" target="_blank">Instagram</a>
+    <a href="https://www.youtube.com/@xohbeats" class="social youtube" target="_blank">YouTube</a>
+    <a href="https://www.beatstars.com/xoh_beats" class="social beatstars" target="_blank">BeatStars</a>
+  </div>
+</section>
+
+  <footer>
+    <p>© 2025 XoH! Beats</p>
+  </footer>
+
+  <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+  <script>
+    (function($) {
+      window.fnames = new Array(); 
+      window.ftypes = new Array();
+      fnames[0]='EMAIL';ftypes[0]='email';
+      fnames[1]='FNAME';ftypes[1]='text';
+      fnames[2]='LNAME';ftypes[2]='text';
+      fnames[4]='PHONE';ftypes[4]='phone';
+    }(jQuery));
+    var $mcj = jQuery.noConflict(true);
+  </script>
+</body>
 </html>
-
-// File: src/main.tsx
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter as Router } from 'react-router-dom'
-import App from './App'
-import './index.css'
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
-  </React.StrictMode>
-)
-
-// File: src/index.css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  font-family: 'Courier New', monospace;
-  background-color: #0f0f0f;
-  color: #39ff14;
-  scroll-behavior: smooth;
-}
-
-/* Additional immersive custom styles */
-input, textarea {
-  background: #1f1f1f;
-  color: #39ff14;
-  border: 1px solid #39ff14;
-  padding: 0.5rem;
-  border-radius: 0.375rem;
-}
-
-button {
-  background-color: #39ff14;
-  color: #0f0f0f;
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  font-weight: bold;
-}
-
-button:hover {
-  background-color: #2fdf10;
-}
-
-// File: src/components/interactive-skull.tsx
-import React from 'react'
-
-export default function InteractiveSkull() {
-  return (
-    <div className="animate-glitch text-5xl text-neon text-center mt-10">
-      💀 XoH! Beats 💀
-    </div>
-  )
-}
