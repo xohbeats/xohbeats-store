@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XoH! Beats — Beat Store</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background-color: #0b0c1a;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1a1c3a;
+      text-align: center;
+      padding: 30px 10px;
+      box-shadow: 0 0 20px #00fff0;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #00fff0;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    .beat-container {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .beat-card {
+      background-color: #1a1c3a;
+      border: 2px solid #00fff0;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.4s ease;
+      position: relative;
+    }
+
+    .beat-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 25px #00fff0;
+    }
+
+    .beat-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #ff4de6;
+      text-shadow: 0 0 8px #ff4de6;
+    }
+
+    iframe {
+      width: 100%;
+      border: none;
+      margin-bottom: 10px;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+
+    .download-button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 18px;
+      background: #ff4de6;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      box-shadow: 0 0 8px #ff4de6;
+      transition: background 0.2s ease;
+    }
+
+    .download-button:hover {
+      background: #ffffff;
+      color: #000;
+      box-shadow: 0 0 16px #ff4de6;
+    }
+
+    footer {
+      text-align: center;
+      color: #888;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>XoH! BEAT STORE</h1>
+    <p>🎧 Preview and lease your next favorite beat below. 100% original. 100% fire.</p>
+  </header>
+
+  <div class="beat-container">
+
+    <div class="beat-card">
+      <h2>(FREE) BigXThaPlug Type Beats</h2>
+      <iframe src="//www.beatstars.com/embed/track/?id=20697182" height="140"></iframe>
+      <audio src="audio/bigx_preview.mp3" controls></audio>
+      <a href="downloads/bigx_free_beat.mp3" class="download-button" download>⬇ Download</a>
+    </div>
+
+    <div class="beat-card">
+      <h2>(FREE) Juice WRLD Type Beats</h2>
+      <iframe src="//www.beatstars.com/embed/track/?id=18961691" height="140"></iframe>
+      <audio src="audio/juicewrld_preview.mp3" controls></audio>
+      <a href="downloads/juicewrld_free_beat.mp3" class="download-button" download>⬇ Download</a>
+    </div>
+
+    <div class="beat-card">
+      <h2>(FREE) Hip-Hop Type Beats</h2>
+      <iframe src="//www.beatstars.com/embed/track/?id=18961691" height="140"></iframe>
+      <audio src="audio/hiphop_preview.mp3" controls></audio>
+      <a href="downloads/hiphop_free_beat.mp3" class="download-button" download>⬇ Download</a>
+    </div>
+
+    <div class="beat-card">
+      <h2>(FREE) BoomBap Type Beats</h2>
+      <iframe src="//www.beatstars.com/embed/track/?id=10784835" height="140"></iframe>
+      <audio src="audio/boombap_preview.mp3" controls></audio>
+      <a href="downloads/boombap_free_beat.mp3" class="download-button" download>⬇ Download</a>
+    </div>
+
+    <div class="beat-card">
+      <h2>(FREE) Trippie Redd Type Beats</h2>
+      <iframe src="//www.beatstars.com/embed/track/?id=11296983" height="140"></iframe>
+      <audio src="audio/trippie_preview.mp3" controls></audio>
+      <a href="downloads/trippie_free_beat.mp3" class="download-button" download>⬇ Download</a>
+    </div>
+
+    <div class="beat-card">
+      <h2>(FREE) Drake Type Beats</h2>
+      <iframe src="//www.beatstars.com/embed/track/?id=18835270" height="140"></iframe>
+      <audio src="audio/drake_preview.mp3" controls></audio>
+      <a href="downloads/drake_free_beat.mp3" class="download-button" download>⬇ Download</a>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 XoH! Beats. All rights reserved.<br />
+    Built with 💽 + 🔊 for real ones.
+  </footer>
+
+</body>
+</html>
