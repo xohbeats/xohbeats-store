@@ -169,7 +169,10 @@
     <p>Rep the wave. Fresh drops from the studio to the street.</p>
   </section>
 
-  <section class="merch-grid">
+  <section class="merch-grid" id="merchGrid">
+  <!-- Products will load here -->
+</section>
+
     
     <!-- Example Product Card -->
     <div class="product-card" data-aos="fade-up">
@@ -209,5 +212,39 @@
       once: true
     });
   </script>
+  <script>
+  async function loadMerch() {
+    const merchGrid = document.getElementById('merchGrid');
+
+    try {
+      const res = await fetch('/api/products');
+      const products = await res.json();
+
+      products.forEach((product, i) => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.setAttribute('data-aos', 'fade-up');
+        card.setAttribute('data-aos-delay', i * 100);
+
+        card.innerHTML = `
+          <img src="${product.thumbnail_url}" alt="${product.name}" />
+          <h2>${product.name}</h2>
+          <p>$${(product.retail_price || '—')}</p>
+          <a href="https://xohbeats.printful.com/${product.id}" target="_blank">Buy Now</a>
+        `;
+
+        merchGrid.appendChild(card);
+      });
+
+      AOS.refresh(); // re-init animations after DOM insert
+    } catch (err) {
+      merchGrid.innerHTML = '<p style="color: red;">Failed to load merch. Please try again later.</p>';
+      console.error(err);
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', loadMerch);
+</script>
+
 </body>
 </html>
