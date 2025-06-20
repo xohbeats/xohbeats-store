@@ -244,3 +244,50 @@ button[type="submit"]:hover {
 footer {
   margin-top: 4em;
 }
+/* Donation Section Styling */
+.donation-hero {
+  background: #14141a;
+  padding: 3em 1em;
+  text-align: center;
+  color: #f5f5ff;
+  border-radius: 8px;
+  margin-bottom: 2em;
+}
+.donation-hero h2 {
+  font-size: 2em;
+  color: #7456ff;
+  margin-bottom: 0.5em;
+}
+.donation-hero p {
+  font-size: 1.1em;
+  color: #cfcff7;
+}
+
+.donate-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  margin: 2em 0;
+}
+.donate-btn {
+  display: inline-block;
+  background: #7456ff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.8em 1.4em;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.donate-btn:hover {
+  background: #8b6aff;
+  box-shadow: 0 0 10px #8b6aff;
+}
+
+.thank-you {
+  text-align: center;
+  color: #cfcff7;
+  font-size: 1em;
+  margin-top: 1.5em;
+}
