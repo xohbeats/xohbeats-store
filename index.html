@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>XoH! Beats — Home</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="styles.css" />
   <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
 </head>
-  <!-- 2️⃣ Messenger Customer Chat -->
-<div class="fb-customerchat"
-     attribution="setup_tool"
-     page_id="YOUR_NUMERIC_PAGE_ID"
-     theme_color="#7456ff"
-     logged_in_greeting="Hey there 👋 Need a beat or got questions?"
-     logged_out_greeting="Please log in to Facebook to chat with us.">
-</div>
 
 <body>
-  <!-- 1️⃣ Facebook SDK root -->
-<div id="fb-root"></div>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId            : 'YOUR_FACEBOOK_APP_ID',  // ← create an app or use your existing one
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v15.0'
-    });
-  };
-  (function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
+  <!-- Facebook SDK root -->
+  <div id="fb-root"></div>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : 'YOUR_FACEBOOK_APP_ID',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v15.0'
+      });
+    };
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Messenger Chat -->
+  <div class="fb-customerchat"
+       attribution="setup_tool"
+       page_id="YOUR_NUMERIC_PAGE_ID"
+       theme_color="#7456ff"
+       logged_in_greeting="Hey there 👋 Need a beat or got questions?"
+       logged_out_greeting="Please log in to Facebook to chat with us.">
+  </div>
 
   <header class="site-header">
     <h1>XoH! Beats</h1>
     <p>Melodic | Emo-Rap | Rage | Boom Bap | Trap</p>
   </header>
-<a href="beatstore.html" class="beatstore-button">🎵 Visit the Beat Store</a>
+
+  <!-- 💽 Beat Store Button -->
+  <section style="text-align:center; margin: 30px 0;">
+    <a href="beatstore.html" class="beatstore-button">🎵 Visit the Beat Store</a>
+  </section>
+
   <main>
     <section class="links-section">
       <a href="about.html" class="link-card">About</a>
@@ -90,6 +96,7 @@
     <p>© 2025 XoH! Beats</p>
   </footer>
 
+  <!-- Mailchimp Validation -->
   <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
   <script>
     (function($) {
