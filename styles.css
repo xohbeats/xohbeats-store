@@ -327,3 +327,24 @@ footer {
 .next {
   right: 10px;
 }
+.beatstore-button {
+  display: inline-block;
+  margin: 30px auto;
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+  background-color: #00fff0;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 0 12px #00fff0;
+  transition: all 0.3s ease;
+}
+
+.beatstore-button:hover {
+  background-color: #ff4de6;
+  box-shadow: 0 0 20px #ff4de6;
+  color: #fff;
+}
