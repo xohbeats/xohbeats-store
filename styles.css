@@ -160,3 +160,87 @@ footer {
 }
 
 }
+/* === Layout Helpers === */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+/* === Hero Banner === */
+.about-hero {
+  background: url('images/about-hero.jpg') center/cover no-repeat;
+  padding: 4em 1em;
+  color: #f5f5ff;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 2em;
+}
+.about-hero .subtitle {
+  color: #9d8fff;
+  font-size: 1.2rem;
+  margin-top: 0.5em;
+}
+
+/* === Two-Column Story Grid === */
+.grid.two-col {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  align-items: center;
+  margin-bottom: 3em;
+}
+.grid.two-col .text-block {
+  flex: 1 1 300px;
+}
+.grid.two-col .image-block {
+  flex: 1 1 300px;
+}
+.grid.two-col .image-block img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+/* === Survey Section === */
+.survey-section {
+  background: #14141a;
+  padding: 2em 1em;
+  border-radius: 8px;
+  margin-bottom: 3em;
+}
+.survey-section h2 {
+  color: #7456ff;
+  margin-bottom: 1em;
+}
+.survey-question {
+  margin-bottom: 1.5em;
+}
+.option-list {
+  list-style: none;
+  padding: 0;
+}
+.option-list li {
+  margin-bottom: 0.6em;
+}
+.option-list input {
+  margin-right: 0.5em;
+}
+button[type="submit"] {
+  background: #7456ff;
+  color: #fff;
+  padding: 0.8em 1.2em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+button[type="submit"]:hover {
+  background: #8b6aff;
+}
+
+/* Tiny tweak: keep footer sitting neat */
+footer {
+  margin-top: 4em;
+}
