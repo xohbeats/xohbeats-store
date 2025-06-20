@@ -7,6 +7,122 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
   <style>
+    body {
+      background: #0a0a0a;
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .site-header {
+      text-align: center;
+      padding: 2em 1em;
+      background: #111;
+      border-bottom: 1px solid #222;
+    }
+
+    .links-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5em;
+      padding: 2em 1em;
+    }
+
+    .link-card {
+      background: #1a1a1a;
+      padding: 1.2em 2em;
+      border-radius: 8px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      border: 1px solid #333;
+      transition: 0.3s;
+    }
+
+    .link-card:hover {
+      background: #ff416c;
+      color: #fff;
+      box-shadow: 0 0 15px #ff416c;
+    }
+
+    .merch-preview {
+      background: #111;
+      text-align: center;
+      padding: 3em 1em;
+      margin: 2em 0;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+    }
+
+    .merch-preview h2 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+      color: #ff416c;
+    }
+
+    .merch-preview p {
+      font-size: 1.1em;
+      color: #ccc;
+      margin-bottom: 1.5em;
+    }
+
+    .merch-preview a {
+      display: inline-block;
+      padding: 0.7em 1.5em;
+      background: #ff416c;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: 0.3s ease;
+    }
+
+    .merch-preview a:hover {
+      background: #ff4b2b;
+      box-shadow: 0 0 12px #ff4b2b;
+    }
+
+    .social-section {
+      text-align: center;
+      padding: 2em 1em;
+      background: #111;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1em;
+      margin-top: 1em;
+    }
+
+    .social {
+      background: #1a1a1a;
+      padding: 0.8em 1.5em;
+      border-radius: 6px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      border: 1px solid #333;
+      transition: 0.3s;
+    }
+
+    .social:hover {
+      background: #ff416c;
+      box-shadow: 0 0 10px #ff416c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em 1em;
+      background: #111;
+      border-top: 1px solid #222;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
     #mc_embed_signup {
       background: #111;
       clear: left;
@@ -18,11 +134,13 @@
       border-radius: 12px;
       padding: 20px;
     }
+
     #mc_embed_signup h2 {
       color: #fff;
       font-size: 1.4rem;
       text-align: center;
     }
+
     #mc_embed_signup input[type="email"] {
       padding: 10px;
       width: 100%;
@@ -30,6 +148,7 @@
       border: none;
       border-radius: 6px;
     }
+
     #mc-embedded-subscribe {
       background-color: #ff4500;
       color: #fff;
@@ -53,6 +172,14 @@
       <a href="ebook.html" class="link-card">Ebooks</a>
       <a href="services.html" class="link-card">Services</a>
       <a href="donations.html" class="link-card">Donations</a>
+      <a href="merch.html" class="link-card">🛍️ Merch</a> <!-- Added Merch link -->
+    </section>
+
+    <!-- 🛍️ Merch Highlight Section -->
+    <section class="merch-preview">
+      <h2>🔥 Official XOH! Beats Merch</h2>
+      <p>From the studio to the street — rock your vibe with exclusive XOLLENT drops.</p>
+      <a href="merch.html">Shop Now</a>
     </section>
 
     <section id="subscribe" class="subscription-section">
@@ -72,15 +199,16 @@
       </div>
     </section>
   </main>
-<section class="social-section">
-  <h2>Follow XoH! Beats</h2>
-  <div class="social-icons">
-    <a href="https://www.facebook.com/XoHBeats" class="social facebook" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/xohbeats" class="social instagram" target="_blank">Instagram</a>
-    <a href="https://www.youtube.com/@xohbeats" class="social youtube" target="_blank">YouTube</a>
-    <a href="https://www.beatstars.com/xoh_beats" class="social beatstars" target="_blank">BeatStars</a>
-  </div>
-</section>
+
+  <section class="social-section">
+    <h2>Follow XoH! Beats</h2>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/XoHBeats" class="social facebook" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/xohbeats" class="social instagram" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/@xohbeats" class="social youtube" target="_blank">YouTube</a>
+      <a href="https://www.beatstars.com/xoh_beats" class="social beatstars" target="_blank">BeatStars</a>
+    </div>
+  </section>
 
   <footer>
     <p>© 2025 XoH! Beats</p>
