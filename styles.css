@@ -154,4 +154,9 @@ footer {
 #mc-embedded-subscribe:hover {
   background-color: #8b6aff;
   box-shadow: 0 0 10px #8b6aff;
+  /* ensure the widget floats above everything */
+.fb_dialog {
+  z-index: 999999 !important;
+}
+
 }
