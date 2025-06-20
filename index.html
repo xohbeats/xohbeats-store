@@ -5,219 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>XoH! Beats — Home</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" />
-  <style>
-    :root {
-      --bg-primary: #0a0a0a;
-      --bg-secondary: #111;
-      --accent: #ff416c;
-      --accent-alt: #ff4b2b;
-      --border: #222;
-      --text-light: #fff;
-      --text-muted: #aaa;
-      --radius: 8px;
-      --transition: 0.3s ease;
-    }
-    * {
-      margin: 0; padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      background: var(--bg-primary);
-      color: var(--text-light);
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-    }
-    a { text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-    header.site-header {
-      text-align: center;
-      padding: 3em 1em;
-      background: var(--bg-secondary);
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      /* shimmer underline effect */
-    }
-    header.site-header h1 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 3rem;
-      color: var(--accent);
-      letter-spacing: 2px;
-      margin-bottom: 0.3em;
-    }
-    header.site-header p {
-      font-size: 1.2em;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .links-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5em;
-      padding: 2em 1em;
-    }
-    .link-card {
-      background: var(--bg-secondary);
-      padding: 1.2em 2em;
-      border-radius: var(--radius);
-      color: var(--text-light);
-      font-weight: bold;
-      border: 2px solid transparent;
-      transition: var(--transition);
-      flex: 1 1 160px;
-      text-align: center;
-    }
-    .link-card:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      box-shadow: 0 0 15px var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .merch-preview {
-      background: var(--bg-secondary);
-      text-align: center;
-      padding: 3em 1em;
-      margin: 2em 1em;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      border-radius: var(--radius);
-    }
-    .merch-preview h2 {
-      font-size: 2.5em;
-      color: var(--accent);
-      margin-bottom: 0.5em;
-    }
-    .merch-preview p {
-      font-size: 1.1em;
-      color: var(--text-muted);
-      margin-bottom: 1.5em;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .merch-preview a {
-      display: inline-block;
-      padding: 0.8em 2em;
-      background: var(--accent);
-      color: var(--text-light);
-      font-size: 1.1em;
-      font-weight: bold;
-      border-radius: var(--radius);
-      transition: var(--transition);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-    .merch-preview a:hover {
-      background: var(--accent-alt);
-      box-shadow: 0 6px 15px var(--accent-alt);
-      transform: translateY(-2px);
-    }
-
-    .subscription-section {
-      text-align: center;
-      padding: 3em 1em;
-    }
-    .subscription-section h2 {
-      font-size: 2em;
-      color: var(--accent);
-      margin-bottom: 1em;
-    }
-    #mc_embed_signup {
-      background: var(--bg-secondary);
-      margin: 0 auto;
-      padding: 2em;
-      border-radius: var(--radius);
-      max-width: 500px;
-      border: 1px solid var(--border);
-    }
-    #mc_embed_signup label {
-      display: block;
-      text-align: left;
-      margin-bottom: 0.5em;
-      font-weight: bold;
-    }
-    #mc_embed_signup input[type="email"] {
-      width: 100%;
-      padding: 0.9em;
-      margin-bottom: 1em;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--bg-primary);
-      color: var(--text-light);
-    }
-    #mc-embedded-subscribe {
-      padding: 0.8em 2em;
-      background: var(--accent);
-      border: none;
-      border-radius: var(--radius);
-      color: var(--text-light);
-      font-weight: bold;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    #mc-embedded-subscribe:hover {
-      background: var(--accent-alt);
-    }
-
-    .social-section {
-      text-align: center;
-      padding: 3em 1em;
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border);
-    }
-    .social-section h2 {
-      font-size: 2em;
-      color: var(--accent);
-      margin-bottom: 0.8em;
-    }
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 1em;
-    }
-    .social {
-      flex: 1 1 120px;
-      background: var(--bg-secondary);
-      padding: 0.8em 1em;
-      border: 2px solid transparent;
-      border-radius: var(--radius);
-      color: var(--text-light);
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .social.facebook:hover { background: #3b5998; border-color: #3b5998; }
-    .social.instagram:hover { background: #E1306C; border-color: #E1306C; }
-    .social.youtube:hover { background: #FF0000; border-color: #FF0000; }
-    .social.beatstars:hover { background: #29abe0; border-color: #29abe0; }
-
-    footer {
-      text-align: center;
-      padding: 2em 1em;
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border);
-      font-size: 0.9em;
-      color: var(--text-muted);
-    }
-
-    @media (max-width: 600px) {
-      header.site-header h1 { font-size: 2.2rem; }
-      .merch-preview h2 { font-size: 2em; }
-    }
-  </style>
+  <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
   <header class="site-header">
     <h1>XoH! Beats</h1>
-    <p>Melodic · Emo‑Rap · Rage · Boom‑Bap · Trap</p>
+    <p>Melodic | Emo-Rap | Rage | Boom Bap | Trap</p>
   </header>
 
   <main>
@@ -230,35 +23,54 @@
     </section>
 
     <section class="merch-preview">
-      <h2>🔥 Official XoH! Beats Merch</h2>
-      <p>From the studio to the street — rock your vibe with exclusive XOLLENT drops. Limited stock, global shipping.</p>
+      <h2>🔥 Official XOH! Beats Merch</h2>
+      <p>From the studio to the street — rock your vibe with exclusive XOLLENT drops.</p>
       <a href="merch.html">Shop Now</a>
     </section>
 
-    <section class="subscription-section" id="subscribe">
+    <section id="subscribe" class="subscription-section">
       <h2>Subscribe to The XOLLENT Community</h2>
       <div id="mc_embed_signup">
-        <!-- Mailchimp form (same as before) -->
+        <form action="https://gmail.us4.list-manage.com/subscribe/post?u=e5d6b74ac9273d75bab607bcb&amp;id=957724485e&amp;f_id=00e7e9eaf0"
+              method="post" target="_blank" class="validate" novalidate>
+          <div id="mc_embed_signup_scroll">
+            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required>
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input type="text" name="b_e5d6b74ac9273d75bab607bcb_957724485e" tabindex="-1" value="">
+            </div>
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+          </div>
+        </form>
       </div>
     </section>
-
-    <section class="social-section">
-      <h2>Follow XoH! Beats</h2>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/XoHBeats" class="social facebook" target="_blank">Facebook</a>
-        <a href="https://www.instagram.com/xohbeats" class="social instagram" target="_blank">Instagram</a>
-        <a href="https://www.youtube.com/@xohbeats" class="social youtube" target="_blank">YouTube</a>
-        <a href="https://www.beatstars.com/xoh_beats" class="social beatstars" target="_blank">BeatStars</a>
-      </div>
-    </section>
-
   </main>
 
+  <section class="social-section">
+    <h2>Follow XoH! Beats</h2>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/XoHBeats" class="social facebook" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/xohbeats" class="social instagram" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/@xohbeats" class="social youtube" target="_blank">YouTube</a>
+      <a href="https://www.beatstars.com/xoh_beats" class="social beatstars" target="_blank">BeatStars</a>
+    </div>
+  </section>
+
   <footer>
-    <p>© 2025 XoH! Beats • Made with passion by [Your Name/Studio]</p>
+    <p>© 2025 XoH! Beats</p>
   </footer>
 
   <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-  <script>/* same Mailchimp code */</script>
+  <script>
+    (function($) {
+      window.fnames = new Array();
+      window.ftypes = new Array();
+      fnames[0]='EMAIL';ftypes[0]='email';
+      fnames[1]='FNAME';ftypes[1]='text';
+      fnames[2]='LNAME';ftypes[2]='text';
+      fnames[4]='PHONE';ftypes[4]='phone';
+    }(jQuery));
+    var $mcj = jQuery.noConflict(true);
+  </script>
 </body>
 </html>
