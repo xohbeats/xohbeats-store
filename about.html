@@ -7,31 +7,98 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- header stays the same -->
   <header class="site-header">
     <h1>XoH! Beats</h1>
     <p>Melodic | Emo-Rap | Rage | Boom Bap | Trap</p>
   </header>
 
-  <main>
-    <section class="content-section">
+  <main class="container">
+
+    <!-- Hero banner -->
+    <section class="about-hero">
       <h2>About XoH! Beats</h2>
-      <p>
-        XoH! Beats is a creative force driven by emotion, storytelling, and innovation. Inspired by the energy of Juice WRLD and the depth of J. Cole, this sound is made for artists who want to connect on a soul level.
-      </p>
-      <p>
-        From melodic trap loops to cinematic rage drops, XoH! Beats delivers genre-bending instrumentals that blend pain and poetry, rhythm and reflection. It's not just production — it's a movement.
-      </p>
-      <p>
-        The XoH! brand expands beyond music into ebooks, fashion, and visual content through the XOLLENT sub-brand — fusing skulls, space, and abstract vibes into the lifestyle.
-      </p>
-      <p>
-        Whether you’re here to collab, shop, or find your next beat — welcome to the XOLLENT community.
-      </p>
+      <p class="subtitle">Where Emotion Meets Innovation</p>
     </section>
+
+    <!-- Story: two-column grid -->
+    <section class="content-section">
+      <div class="grid two-col">
+        <div class="text-block">
+          <h3>Our Mission</h3>
+          <p>
+            To craft beats that don’t just sound good, but feel good—beats that become the soundtrack
+            to your rawest emotions and boldest moves.
+          </p>
+        </div>
+        <div class="image-block">
+          <img src="images/studio-setup.jpg" alt="Studio setup">
+        </div>
+      </div>
+
+      <div class="grid two-col">
+        <div class="image-block">
+          <img src="images/live-session.jpg" alt="Live beat session">
+        </div>
+        <div class="text-block">
+          <h3>What We Offer</h3>
+          <ul>
+            <li>Melodic Trap & Emo-Rap loops</li>
+            <li>Cinematic Rage & Boom-Bap drops</li>
+            <li>Custom stems & exclusive rights</li>
+            <li>XOLLENT ebooks, merch & visuals</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Survey -->
+    <section class="survey-section">
+      <h2>Help Us Tune Your Experience 🎧</h2>
+      <form action="#" method="post">
+
+        <div class="survey-question">
+          <p><strong>1. Which genre resonates with you most?</strong></p>
+          <ul class="option-list">
+            <li><label><input type="radio" name="genre" value="melodic" required> Melodic</label></li>
+            <li><label><input type="radio" name="genre" value="emo-rap"> Emo-Rap</label></li>
+            <li><label><input type="radio" name="genre" value="rage"> Rage</label></li>
+            <li><label><input type="radio" name="genre" value="boom-bap"> Boom-Bap</label></li>
+            <li><label><input type="radio" name="genre" value="trap"> Trap</label></li>
+          </ul>
+        </div>
+
+        <div class="survey-question">
+          <p><strong>2. What’s your top need for a beat?</strong></p>
+          <ul class="option-list">
+            <li><label><input type="radio" name="need" value="studio-ready" required> Studio-ready mixdown</label></li>
+            <li><label><input type="radio" name="need" value="stems"> Custom stems</label></li>
+            <li><label><input type="radio" name="need" value="exclusive"> Exclusive rights</label></li>
+            <li><label><input type="radio" name="need" value="royalty-free"> Royalty-free license</label></li>
+          </ul>
+        </div>
+
+        <div class="survey-question">
+          <p><strong>3. How will you use our beats?</strong></p>
+          <ul class="option-list">
+            <li><label><input type="radio" name="usage" value="release" required> Commercial release</label></li>
+            <li><label><input type="radio" name="usage" value="mixtape"> Mixtape/EP</label></li>
+            <li><label><input type="radio" name="usage" value="social"> Social media content</label></li>
+            <li><label><input type="radio" name="usage" value="scoring"> Film/TV scoring</label></li>
+            <li><label><input type="radio" name="usage" value="other"> Other</label></li>
+          </ul>
+        </div>
+
+        <button type="submit">Send Feedback</button>
+      </form>
+    </section>
+
   </main>
 
   <footer>
     <p>© 2025 XoH! Beats</p>
   </footer>
+
 </body>
 </html>
