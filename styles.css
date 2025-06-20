@@ -291,3 +291,39 @@ footer {
   font-size: 1em;
   margin-top: 1.5em;
 }
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  overflow: hidden;
+}
+
+.carousel-images img {
+  width: 100%;
+  display: none;
+}
+
+.carousel-images .active {
+  display: block;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
