@@ -10,18 +10,36 @@
 </head>
 
 <body>
-  <!-- Facebook SDK root -->
-  <div id="fb-root"></div>
+ <!-- Facebook SDK root -->
+<div id="fb-root"></div>
 
-  <!-- Messenger Chat Plugin -->
-  <div id="fb-customer-chat" 
-       class="fb-customerchat"
-       page_id="702745043528848"
-       attribution="biz_inbox"
-       theme_color="#7456ff"
-       logged_in_greeting="Hey there 👋 Need a beat or got questions?"
-       logged_out_greeting="Please log in to Facebook to chat with us.">
-  </div>
+<!-- Messenger Chat Plugin -->
+<div id="fb-customer-chat"
+     class="fb-customerchat"
+     page_id="702745043528848"
+     attribution="biz_inbox"
+     theme_color="#7456ff"
+     logged_in_greeting="Hey there 👋 Need a beat or got questions?"
+     logged_out_greeting="Please log in to Facebook to chat with us.">
+</div>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml: true,
+      version: 'v23.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
 
   <script>
     window.fbAsyncInit = function() {
