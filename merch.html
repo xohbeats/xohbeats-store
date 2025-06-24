@@ -1,31 +1,31 @@
 <section class="merch-grid" id="merchGrid">
-  <!-- Product cards will be injected here -->
+  <!-- Cards are injected via JS -->
 </section>
 
 <script>
-  async function loadMerch() {
-    const merchGrid = document.getElementById('merchGrid');
+async function loadMerch() {
+  const merchGrid = document.getElementById('merchGrid');
+  try {
+    const res = await fetch('/api/products');
+    const products = await res.json();
 
-    try {
-      const res = await fetch('/api/products');
-      const products = await res.json();
-
-      merchGrid.innerHTML = '';
-
-      products.forEach((p, i) => {
-        merchGrid.innerHTML += `
-          <div class="product-card" data-aos="fade-up" data-aos-delay="${i * 100}">
-            <img src="${p.thumbnail_url}" alt="${p.name}" />
-            <h2>${p.name}</h2>
-            <p>Variants: ${p.variants}</p>
-            <a href="https://xollent.printful.com/product/${p.external_id}" target="_blank" rel="noopener noreferrer">Buy Now</a>
-          </div>`;
-      });
-    } catch (err) {
-      merchGrid.innerHTML = '<p style="color: red;">Failed to load merch. Please try again later.</p>';
-      console.error(err);
-    }
+    merchGrid.innerHTML = products.map((p, i) => `
+      <div class="product-card" data-aos="fade-up" data-aos-delay="${i * 100}">
+        <div class="card-image">
+          <img src="${p.thumbnail_url}" alt="${p.name}">
+        </div>
+        <div class="card-info">
+          <h3>${p.name}</h3>
+          <p>${p.variants} Variant${p.variants > 1 ? 's' : ''}</p>
+          <a href="https://xollent.printful.com/product/${p.external_id}" class="buy-btn" target="_blank">Buy Now</a>
+        </div>
+      </div>
+    `).join('');
+  } catch (e) {
+    merchGrid.innerHTML = `<p class="error-msg">Failed to load merch.</p>`;
+    console.error(e);
   }
+}
 
-  window.addEventListener('DOMContentLoaded', loadMerch);
+window.addEventListener('DOMContentLoaded', loadMerch);
 </script>
