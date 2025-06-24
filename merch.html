@@ -1,31 +1,69 @@
-<section class="merch-grid" id="merchGrid">
-  <!-- Cards are injected via JS -->
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XOLLENT Merch</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <h1>XOLLENT Official Merch</h1>
+    <p>From studio vibes to streetwear. Grab yours now.</p>
+  </header>
 
-<script>
-async function loadMerch() {
-  const merchGrid = document.getElementById('merchGrid');
-  try {
-    const res = await fetch('/api/products');
-    const products = await res.json();
+  <section class="merch-grid" id="merchGrid">
+    <!-- Product cards will be injected here -->
+  </section>
 
-    merchGrid.innerHTML = products.map((p, i) => `
-      <div class="product-card" data-aos="fade-up" data-aos-delay="${i * 100}">
-        <div class="card-image">
-          <img src="${p.thumbnail_url}" alt="${p.name}">
-        </div>
-        <div class="card-info">
-          <h3>${p.name}</h3>
-          <p>${p.variants} Variant${p.variants > 1 ? 's' : ''}</p>
-          <a href="https://xollent.printful.com/product/${p.external_id}" class="buy-btn" target="_blank">Buy Now</a>
-        </div>
-      </div>
-    `).join('');
-  } catch (e) {
-    merchGrid.innerHTML = `<p class="error-msg">Failed to load merch.</p>`;
-    console.error(e);
-  }
-}
+  <footer>
+    <p>© 2025 XOH! Beats — Powered by XOLLENT</p>
+  </footer>
 
-window.addEventListener('DOMContentLoaded', loadMerch);
-</script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+  <script>
+    async function loadMerch() {
+      const merchGrid = document.getElementById('merchGrid');
+
+      try {
+        const res = await fetch('/api/products');
+        const products = await res.json();
+
+        merchGrid.innerHTML = '';
+
+        const prices = {
+          "Space Ranger": "$19.99",
+          "Rambo Camo": "$19.99",
+          "Built Different, Looped Better": "$19.99",
+          "Still Alive": "$19.99",
+          "The Masked Musician": "$19.99"
+        };
+
+        products.forEach((p, i) => {
+          merchGrid.innerHTML += `
+            <div class="product-card" data-aos="fade-up" data-aos-delay="${i * 100}">
+              <div class="card-image">
+                <img src="${p.thumbnail_url}" alt="${p.name}" />
+              </div>
+              <div class="card-info">
+                <h3>${p.name}</h3>
+                <p>${prices[p.name] || '—'}</p>
+                <a class="buy-btn" href="https://xollent.printful.com/product/${p.id}" target="_blank">Buy Now</a>
+              </div>
+            </div>`;
+        });
+      } catch (err) {
+        merchGrid.innerHTML = '<p class="error-msg">Failed to load merch. Please try again later.</p>';
+        console.error(err);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', loadMerch);
+  </script>
+</body>
+</html>
