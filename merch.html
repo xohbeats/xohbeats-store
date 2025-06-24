@@ -15,10 +15,10 @@
       products.forEach((p, i) => {
         merchGrid.innerHTML += `
           <div class="product-card" data-aos="fade-up" data-aos-delay="${i * 100}">
-            <img src="${p.sync_product.thumbnail_url}" alt="${p.name}" />
+            <img src="${p.thumbnail_url}" alt="${p.name}" />
             <h2>${p.name}</h2>
-            <p>$${p.retail_price || '—'}</p>
-            <a href="https://xollent.printful.com/product/${p.id}" target="_blank">Buy Now</a>
+            <p>Variants: ${p.variants}</p>
+            <a href="https://xollent.printful.com/product/${p.external_id}" target="_blank" rel="noopener noreferrer">Buy Now</a>
           </div>`;
       });
     } catch (err) {
