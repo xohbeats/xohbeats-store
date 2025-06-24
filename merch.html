@@ -3,29 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>XOLLENT Merch</title>
-  <link rel="stylesheet" href="/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <title>Xollent Merch Store</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .merch-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: #1a1a1f;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid #2a2a2a;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px #7456ff;
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product-card h2 {
+      font-size: 1.2rem;
+      margin: 1rem 0 0.5rem;
+      color: #e6e6f8;
+    }
+
+    .product-card p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #cfcff7;
+    }
+
+    .product-card .btn {
+      background: #7456ff;
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .product-card .btn:hover {
+      background: #8b6aff;
+      box-shadow: 0 0 10px #8b6aff;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
-    <h1>XOLLENT Official Merch</h1>
-    <p>From studio vibes to streetwear. Grab yours now.</p>
+    <h1>Xollent Merch Store</h1>
+    <p>Curated apparel and accessories for creatives</p>
   </header>
 
-  <section class="merch-grid" id="merchGrid">
-    <!-- Product cards will be injected here -->
-  </section>
+  <main class="merch-container">
+    <div class="product-grid" id="merchGrid">
+      <!-- Products populated here -->
+    </div>
+  </main>
 
   <footer>
-    <p>© 2025 XOH! Beats — Powered by XOLLENT</p>
+    <p>&copy; 2025 Xollent. All rights reserved.</p>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 800, once: true });
-  </script>
   <script>
     async function loadMerch() {
       const merchGrid = document.getElementById('merchGrid');
@@ -34,31 +92,28 @@
         const res = await fetch('/api/products');
         const products = await res.json();
 
-        merchGrid.innerHTML = '';
-
         const prices = {
-          "Space Ranger": "$19.99",
-          "Rambo Camo": "$19.99",
-          "Built Different, Looped Better": "$19.99",
-          "Still Alive": "$19.99",
-          "The Masked Musician": "$19.99"
+          'Space Ranger': '19.99',
+          'Rambo Camo': '19.99',
+          'Built Different, Looped Better': '19.99',
+          'Still Alive': '19.99',
+          'The Masked Musician': '19.99'
         };
 
-        products.forEach((p, i) => {
+        merchGrid.innerHTML = '';
+
+        products.forEach((p) => {
           merchGrid.innerHTML += `
-            <div class="product-card" data-aos="fade-up" data-aos-delay="${i * 100}">
-              <div class="card-image">
-                <img src="${p.thumbnail_url}" alt="${p.name}" />
-              </div>
-              <div class="card-info">
-                <h3>${p.name}</h3>
-                <p>${prices[p.name] || '—'}</p>
-                <a class="buy-btn" href="https://xollent.printful.com/product/${p.id}" target="_blank">Buy Now</a>
-              </div>
-            </div>`;
+            <div class="product-card">
+              <img src="${p.thumbnail_url}" alt="${p.name}" />
+              <h2>${p.name}</h2>
+              <p>$${prices[p.name] || '19.99'}</p>
+              <a class="btn" href="https://xollent.printful.com/product/${p.id}" target="_blank">Buy Now</a>
+            </div>
+          `;
         });
       } catch (err) {
-        merchGrid.innerHTML = '<p class="error-msg">Failed to load merch. Please try again later.</p>';
+        merchGrid.innerHTML = '<p style="color: red;">Failed to load merch. Please try again later.</p>';
         console.error(err);
       }
     }
