@@ -3,8 +3,15 @@ body {
   background: #0d0d0f;
   color: #f5f5ff;
   font-family: Helvetica, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 0 1em;
+}
+
+/* === WRAPPER / CONTAINER === */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* === HEADER === */
@@ -15,8 +22,31 @@ body {
   border-bottom: 1px solid #292933;
 }
 
+/* === BEATSTORE BUTTON === */
+.beatstore-section {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.beatstore-button {
+  background-color: #7456ff;
+  color: white;
+  padding: 12px 24px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.beatstore-button:hover {
+  background-color: #8b6aff;
+}
+
 /* === LINKS === */
 .links-section {
+  max-width: 900px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -41,7 +71,136 @@ body {
   box-shadow: 0 0 15px #7456ff;
 }
 
-/* === MERCH GRID === */
+/* === MERCH PREVIEW === */
+.merch-preview {
+  max-width: 700px;
+  margin: 3em auto;
+  text-align: center;
+  padding: 0 1em;
+}
+
+.merch-preview h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+  color: #fff;
+}
+
+.merch-preview p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5em;
+  color: #ccc;
+}
+
+.merch-preview a {
+  background-color: #7456ff;
+  color: white;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.merch-preview a:hover {
+  background-color: #8b6aff;
+}
+
+/* === SUBSCRIPTION SECTION === */
+.subscription-section {
+  margin: 3em 0;
+  padding: 0 1em;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subscription-section h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+/* === MAILCHIMP FORM === */
+#mc_embed_signup {
+  background: #1b1b23;
+  clear: left;
+  font: 14px Helvetica, Arial, sans-serif;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #f5f5ff;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+#mc_embed_signup h2 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+#mc_embed_signup input[type="email"] {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 6px;
+}
+
+#mc-embedded-subscribe {
+  background-color: #7456ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#mc-embedded-subscribe:hover {
+  background-color: #8b6aff;
+  box-shadow: 0 0 10px #8b6aff;
+}
+
+/* === SOCIAL SECTION === */
+.social-section {
+  max-width: 700px;
+  margin: 3em auto;
+  padding: 0 1em;
+  text-align: center;
+}
+
+.social-section h2 {
+  margin-bottom: 1em;
+  color: #fff;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 0.7em;
+  color: #aaa;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.social-icons a:hover {
+  color: #7456ff;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 2em 1em;
+  background: #14141a;
+  border-top: 1px solid #292933;
+  font-size: 0.9em;
+  color: #aaa;
+  margin-top: 4em;
+}
+
+/* === MERCH GRID (if you use it) === */
 .merch-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -133,59 +292,3 @@ body {
     gap: 2rem;
   }
 }
-
-/* === FOOTER === */
-footer {
-  text-align: center;
-  padding: 2em 1em;
-  background: #14141a;
-  border-top: 1px solid #292933;
-  font-size: 0.9em;
-  color: #aaa;
-  margin-top: 4em;
-}
-
-/* === MAILCHIMP === */
-#mc_embed_signup {
-  background: #1b1b23;
-  clear: left;
-  font: 14px Helvetica, Arial, sans-serif;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  color: #f5f5ff;
-  border-radius: 12px;
-  padding: 20px;
-}
-
-#mc_embed_signup h2 {
-  color: #ffffff;
-  font-size: 1.4rem;
-  text-align: center;
-}
-
-#mc_embed_signup input[type="email"] {
-  padding: 10px;
-  width: 100%;
-  margin-bottom: 10px;
-  border: none;
-  border-radius: 6px;
-}
-
-#mc-embedded-subscribe {
-  background-color: #7456ff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-#mc-embedded-subscribe:hover {
-  background-color: #8b6aff;
-  box-shadow: 0 0 10px #8b6aff;
-}
-
-/* === ADDITIONAL STYLES FROM ORIGINAL === */
-/* Keep all other UI elements from your original style intact, such as carousels, donate sections, etc. */
