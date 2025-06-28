@@ -7,8 +7,13 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="dark-theme">
-  <header class="site-header neon-glow">
-    <h1>XoH! Beats</h1>
+
+  <!-- 🔥 Sticky Header -->
+  <header class="site-header neon-glow sticky-header">
+    <div class="header-inner">
+      <h1>XoH! Beats</h1>
+      <a href="mailto:xohbeats@gmail.com" class="header-cta">📩 Book Now</a>
+    </div>
     <p class="tagline">Melodic | Emo-Rap | Rage | Boom Bap | Trap</p>
   </header>
 
@@ -32,14 +37,40 @@
     </section>
   </main>
 
-  <!-- Floating CTA Buttons -->
+  <!-- 🔄 Floating CTA Buttons -->
   <div class="floating-cta">
-    <a href="mailto:xohbeats@gmail.com" class="cta-btn">📧 Email Me</a>
-    <a href="https://facebook.com/xohbeats" target="_blank" class="cta-btn">💬 DM Me</a>
+    <a href="mailto:xohbeats@gmail.com" class="cta-btn pulse">📧 Email Me</a>
+    <a href="https://facebook.com/xohbeats" target="_blank" class="cta-btn pulse">💬 DM Me</a>
   </div>
+
+  <!-- 🔵 Messenger Plugin -->
+  <div id="fb-root"></div>
+  <div id="fb-customer-chat" class="fb-customerchat"></div>
 
   <footer class="footer">
     <p>© 2025 <span class="footer-highlight">XoH! Beats</span></p>
   </footer>
+
+  <!-- Facebook SDK -->
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "YOUR_PAGE_ID_HERE"); // Replace with your page ID
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml: true,
+        version: 'v23.0'
+      });
+    };
+
+    (function(d, s, id) {
+      if (d.getElementById(id)) return;
+      var js = d.createElement(s);
+      js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      d.head.appendChild(js);
+    })(document, 'script', 'facebook-jssdk');
+  </script>
 </body>
 </html>
