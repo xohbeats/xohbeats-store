@@ -269,3 +269,91 @@ footer {
   transform: scale(1.05);
   box-shadow: 0 0 18px rgba(110, 243, 255, 0.5);
 }
+/* === Sticky Header === */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: #0f0f0f;
+  z-index: 999;
+  padding: 1em 1em 0.5em;
+  border-bottom: 1px solid #333;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header-cta {
+  background: #6ef3ff;
+  color: #000;
+  padding: 0.5em 1em;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.header-cta:hover {
+  background: #ff4fe6;
+  color: #fff;
+  box-shadow: 0 0 10px #ff4fe6;
+}
+
+/* === Floating CTA Buttons === */
+.floating-cta {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.cta-btn {
+  background: linear-gradient(90deg, #ff4fe6, #6ef3ff);
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 16px;
+  border-radius: 50px;
+  box-shadow: 0 0 12px rgba(255, 79, 230, 0.4);
+  text-align: center;
+}
+
+.pulse {
+  animation: pulseEffect 2s infinite;
+}
+
+@keyframes pulseEffect {
+  0% {
+    box-shadow: 0 0 12px rgba(255, 79, 230, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(110, 243, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 12px rgba(255, 79, 230, 0.4);
+  }
+}
+
+/* === Responsive CTA Buttons === */
+@media (max-width: 480px) {
+  .floating-cta {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .cta-btn {
+    font-size: 0.9rem;
+    padding: 10px 14px;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+}
