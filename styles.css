@@ -242,3 +242,30 @@ footer {
     padding: 12px 20px;
   }
 }
+/* === Floating CTA Buttons === */
+.floating-cta {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.cta-btn {
+  background: linear-gradient(90deg, #ff4fe6, #6ef3ff);
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 16px;
+  border-radius: 50px;
+  box-shadow: 0 0 12px rgba(255, 79, 230, 0.4);
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(110, 243, 255, 0.5);
+}
