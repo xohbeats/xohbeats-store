@@ -357,3 +357,69 @@ footer {
     gap: 0.5em;
   }
 }
+/* === Donation Buttons === */
+.donate-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  margin: 2em 0;
+}
+
+.donate-btn {
+  background: linear-gradient(90deg, #ff4fe6, #6ef3ff);
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgba(255, 79, 230, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 1.1rem;
+}
+
+.donate-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(110, 243, 255, 0.5);
+}
+
+.pulse {
+  animation: pulseEffect 2s infinite;
+}
+
+@keyframes pulseEffect {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 79, 230, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(110, 243, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 79, 230, 0.4);
+  }
+}
+
+/* === Donation Thank You Text === */
+.thank-you {
+  text-align: center;
+  font-size: 1rem;
+  color: #aaa;
+  margin-top: 1.5em;
+}
+
+/* === Donation Hero Section === */
+.donation-hero {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+@media (max-width: 600px) {
+  .donate-options {
+    gap: 0.8em;
+  }
+  
+  .donate-btn {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}
