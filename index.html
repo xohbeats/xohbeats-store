@@ -44,26 +44,38 @@
     }
 
     .top-nav {
-      margin-top: 20px;
-    }
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
 
-    .top-nav a {
-      color: #ffffff;
-      background: #1a1c3a;
-      border: 1px solid #00fff0;
-      padding: 10px 16px;
-      margin: 0 8px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s, box-shadow 0.3s;
-    }
+.top-nav a {
+  font-size: 0.9rem;
+  padding: 8px 14px;
+  margin: 0;
+  border-radius: 6px;
+  background: #1a1c3a;
+  border: 1px solid #00fff0;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, box-shadow 0.3s;
+}
 
-    .top-nav a:hover {
-      background-color: #00fff0;
-      color: #0a0a1a;
-      box-shadow: 0 0 10px #00fff0;
-    }
+.top-nav a:hover {
+  background-color: #00fff0;
+  color: #0a0a1a;
+  box-shadow: 0 0 10px #00fff0;
+}
+
+@media (max-width: 600px) {
+  .top-nav a {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}
 
     .subscription-section {
       background: #121222;
@@ -176,11 +188,12 @@
       <h1>XoH! Beats</h1>
       <p>Melodic | Emo-Rap | Rage | Boom Bap | Trap</p>
       <nav class="top-nav">
-        <a href="about.html">About</a>
-        <a href="ebook.html">Ebooks</a>
-        <a href="services.html">Services</a>
-        <a href="donations.html">Donations</a>
-      </nav>
+  <a href="about.html">About</a>
+  <a href="ebook.html">Ebooks</a>
+  <a href="merch.html">Merch</a>
+  <a href="services.html">Services</a>
+  <a href="donations.html">Donations</a>
+</nav>
     </header>
 
     <!-- 🚀 Mailchimp Subscription -->
