@@ -5,13 +5,173 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>XoH! Beats — Home</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
   <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+  <style>
+    body {
+      background-color: #0a0a1a;
+      color: #ffffff;
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header.site-header {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(90deg, #00fff0 0%, #8a00d4 100%);
+      box-shadow: 0 0 20px #00fff0;
+      border-radius: 10px;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #0a0a1a;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #0a0a1a;
+    }
+
+    .top-nav {
+      margin-top: 20px;
+    }
+
+    .top-nav a {
+      color: #ffffff;
+      background: #1a1c3a;
+      border: 1px solid #00fff0;
+      padding: 10px 16px;
+      margin: 0 8px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    .top-nav a:hover {
+      background-color: #00fff0;
+      color: #0a0a1a;
+      box-shadow: 0 0 10px #00fff0;
+    }
+
+    .subscription-section {
+      background: #121222;
+      padding: 40px 20px;
+      margin-top: 40px;
+      border-radius: 10px;
+      border: 1px solid #00fff0;
+      box-shadow: 0 0 15px rgba(0, 255, 240, 0.2);
+    }
+
+    .subscription-section h2 {
+      color: #00fff0;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 20px;
+      text-shadow: 0 0 6px #00fff0;
+    }
+
+    #mc_embed_signup {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .beatstore-section {
+      text-align: center;
+      margin: 50px 0;
+    }
+
+    .beatstore-button {
+      background: #ff4de6;
+      color: #0a0a1a;
+      font-weight: bold;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      box-shadow: 0 0 15px #ff4de6;
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    .beatstore-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #ff4de6;
+    }
+
+    .social-section {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .social-section h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #ff4de6;
+      text-shadow: 0 0 6px #ff4de6;
+    }
+
+    .social-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .social-icons a {
+      background-color: #1a1c3a;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 6px;
+      border: 1px solid #00fff0;
+      text-decoration: none;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    .social-icons a:hover {
+      background-color: #00fff0;
+      color: #0a0a1a;
+      box-shadow: 0 0 12px #00fff0;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 0.9rem;
+      color: #aaa;
+      border-top: 1px solid #222;
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .beatstore-button {
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <div class="wrapper">
 
-    <!-- 🎵 Header with integrated nav links -->
+    <!-- 🎵 Header with nav -->
     <header class="site-header">
       <h1>XoH! Beats</h1>
       <p>Melodic | Emo-Rap | Rage | Boom Bap | Trap</p>
@@ -23,7 +183,7 @@
       </nav>
     </header>
 
-    <!-- 🚀 Mailchimp Subscription Box - moved to top -->
+    <!-- 🚀 Mailchimp Subscription -->
     <section id="subscribe" class="subscription-section">
       <h2>Subscribe to The XOLLENT Community</h2>
       <div id="mc_embed_signup">
@@ -40,33 +200,29 @@
         </form>
       </div>
     </section>
-    
-    <!-- Beat Store Button -->
+
+    <!-- 🔥 Beat Store CTA -->
     <section class="beatstore-section">
       <a href="beatstore.html" class="beatstore-button">🎵 Visit the Beat Store</a>
     </section>
-
-    <main class="main-container">
-      <!-- ❌ Removed Merch section -->
-    </main>
 
     <!-- 🌐 Social Links -->
     <section class="social-section">
       <h2>Follow XoH! Beats</h2>
       <div class="social-icons">
-        <a href="https://www.facebook.com/XoHBeats" class="social facebook" target="_blank">Facebook</a>
-        <a href="https://www.instagram.com/xohbeats" class="social instagram" target="_blank">Instagram</a>
-        <a href="https://www.youtube.com/@xohbeats" class="social youtube" target="_blank">YouTube</a>
-        <a href="https://www.beatstars.com/xoh_beats" class="social beatstars" target="_blank">BeatStars</a>
+        <a href="https://www.facebook.com/XoHBeats" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/xohbeats" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com/@xohbeats" target="_blank">YouTube</a>
+        <a href="https://www.beatstars.com/xoh_beats" target="_blank">BeatStars</a>
       </div>
     </section>
 
     <footer>
-      <p>© 2025 XoH! Beats</p>
+      <p>© 2025 XoH! Beats. Built with 💽 + 🔊 for real ones.</p>
     </footer>
   </div>
 
-  <!-- Facebook SDK -->
+  <!-- Facebook Chat Plugin -->
   <div id="fb-root"></div>
   <div id="fb-customer-chat"
        class="fb-customerchat"
@@ -81,10 +237,7 @@
 
   <script>
     window.fbAsyncInit = function() {
-      FB.init({
-        xfbml: true,
-        version: 'v23.0'
-      });
+      FB.init({ xfbml: true, version: 'v23.0' });
     };
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -101,9 +254,6 @@
     (function($) {
       window.fnames = new Array(); window.ftypes = new Array();
       fnames[0] = 'EMAIL'; ftypes[0] = 'email';
-      fnames[1] = 'FNAME'; ftypes[1] = 'text';
-      fnames[2] = 'LNAME'; ftypes[2] = 'text';
-      fnames[4] = 'PHONE'; ftypes[4] = 'phone';
     }(jQuery));
     var $mcj = jQuery.noConflict(true);
   </script>
