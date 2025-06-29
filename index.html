@@ -9,11 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
   <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
 
-  <!-- Google AdSense Script -->
+  <!-- ✅ Google AdSense Script -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7597617470972612"
      crossorigin="anonymous"></script>
-  
-</head>
+
   <style>
     body {
       background-color: #0a0a1a;
@@ -51,38 +50,37 @@
     }
 
     .top-nav {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
 
-.top-nav a {
-  font-size: 0.9rem;
-  padding: 8px 14px;
-  margin: 0;
-  border-radius: 6px;
-  background: #1a1c3a;
-  border: 1px solid #00fff0;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s, box-shadow 0.3s;
-}
+    .top-nav a {
+      font-size: 0.9rem;
+      padding: 8px 14px;
+      border-radius: 6px;
+      background: #1a1c3a;
+      border: 1px solid #00fff0;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
 
-.top-nav a:hover {
-  background-color: #00fff0;
-  color: #0a0a1a;
-  box-shadow: 0 0 10px #00fff0;
-}
+    .top-nav a:hover {
+      background-color: #00fff0;
+      color: #0a0a1a;
+      box-shadow: 0 0 10px #00fff0;
+    }
 
-@media (max-width: 600px) {
-  .top-nav a {
-    font-size: 0.85rem;
-    padding: 6px 10px;
-  }
-}
+    @media (max-width: 600px) {
+      .top-nav a {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+      }
+    }
 
     .subscription-section {
       background: #121222;
@@ -195,52 +193,46 @@
       <h1>XoH! Beats</h1>
       <p>Melodic | Emo-Rap | Rage | Boom Bap | Trap</p>
       <nav class="top-nav">
-  <a href="about.html">About</a>
-  <a href="ebook.html">Ebooks</a>
-  <a href="merch.html">Merch</a>
-  <a href="services.html">Services</a>
-  <a href="donations.html">Donations</a>
-</nav>
+        <a href="about.html">About</a>
+        <a href="ebook.html">Ebooks</a>
+        <a href="merch.html">Merch</a>
+        <a href="services.html">Services</a>
+        <a href="donations.html">Donations</a>
+      </nav>
     </header>
 
-   <!-- 🚀 Mailchimp Subscription -->
-<section id="subscribe" class="subscription-section">
-  <h2>Subscribe to The XOLLENT Community</h2>
-  <div id="mc_embed_signup">
-    <form 
-      action="https://gmail.us4.list-manage.com/subscribe/post?u=e5d6b74ac9273d75bab607bcb&amp;id=957724485e&amp;f_id=00e7e9eaf0" 
-      method="post" 
-      target="_blank" 
-      class="validate" 
-      novalidate
-      id="mc-form"
-    >
-      <div id="mc_embed_signup_scroll">
-        <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
-        <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required>
-
-        <!-- 🛠️ Hidden redirect field -->
-        <input type="hidden" name="redirect" value="https://www.xohbeats.com/thanks.html" />
-
-        <!-- 🛡️ Bot protection -->
-        <div style="position: absolute; left: -5000px;" aria-hidden="true">
-          <input type="text" name="b_e5d6b74ac9273d75bab607bcb_957724485e" tabindex="-1" value="">
-        </div>
-
-        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+    <!-- 🚀 Mailchimp Subscription -->
+    <section id="subscribe" class="subscription-section">
+      <h2>Subscribe to The XOLLENT Community</h2>
+      <div id="mc_embed_signup">
+        <form 
+          action="https://gmail.us4.list-manage.com/subscribe/post?u=e5d6b74ac9273d75bab607bcb&amp;id=957724485e&amp;f_id=00e7e9eaf0" 
+          method="post" 
+          target="_blank" 
+          class="validate" 
+          novalidate
+          id="mc-form"
+        >
+          <div id="mc_embed_signup_scroll">
+            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required>
+            <input type="hidden" name="redirect" value="https://www.xohbeats.com/thanks.html" />
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input type="text" name="b_e5d6b74ac9273d75bab607bcb_957724485e" tabindex="-1" value="">
+            </div>
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+          </div>
+        </form>
       </div>
-    </form>
-  </div>
-</section>
+    </section>
 
-<!-- 🧠 Optional JS fallback if Mailchimp ignores redirect -->
-<script>
-  document.getElementById("mc-form").addEventListener("submit", function () {
-    setTimeout(function () {
-      window.location.href = "https://www.xohbeats.com/thanks.html";
-    }, 1500); // delay gives Mailchimp time to receive
-  });
-</script>
+    <script>
+      document.getElementById("mc-form").addEventListener("submit", function () {
+        setTimeout(function () {
+          window.location.href = "https://www.xohbeats.com/thanks.html";
+        }, 1500);
+      });
+    </script>
 
     <!-- 🔥 Beat Store CTA -->
     <section class="beatstore-section">
@@ -262,6 +254,17 @@
       <p>© 2025 XoH! Beats. Built with 💽 + 🔊 for real ones.</p>
     </footer>
   </div>
+
+  <!-- ✅ AdSense Ad Unit (Final) -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-7597617470972612"
+       data-ad-slot="9686635329"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
 
   <!-- Facebook Chat Plugin -->
   <div id="fb-root"></div>
@@ -298,31 +301,5 @@
     }(jQuery));
     var $mcj = jQuery.noConflict(true);
   </script>
-
-<!-- Example Ad Unit in the body -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7597617470972612"
-     data-ad-slot="1234567890"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script> 
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7597617470972612"
-     crossorigin="anonymous"></script>
-
-<!-- xohbeats -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7597617470972612"
-     data-ad-slot="9686635329"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>  
 </body>
 </html>
