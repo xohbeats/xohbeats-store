@@ -3,32 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>XoH! Beats — Home</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
-  <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-
-  <!-- ✅ Google AdSense Script -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7597617470972612"
-     crossorigin="anonymous"></script>
-
+  <title>XoH! Beats</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
-    body {
-      background-color: #0a0a1a;
-      color: #ffffff;
-      font-family: 'Open Sans', sans-serif;
+    /* === GLOBAL RESET & BASE === */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    body {
+      background-color: #0a0a1a;
+      color: #ffffff;
+      font-family: 'Open Sans', sans-serif;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* === WRAPPER === */
     .wrapper {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 0 20px;
     }
 
-    header.site-header {
+    /* === HEADER === */
+    .site-header {
       text-align: center;
       padding: 50px 20px;
       background: linear-gradient(90deg, #00fff0 0%, #8a00d4 100%);
@@ -36,34 +37,34 @@
       border-radius: 10px;
     }
 
-    header h1 {
+    .site-header h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 3rem;
-      margin-bottom: 10px;
-      color: #0a0a1a;
       letter-spacing: 2px;
-    }
-
-    header p {
-      font-size: 1.1rem;
       color: #0a0a1a;
+      margin-bottom: 10px;
     }
 
+    .site-header p {
+      color: #0a0a1a;
+      font-size: 1.1rem;
+    }
+
+    /* === NAVIGATION === */
     .top-nav {
       margin-top: 20px;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 10px;
     }
 
     .top-nav a {
-      font-size: 0.9rem;
-      padding: 8px 14px;
-      border-radius: 6px;
+      color: #ffffff;
       background: #1a1c3a;
       border: 1px solid #00fff0;
-      color: #ffffff;
+      padding: 8px 14px;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
       transition: background 0.3s, box-shadow 0.3s;
@@ -75,35 +76,45 @@
       box-shadow: 0 0 10px #00fff0;
     }
 
-    @media (max-width: 600px) {
-      .top-nav a {
-        font-size: 0.85rem;
-        padding: 6px 10px;
-      }
+    /* === BEATSTORE CARDS === */
+    .beat-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin: 60px auto;
+      padding: 0 20px;
     }
 
-    .subscription-section {
+    .beat-card {
       background: #121222;
-      padding: 40px 20px;
-      margin-top: 40px;
-      border-radius: 10px;
       border: 1px solid #00fff0;
+      border-radius: 15px;
       box-shadow: 0 0 15px rgba(0, 255, 240, 0.2);
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .subscription-section h2 {
-      color: #00fff0;
-      text-align: center;
-      font-family: 'Orbitron', sans-serif;
-      margin-bottom: 20px;
-      text-shadow: 0 0 6px #00fff0;
+    .beat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(0, 255, 240, 0.4);
     }
 
-    #mc_embed_signup {
-      max-width: 600px;
-      margin: 0 auto;
+    .beat-card h2 {
+      color: #ff4de6;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 6px #ff4de6;
     }
 
+    iframe {
+      width: 100%;
+      height: 140px;
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* === BEATSTORE BUTTON === */
     .beatstore-section {
       text-align: center;
       margin: 50px 0;
@@ -127,9 +138,64 @@
       box-shadow: 0 0 25px #ff4de6;
     }
 
-    .social-section {
-      margin-top: 60px;
+    /* === SUBSCRIPTION SECTION === */
+    .subscription-section {
+      background: #121222;
+      padding: 40px 20px;
+      margin: 40px auto 0 auto;
+      border-radius: 10px;
+      border: 1px solid #00fff0;
+      box-shadow: 0 0 15px rgba(0, 255, 240, 0.2);
+      max-width: 700px;
+    }
+
+    .subscription-section h2 {
+      color: #00fff0;
       text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 20px;
+      text-shadow: 0 0 6px #00fff0;
+    }
+
+    /* === MAILCHIMP FORM === */
+    #mc_embed_signup {
+      background: #1b1b23;
+      font: 14px Helvetica, Arial, sans-serif;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #f5f5ff;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    #mc_embed_signup input[type="email"] {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    #mc-embedded-subscribe {
+      background-color: #7456ff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #mc-embedded-subscribe:hover {
+      background-color: #8b6aff;
+      box-shadow: 0 0 10px #8b6aff;
+    }
+
+    /* === SOCIAL SECTION === */
+    .social-section {
+      text-align: center;
+      margin: 60px 0;
     }
 
     .social-section h2 {
@@ -140,20 +206,16 @@
       text-shadow: 0 0 6px #ff4de6;
     }
 
-    .social-icons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px;
-    }
-
     .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
       background-color: #1a1c3a;
       color: #ffffff;
       padding: 12px 20px;
       border-radius: 6px;
       border: 1px solid #00fff0;
       text-decoration: none;
+      font-weight: bold;
       transition: background 0.3s, box-shadow 0.3s;
     }
 
@@ -163,31 +225,80 @@
       box-shadow: 0 0 12px #00fff0;
     }
 
+    /* === FOOTER === */
     footer {
-      margin-top: 60px;
       text-align: center;
-      padding: 30px 10px;
-      font-size: 0.9rem;
       color: #aaa;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      background-color: #0a0a1a;
       border-top: 1px solid #222;
+      margin-top: 60px;
     }
 
+    /* === RESPONSIVE === */
     @media (max-width: 480px) {
-      header h1 {
+      .site-header h1 {
         font-size: 2rem;
+      }
+
+      .beat-card h2 {
+        font-size: 1.1rem;
       }
 
       .beatstore-button {
         font-size: 1rem;
         padding: 12px 20px;
       }
+
+      .top-nav a {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+      }
+    }
+
+    /* === COOKIE CONSENT BANNER === */
+    #cookie-consent-banner {
+      display: none; /* Hidden by default, JS toggles */
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #0a0a1a;
+      color: #ffffff;
+      text-align: center;
+      padding: 15px 20px;
+      box-shadow: 0 -2px 8px rgba(0, 255, 240, 0.3);
+      font-size: 0.95rem;
+      z-index: 9999;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    #cookie-consent-banner p {
+      display: inline;
+      margin: 0;
+    }
+
+    #cookie-consent-banner button {
+      margin-left: 15px;
+      padding: 8px 16px;
+      background: #00fff0;
+      color: #0a0a1a;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #cookie-consent-banner button:hover {
+      background: #00cfcf;
     }
   </style>
 </head>
-
 <body>
-  <div class="wrapper">
 
+  <div class="wrapper">
     <!-- 🎵 Header with nav -->
     <header class="site-header">
       <h1>XoH! Beats</h1>
@@ -226,14 +337,6 @@
       </div>
     </section>
 
-    <script>
-      document.getElementById("mc-form").addEventListener("submit", function () {
-        setTimeout(function () {
-          window.location.href = "https://www.xohbeats.com/thanks.html";
-        }, 1500);
-      });
-    </script>
-
     <!-- 🔥 Beat Store CTA -->
     <section class="beatstore-section">
       <a href="beatstore.html" class="beatstore-button">🎵 Visit the Beat Store</a>
@@ -243,10 +346,10 @@
     <section class="social-section">
       <h2>Follow XoH! Beats</h2>
       <div class="social-icons">
-        <a href="https://www.facebook.com/XoHBeats" target="_blank">Facebook</a>
-        <a href="https://www.instagram.com/xohbeats" target="_blank">Instagram</a>
-        <a href="https://www.youtube.com/@xohbeats" target="_blank">YouTube</a>
-        <a href="https://www.beatstars.com/xoh_beats" target="_blank">BeatStars</a>
+        <a href="https://www.facebook.com/XoHBeats" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.instagram.com/xohbeats" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.youtube.com/@xohbeats" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://www.beatstars.com/xoh_beats" target="_blank" rel="noopener noreferrer">BeatStars</a>
       </div>
     </section>
 
@@ -255,91 +358,53 @@
     </footer>
   </div>
 
-  <!-- ✅ AdSense Ad Unit (Final) -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-7597617470972612"
-       data-ad-slot="9686635329"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-
-  <!-- Facebook Chat Plugin -->
-  <div id="fb-root"></div>
-  <div id="fb-customer-chat"
-       class="fb-customerchat"
-       page_id="702745043528848"
-       attribution="biz_inbox"
-       theme_color="#7456ff"
-       greeting_dialog_display="show"
-       greeting_dialog_delay="3"
-       logged_in_greeting="Hey there 👋 Need a beat or got questions?"
-       logged_out_greeting="Please log in to Facebook to chat with us.">
+  <!-- 🍪 Cookie Consent Banner -->
+  <div id="cookie-consent-banner" role="dialog" aria-live="polite" aria-label="Cookie Consent Banner">
+    <p>This website uses cookies to improve your experience. By continuing to browse, you agree to our use of cookies.</p>
+    <button id="accept-cookies-btn" aria-label="Accept Cookies">Accept</button>
   </div>
 
   <script>
-    window.fbAsyncInit = function() {
-      FB.init({ xfbml: true, version: 'v23.0' });
+    // Helper functions for cookies
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for(let i=0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
+    }
+
+    // Show cookie banner if not accepted yet
+    function checkCookieConsent() {
+      if (getCookie("cookiesAccepted") !== "true") {
+        document.getElementById("cookie-consent-banner").style.display = "block";
+      }
+    }
+
+    // Accept cookies handler
+    document.getElementById("accept-cookies-btn").addEventListener("click", function() {
+      setCookie("cookiesAccepted", "true", 365);
+      document.getElementById("cookie-consent-banner").style.display = "none";
+    });
+
+    // On page load
+    window.onload = function() {
+      checkCookieConsent();
     };
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
   </script>
 
-  <!-- Mailchimp JS -->
-  <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-  <script>
-    (function($) {
-      window.fnames = new Array(); window.ftypes = new Array();
-      fnames[0] = 'EMAIL'; ftypes[0] = 'email';
-    }(jQuery));
-    var $mcj = jQuery.noConflict(true);
-  </script>
-
-<!-- 🍪 Cookie Consent Banner -->
-<div id="cookie-banner">
-  <p>This website uses cookies to improve your experience. By continuing to browse, you agree to our use of cookies.</p>
-  <button onclick="acceptCookies()">Accept</button>
-</div>
-
-<script>
-  function setCookie(name, value, days) {
-    let expires = "";
-    if (days) {
-      const date = new Date();
-      date.setTime(date.getTime() + (days*24*60*60*1000));
-      expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + (value || "") + expires + "; path=/";
-  }
-
-  function getCookie(name) {
-    const nameEQ = name + "=";
-    const ca = document.cookie.split(';');
-    for(let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0)==' ') c = c.substring(1,c.length);
-      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
-  }
-
-  function acceptCookies() {
-    setCookie("cookiesAccepted", "true", 365);
-    document.getElementById("cookie-banner").style.display = "none";
-  }
-
-  window.onload = function() {
-    if (getCookie("cookiesAccepted") === "true") {
-      document.getElementById("cookie-banner").style.display = "none";
-    }
-  };
-</script> 
 </body>
 </html>
