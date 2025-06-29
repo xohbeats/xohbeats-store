@@ -423,3 +423,37 @@ footer {
     padding: 12px 20px;
   }
 }
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0a0a1a;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px 20px;
+  box-shadow: 0 -2px 8px rgba(0, 255, 240, 0.3);
+  font-size: 0.95rem;
+  z-index: 9999;
+}
+
+#cookie-banner p {
+  margin: 0;
+  display: inline;
+}
+
+#cookie-banner button {
+  margin-left: 15px;
+  padding: 8px 16px;
+  background: #00fff0;
+  color: #0a0a1a;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#cookie-banner button:hover {
+  background: #00cfcf;
+}
