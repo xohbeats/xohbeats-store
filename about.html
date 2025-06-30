@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="styles.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — XoH! Beats</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<script src="script.js"></script>
-  <!-- header stays the same -->
-  <header class="site-header">
+  <script src="script.js"></script>
+
+  <!-- Header -->
+  <header class="site-header" aria-label="XoH! Beats Header">
     <h1>XoH! Beats</h1>
     <p>Melodic | Emo-Rap | Rage | Boom Bap | Trap</p>
   </header>
@@ -21,19 +21,14 @@
     <section class="about-hero">
       <h2>About XoH! Beats</h2>
       <p class="subtitle">Where Emotion Meets Innovation</p>
+      <p class="intro-text">
+        Every sound you hear is stitched with soul. I'm not just a producer—I’m a vessel for the moods, moments,
+        and movements you can’t put into words. Whether you're vibing at 2AM or chasing a dream, XoH! Beats is the
+        pulse behind your purpose.
+      </p>
     </section>
-<div class="carousel">
-  <button class="prev">&#10094;</button>
 
-  <div class="carousel-images">
-    <img src="images/studio1.jpg" class="slide active">
-    <img src="images/studio2.jpg" class="slide">
-    <img src="images/studio3.jpg" class="slide">
-  </div>
-
-  <button class="next">&#10095;</button>
-</div>
-    <!-- Story: two-column grid -->
+    <!-- Story -->
     <section class="content-section">
       <div class="grid two-col">
         <div class="text-block">
@@ -44,13 +39,13 @@
           </p>
         </div>
         <div class="image-block">
-          <img src="images/studio-setup.jpg" alt="Studio setup">
+          <img src="images/studio-setup.jpg" alt="Studio setup" class="responsive-img">
         </div>
       </div>
 
       <div class="grid two-col">
         <div class="image-block">
-          <img src="images/live-session.jpg" alt="Live beat session">
+          <img src="images/live-session.jpg" alt="Live beat session" class="responsive-img">
         </div>
         <div class="text-block">
           <h3>What We Offer</h3>
@@ -64,10 +59,39 @@
       </div>
     </section>
 
+    <!-- Testimonial -->
+    <section class="testimonial-section">
+      <blockquote>
+        <p>“Working with XoH! Beats took my music to the next level. His production isn’t just sound—it's soul.”</p>
+        <footer>— NovaKai, Independent Artist</footer>
+      </blockquote>
+    </section>
+
+    <!-- Meet the Producer -->
+    <section class="producer-section">
+      <h2>Meet the Producer</h2>
+      <div class="producer-card">
+        <img src="images/xoh-portrait.jpg" alt="D'Andre Spears - XoH! Beats" class="producer-img">
+        <div class="producer-info">
+          <h3>D'Andre Spears aka XoH!</h3>
+          <p>
+            Raised on raw freestyles and late-night cyphers, I started crafting beats in a bedroom with no budget—
+            just emotion, intention, and hunger. Every loop I make tells a story. This is more than production;
+            it's therapy, energy, and connection.
+          </p>
+          <ul class="social-links">
+            <li><a href="https://instagram.com/xohbeats" target="_blank">Instagram</a></li>
+            <li><a href="https://youtube.com/@xohbeats" target="_blank">YouTube</a></li>
+            <li><a href="mailto:xohbeats@gmail.com">Email</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- Survey -->
     <section class="survey-section">
       <h2>Help Us Tune Your Experience 🎧</h2>
-      <form action="#" method="post">
+      <form action="#" method="post" aria-label="Beat Preference Survey">
 
         <div class="survey-question">
           <p><strong>1. Which genre resonates with you most?</strong></p>
