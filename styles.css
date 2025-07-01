@@ -285,3 +285,26 @@ body {
     height: 140px;
   }
 }
+/* === BEATSTORE CTA UNDER COOKUPS === */
+.beatstore-cta {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.beatstore-cta .beatstore-button {
+  background: #ff4de6;
+  color: #0a0a1a;
+  font-weight: bold;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  box-shadow: 0 0 18px #ff4de6;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.beatstore-cta .beatstore-button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 28px #ff4de6;
+}
