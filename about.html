@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — XoH! Beats</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Responsive Images */
+    .responsive-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 255, 240, 0.3);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .grid.two-col .image-block img.responsive-img {
+      max-width: 450px;
+      width: 100%;
+      height: auto;
+    }
+
+    .producer-img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00fff0;
+      margin-bottom: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 720px) {
+      .grid.two-col {
+        display: block;
+      }
+      .grid.two-col .image-block img.responsive-img {
+        max-width: 100%;
+      }
+      .producer-img {
+        max-width: 80vw;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -28,13 +70,13 @@
           </p>
         </div>
         <div class="image-block">
-          <img src="images/studio-setup.jpg" class="responsive-img" alt="Studio setup">
+          <img src="images/studio-setup.jpg" class="responsive-img" alt="Studio setup" />
         </div>
       </div>
 
       <div class="grid two-col">
         <div class="image-block">
-          <img src="images/live-session.jpg" class="responsive-img" alt="Live beat session">
+          <img src="images/live-session.jpg" class="responsive-img" alt="Live beat session" />
         </div>
         <div class="text-block">
           <h3>What We Offer</h3>
@@ -51,15 +93,15 @@
     <!-- Meet the Producer -->
     <section class="producer-section">
       <div class="producer-card">
-        <img src="images/meettheproducer.jpg" alt="Meet the Producer" class="producer-img">
+        <img src="images/meettheproducer.jpg" alt="Meet the Producer" class="producer-img" />
         <div class="producer-info">
-         <p>
-  Hey — I’m D’Andre Spears, but most people know me as XoH! Beats. I’ve been producing since the early days of recording with my crew DMGB in a homemade studio built from scratch. What started as raw passion turned into a real movement. Over the years, my sound has evolved — from dark, melodic trap to emo-rap, boom bap, and cinematic rage — always rooted in emotion and authenticity.
-</p>
-<p>
-  I’ve worked with rising underground artists, helped soundtrack visuals, dropped viral loops on Discord, and built a growing brand that now includes merch, ebooks, and an upcoming game. XoH! isn’t just a name — it’s a mission to create what people feel, not just hear. Appreciate you being part of that journey.
-</p>
-<ul class="social-links">
+          <p>
+            Hey — I’m D’Andre Spears, but most people know me as XoH! Beats. I’ve been producing since the early days of recording with my crew DMGB in a homemade studio built from scratch. What started as raw passion turned into a real movement. Over the years, my sound has evolved — from dark, melodic trap to emo-rap, boom bap, and cinematic rage — always rooted in emotion and authenticity.
+          </p>
+          <p>
+            I’ve worked with rising underground artists, helped soundtrack visuals, dropped viral loops on Discord, and built a growing brand that now includes merch, ebooks, and an upcoming game. XoH! isn’t just a name — it’s a mission to create what people feel, not just hear. Appreciate you being part of that journey.
+          </p>
+          <ul class="social-links">
             <li><a href="#">Instagram</a></li>
             <li><a href="#">YouTube</a></li>
             <li><a href="#">SoundCloud</a></li>
@@ -72,9 +114,10 @@
     <section class="survey-section">
       <h2>Leave a Review ⭐</h2>
       <form id="reviewForm">
-        <input type="text" id="reviewerName" placeholder="Your name" required>
+        <input type="text" id="reviewerName" placeholder="Your name" required />
         <textarea id="reviewText" placeholder="Your review" required></textarea>
-        <label>Rating:
+        <label
+          >Rating:
           <select id="reviewRating">
             <option value="1">1 Star</option>
             <option value="2">2 Stars</option>
@@ -107,19 +150,19 @@
       storageBucket: "xohreviews.firebasestorage.app",
       messagingSenderId: "848040429034",
       appId: "1:848040429034:web:1ae2a5c233385296999e93",
-      measurementId: "G-J8X6JHM9LV"
+      measurementId: "G-J8X6JHM9LV",
     };
 
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
 
-    const form = document.getElementById('reviewForm');
-    const container = document.getElementById('reviewsContainer');
-    const clearBtn = document.getElementById('clearReviews');
+    const form = document.getElementById("reviewForm");
+    const container = document.getElementById("reviewsContainer");
+    const clearBtn = document.getElementById("clearReviews");
 
     function renderReview(doc) {
-      const div = document.createElement('div');
-      div.classList.add('review-card');
+      const div = document.createElement("div");
+      div.classList.add("review-card");
       div.innerHTML = `
         <strong>${doc.data().name}</strong> <br>
         ⭐ ${doc.data().rating} — ${doc.data().text}<br>
@@ -129,50 +172,53 @@
       container.appendChild(div);
     }
 
-    form.addEventListener('submit', async (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const name = document.getElementById('reviewerName').value.trim();
-      const text = document.getElementById('reviewText').value.trim();
-      const rating = parseInt(document.getElementById('reviewRating').value);
+      const name = document.getElementById("reviewerName").value.trim();
+      const text = document.getElementById("reviewText").value.trim();
+      const rating = parseInt(document.getElementById("reviewRating").value);
 
       if (name && text && rating) {
-        await db.collection('reviews').add({
-          name, text, rating,
-          timestamp: new Date()
+        await db.collection("reviews").add({
+          name,
+          text,
+          rating,
+          timestamp: new Date(),
         });
         form.reset();
       }
     });
 
-    db.collection('reviews').orderBy('timestamp', 'desc')
-      .onSnapshot(snapshot => {
-        container.innerHTML = '';
-        snapshot.forEach(doc => renderReview(doc));
+    db.collection("reviews")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) => {
+        container.innerHTML = "";
+        snapshot.forEach((doc) => renderReview(doc));
       });
 
-    container.addEventListener('click', async (e) => {
-      if (e.target.classList.contains('delete-btn')) {
+    container.addEventListener("click", async (e) => {
+      if (e.target.classList.contains("delete-btn")) {
         const pass = prompt("Enter admin key:");
         if (pass === "xohbeats") {
-          await db.collection('reviews').doc(e.target.dataset.id).delete();
+          await db.collection("reviews").doc(e.target.dataset.id).delete();
         }
       }
     });
 
-    clearBtn.addEventListener('click', async () => {
+    clearBtn.addEventListener("click", async () => {
       const confirm = prompt("Admin key to clear all:");
       if (confirm === "xohbeats") {
-        const snap = await db.collection('reviews').get();
-        snap.forEach(doc => doc.ref.delete());
+        const snap = await db.collection("reviews").get();
+        snap.forEach((doc) => doc.ref.delete());
       }
     });
 
     // Show clear button if admin
-    document.addEventListener('keydown', (e) => {
-      if (e.ctrlKey && e.key === 'A') {
+    document.addEventListener("keydown", (e) => {
+      if (e.ctrlKey && e.key === "A") {
         const check = prompt("Admin key:");
         if (check === "xohbeats") {
-          clearBtn.style.display = 'block';
+          clearBtn.style.display = "block";
         }
       }
     });
