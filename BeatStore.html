@@ -6,6 +6,65 @@
   <title>XoH! Beats Store</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #0f0f0f;
+      color: white;
+      text-align: center;
+    }
+    header {
+      padding: 2rem 1rem;
+      background: #1f1f1f;
+    }
+    .tagline {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      color: #999;
+    }
+    .beat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .beat-category {
+      background: #181818;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+    .cover-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+    button {
+      background: #00ffcc;
+      border: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+      margin-bottom: 1.5rem;
+      cursor: pointer;
+      border-radius: 2rem;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #00ccb3;
+    }
+    footer {
+      padding: 2rem;
+      background: #1f1f1f;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -14,31 +73,26 @@
   </header>
 
   <main class="beat-grid">
-    <!-- CATEGORY BLOCKS -->
     <section class="beat-category">
       <img src="images/melodic.jpg" alt="Melodic Beats" class="cover-img">
       <h2>Melodic</h2>
       <button onclick="buyNow('melodic')">BUY NOW</button>
     </section>
-
     <section class="beat-category">
       <img src="images/emo.jpg" alt="Emo-Rap Beats" class="cover-img">
       <h2>Emo-Rap</h2>
       <button onclick="buyNow('emo')">BUY NOW</button>
     </section>
-
     <section class="beat-category">
       <img src="images/rage.jpg" alt="Rage Beats" class="cover-img">
       <h2>Rage</h2>
       <button onclick="buyNow('rage')">BUY NOW</button>
     </section>
-
     <section class="beat-category">
       <img src="images/boombap.jpg" alt="Boom Bap Beats" class="cover-img">
       <h2>Boom Bap</h2>
       <button onclick="buyNow('boombap')">BUY NOW</button>
     </section>
-
     <section class="beat-category">
       <img src="images/trap.jpg" alt="Trap Beats" class="cover-img">
       <h2>Trap</h2>
@@ -52,7 +106,6 @@
 
   <script>
     function buyNow(category) {
-      // Redirect to category payment or delivery URL
       const links = {
         melodic: 'https://paypal.me/yourlink1',
         emo: 'https://paypal.me/yourlink2',
