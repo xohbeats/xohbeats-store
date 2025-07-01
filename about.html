@@ -1,34 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — XoH! Beats</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <script src="script.js"></script>
-
-  <!-- Header -->
-  <header class="site-header" aria-label="XoH! Beats Header">
+  <header class="site-header">
     <h1>XoH! Beats</h1>
     <p>Melodic | Emo-Rap | Rage | Boom Bap | Trap</p>
   </header>
 
   <main class="container">
-
-    <!-- Hero banner -->
     <section class="about-hero">
       <h2>About XoH! Beats</h2>
       <p class="subtitle">Where Emotion Meets Innovation</p>
-      <p class="intro-text">
-        Every sound you hear is stitched with soul. I'm not just a producer—I’m a vessel for the moods, moments,
-        and movements you can’t put into words. Whether you're vibing at 2AM or chasing a dream, XoH! Beats is the
-        pulse behind your purpose.
-      </p>
     </section>
 
-    <!-- Story -->
     <section class="content-section">
       <div class="grid two-col">
         <div class="text-block">
@@ -39,13 +28,13 @@
           </p>
         </div>
         <div class="image-block">
-          <img src="images/studio-setup.jpg" alt="Studio setup" class="responsive-img">
+          <img src="images/studio-setup.jpg" class="responsive-img" alt="Studio setup">
         </div>
       </div>
 
       <div class="grid two-col">
         <div class="image-block">
-          <img src="images/live-session.jpg" alt="Live beat session" class="responsive-img">
+          <img src="images/live-session.jpg" class="responsive-img" alt="Live beat session">
         </div>
         <div class="text-block">
           <h3>What We Offer</h3>
@@ -59,81 +48,129 @@
       </div>
     </section>
 
-    <!-- Testimonial -->
-    <section class="testimonial-section">
-      <blockquote>
-        <p>“Working with XoH! Beats took my music to the next level. His production isn’t just sound—it's soul.”</p>
-        <footer>— NovaKai, Independent Artist</footer>
-      </blockquote>
-    </section>
-
     <!-- Meet the Producer -->
     <section class="producer-section">
-      <h2>Meet the Producer</h2>
       <div class="producer-card">
-        <img src="images/xoh-portrait.jpg" alt="D'Andre Spears - XoH! Beats" class="producer-img">
+        <img src="images/producer.jpg" alt="Producer" class="producer-img">
         <div class="producer-info">
-          <h3>D'Andre Spears aka XoH!</h3>
-          <p>
-            Raised on raw freestyles and late-night cyphers, I started crafting beats in a bedroom with no budget—
-            just emotion, intention, and hunger. Every loop I make tells a story. This is more than production;
-            it's therapy, energy, and connection.
-          </p>
+          <p>I'm D'Andre Spears, the creative behind XoH! Beats. From DIY studios to global collaborations, I build sonic experiences that capture emotion and push boundaries. Thanks for being part of the journey.</p>
           <ul class="social-links">
-            <li><a href="https://instagram.com/xohbeats" target="_blank">Instagram</a></li>
-            <li><a href="https://youtube.com/@xohbeats" target="_blank">YouTube</a></li>
-            <li><a href="mailto:xohbeats@gmail.com">Email</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">SoundCloud</a></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Survey -->
+    <!-- Interactive Review Section -->
     <section class="survey-section">
-      <h2>Help Us Tune Your Experience 🎧</h2>
-      <form action="#" method="post" aria-label="Beat Preference Survey">
-
-        <div class="survey-question">
-          <p><strong>1. Which genre resonates with you most?</strong></p>
-          <ul class="option-list">
-            <li><label><input type="radio" name="genre" value="melodic" required> Melodic</label></li>
-            <li><label><input type="radio" name="genre" value="emo-rap"> Emo-Rap</label></li>
-            <li><label><input type="radio" name="genre" value="rage"> Rage</label></li>
-            <li><label><input type="radio" name="genre" value="boom-bap"> Boom-Bap</label></li>
-            <li><label><input type="radio" name="genre" value="trap"> Trap</label></li>
-          </ul>
-        </div>
-
-        <div class="survey-question">
-          <p><strong>2. What’s your top need for a beat?</strong></p>
-          <ul class="option-list">
-            <li><label><input type="radio" name="need" value="studio-ready" required> Studio-ready mixdown</label></li>
-            <li><label><input type="radio" name="need" value="stems"> Custom stems</label></li>
-            <li><label><input type="radio" name="need" value="exclusive"> Exclusive rights</label></li>
-            <li><label><input type="radio" name="need" value="royalty-free"> Royalty-free license</label></li>
-          </ul>
-        </div>
-
-        <div class="survey-question">
-          <p><strong>3. How will you use our beats?</strong></p>
-          <ul class="option-list">
-            <li><label><input type="radio" name="usage" value="release" required> Commercial release</label></li>
-            <li><label><input type="radio" name="usage" value="mixtape"> Mixtape/EP</label></li>
-            <li><label><input type="radio" name="usage" value="social"> Social media content</label></li>
-            <li><label><input type="radio" name="usage" value="scoring"> Film/TV scoring</label></li>
-            <li><label><input type="radio" name="usage" value="other"> Other</label></li>
-          </ul>
-        </div>
-
-        <button type="submit">Send Feedback</button>
+      <h2>Leave a Review ⭐</h2>
+      <form id="reviewForm">
+        <input type="text" id="reviewerName" placeholder="Your name" required>
+        <textarea id="reviewText" placeholder="Your review" required></textarea>
+        <label>Rating:
+          <select id="reviewRating">
+            <option value="1">1 Star</option>
+            <option value="2">2 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="5" selected>5 Stars</option>
+          </select>
+        </label>
+        <button type="submit">Submit Review</button>
       </form>
-    </section>
 
+      <div id="reviewsContainer"></div>
+      <button id="clearReviews" style="display:none">🧹 Admin: Clear All</button>
+    </section>
   </main>
 
   <footer>
     <p>© 2025 XoH! Beats</p>
   </footer>
 
+  <!-- Firebase SDK Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBBERa-jV15ZNbRas64pCWIPWg4_ppp_1o",
+      authDomain: "xohreviews.firebaseapp.com",
+      projectId: "xohreviews",
+      storageBucket: "xohreviews.firebasestorage.app",
+      messagingSenderId: "848040429034",
+      appId: "1:848040429034:web:1ae2a5c233385296999e93",
+      measurementId: "G-J8X6JHM9LV"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    const form = document.getElementById('reviewForm');
+    const container = document.getElementById('reviewsContainer');
+    const clearBtn = document.getElementById('clearReviews');
+
+    function renderReview(doc) {
+      const div = document.createElement('div');
+      div.classList.add('review-card');
+      div.innerHTML = `
+        <strong>${doc.data().name}</strong> <br>
+        ⭐ ${doc.data().rating} — ${doc.data().text}<br>
+        <small>${new Date(doc.data().timestamp?.seconds * 1000).toLocaleString()}</small>
+        <button data-id="${doc.id}" class="delete-btn">❌</button>
+      `;
+      container.appendChild(div);
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('reviewerName').value.trim();
+      const text = document.getElementById('reviewText').value.trim();
+      const rating = parseInt(document.getElementById('reviewRating').value);
+
+      if (name && text && rating) {
+        await db.collection('reviews').add({
+          name, text, rating,
+          timestamp: new Date()
+        });
+        form.reset();
+      }
+    });
+
+    db.collection('reviews').orderBy('timestamp', 'desc')
+      .onSnapshot(snapshot => {
+        container.innerHTML = '';
+        snapshot.forEach(doc => renderReview(doc));
+      });
+
+    container.addEventListener('click', async (e) => {
+      if (e.target.classList.contains('delete-btn')) {
+        const pass = prompt("Enter admin key:");
+        if (pass === "xohbeats") {
+          await db.collection('reviews').doc(e.target.dataset.id).delete();
+        }
+      }
+    });
+
+    clearBtn.addEventListener('click', async () => {
+      const confirm = prompt("Admin key to clear all:");
+      if (confirm === "xohbeats") {
+        const snap = await db.collection('reviews').get();
+        snap.forEach(doc => doc.ref.delete());
+      }
+    });
+
+    // Show clear button if admin
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.key === 'A') {
+        const check = prompt("Admin key:");
+        if (check === "xohbeats") {
+          clearBtn.style.display = 'block';
+        }
+      }
+    });
+  </script>
 </body>
 </html>
