@@ -1,3 +1,30 @@
+/* === CSS VARIABLES === */
+:root {
+  --primary-cyan: #00fff0;
+  --primary-pink: #ff4de6;
+  --primary-purple: #8a00d4;
+  --dark-bg: #0a0a1a;
+  --dark-secondary: #1a1c3a;
+  --dark-tertiary: #121222;
+  --text-light: #ffffff;
+  --text-muted: #aaa;
+}
+
+/* === GLOBAL RESET & BASE === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  font-family: 'Open Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
 /* === RESPONSIVE IMAGE FIX === */
 .responsive-img {
   max-width: 100%;
@@ -78,4 +105,183 @@
 .social-links a:hover {
   color: var(--primary-pink);
   text-decoration: underline;
+}
+
+/* === REVIEWS SECTION === */
+#reviewsContainer {
+  margin: 3rem auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.review-card {
+  background: var(--dark-secondary);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 240, 0.15);
+  color: var(--text-light);
+  position: relative;
+}
+
+.review-card strong {
+  font-size: 1.2rem;
+  color: var(--primary-pink);
+  text-shadow: 0 0 6px var(--primary-pink);
+}
+
+.review-card small {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.review-card button.delete-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: var(--primary-cyan);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.review-card button.delete-btn:hover {
+  color: var(--primary-pink);
+}
+
+.review-card .reactions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.review-card .reactions button.react-btn {
+  background: var(--dark-tertiary);
+  border: 1px solid var(--primary-cyan);
+  color: var(--primary-cyan);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+}
+
+.review-card .reactions button.react-btn:hover {
+  background: var(--primary-cyan);
+  color: var(--dark-bg);
+  border-color: var(--primary-pink);
+  box-shadow: 0 0 12px var(--primary-pink);
+}
+
+/* === FORM === */
+#reviewForm {
+  max-width: 700px;
+  margin: 3rem auto 0;
+  background: var(--dark-tertiary);
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(138, 0, 212, 0.3);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+#reviewForm label {
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--primary-cyan);
+}
+
+#reviewForm input[type="text"],
+#reviewForm textarea,
+#reviewForm select {
+  background: var(--dark-secondary);
+  border: 1px solid var(--primary-cyan);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: var(--text-light);
+  font-size: 1rem;
+  resize: vertical;
+}
+
+#reviewForm textarea {
+  min-height: 80px;
+}
+
+#reviewForm button[type="submit"] {
+  background: var(--primary-pink);
+  color: var(--dark-bg);
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  box-shadow: 0 0 18px var(--primary-pink);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#reviewForm button[type="submit"]:hover,
+#reviewForm button[type="submit"]:focus {
+  background: var(--primary-cyan);
+  box-shadow: 0 0 25px var(--primary-cyan);
+  outline: none;
+}
+
+/* === CLEAR BUTTON (Admin Only) === */
+#clearReviews {
+  display: none;
+  margin: 2rem auto;
+  background: var(--primary-pink);
+  color: var(--dark-bg);
+  padding: 10px 30px;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 0 15px var(--primary-pink);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+#clearReviews:hover,
+#clearReviews:focus {
+  box-shadow: 0 0 25px var(--primary-cyan);
+  outline: none;
+}
+
+/* === LOADING SPINNER === */
+#spinner {
+  display: none;
+  text-align: center;
+  margin: 1rem 0;
+}
+#spinner img {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 0 3px var(--primary-cyan));
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  #reviewForm {
+    padding: 1.5rem 1.8rem;
+  }
+  .producer-card {
+    padding: 1.5rem;
+  }
+  .producer-img {
+    width: 140px;
+    height: 140px;
+  }
 }
