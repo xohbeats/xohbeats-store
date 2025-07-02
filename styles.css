@@ -371,3 +371,96 @@ body {
     height: 140px;
   }
 }
+/* === SUBSCRIPTION SECTION === */
+.subscription-section {
+  background: var(--dark-secondary);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  margin: 2rem 0;
+  box-shadow: 0 0 15px rgba(0, 255, 240, 0.1);
+}
+
+.subscription-section h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--primary-cyan);
+  font-size: 1.7rem;
+  margin-bottom: 1.2rem;
+}
+
+#mc_embed_signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#mc_embed_signup input[type="email"] {
+  padding: 0.8rem;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 6px;
+  border: 2px solid var(--primary-pink);
+  background-color: var(--dark-tertiary);
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+#mc_embed_signup input[type="submit"] {
+  background-color: var(--primary-pink);
+  color: var(--dark-bg);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 12px var(--primary-pink);
+  transition: all 0.3s ease;
+}
+
+#mc_embed_signup input[type="submit"]:hover {
+  background-color: var(--primary-purple);
+  box-shadow: 0 0 20px var(--primary-purple);
+}
+
+/* === SOCIAL SECTION === */
+.social-section {
+  background: var(--dark-secondary);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 15px rgba(138, 0, 212, 0.15);
+}
+
+.social-section h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--primary-cyan);
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.social-icons a {
+  background-color: var(--dark-tertiary);
+  color: var(--primary-pink);
+  border: 2px solid var(--primary-pink);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: var(--primary-purple);
+  color: #fff;
+  border-color: var(--primary-purple);
+}
