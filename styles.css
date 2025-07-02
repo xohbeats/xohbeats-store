@@ -32,6 +32,38 @@ body {
   border-radius: 8px;
 }
 
+/* === SCROLLING BANNER === */
+.scroll-banner {
+  width: 100%;
+  overflow: hidden;
+  background-color: #ff0055;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: 'Orbitron', sans-serif;
+  padding: 10px 0;
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  position: relative;
+  z-index: 1000;
+  text-shadow: 0 0 10px #fff, 0 0 20px #ff0088, 0 0 30px #ff0088;
+}
+
+.scroll-inner {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 15s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 /* === TESTIMONIAL SECTION === */
 .testimonial-section {
   background: var(--dark-tertiary);
@@ -40,12 +72,14 @@ body {
   border-left: 4px solid var(--primary-cyan);
   box-shadow: 0 0 12px rgba(0, 255, 240, 0.2);
 }
+
 .testimonial-section blockquote {
   font-style: italic;
   color: var(--text-muted);
   font-size: 1.1rem;
   line-height: 1.6;
 }
+
 .testimonial-section footer {
   margin-top: 1rem;
   font-weight: bold;
@@ -58,6 +92,7 @@ body {
   margin: 4rem 0;
   text-align: center;
 }
+
 .producer-card {
   display: flex;
   flex-direction: column;
@@ -70,6 +105,7 @@ body {
   margin: 0 auto;
   box-shadow: 0 0 15px rgba(138, 0, 212, 0.3);
 }
+
 .producer-img {
   width: 180px;
   height: 180px;
@@ -78,15 +114,18 @@ body {
   margin-bottom: 1.5rem;
   border: 3px solid var(--primary-pink);
 }
+
 .producer-info {
   max-width: 600px;
 }
+
 .producer-info p {
   margin-bottom: 1rem;
   color: var(--text-muted);
   font-size: 1rem;
   line-height: 1.6;
 }
+
 .social-links {
   list-style: none;
   padding: 0;
@@ -95,6 +134,7 @@ body {
   justify-content: center;
   margin-top: 1rem;
 }
+
 .social-links a {
   color: var(--primary-cyan);
   text-decoration: none;
@@ -102,6 +142,7 @@ body {
   font-size: 0.95rem;
   transition: color 0.3s ease;
 }
+
 .social-links a:hover {
   color: var(--primary-pink);
   text-decoration: underline;
@@ -266,10 +307,35 @@ body {
   text-align: center;
   margin: 1rem 0;
 }
+
 #spinner img {
   width: 40px;
   height: 40px;
   filter: drop-shadow(0 0 3px var(--primary-cyan));
+}
+
+/* === BEATSTORE CTA UNDER COOKUPS === */
+.beatstore-cta {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.beatstore-cta .beatstore-button {
+  background: var(--primary-pink);
+  color: var(--dark-bg);
+  font-weight: bold;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  box-shadow: 0 0 18px var(--primary-pink);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.beatstore-cta .beatstore-button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 28px var(--primary-pink);
 }
 
 /* === RESPONSIVE === */
@@ -284,60 +350,4 @@ body {
     width: 140px;
     height: 140px;
   }
-}
-/* === BEATSTORE CTA UNDER COOKUPS === */
-.beatstore-cta {
-  margin-top: 40px;
-  text-align: center;
-}
-
-.beatstore-cta .beatstore-button {
-  background: #ff4de6;
-  color: #0a0a1a;
-  font-weight: bold;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 1.3rem;
-  box-shadow: 0 0 18px #ff4de6;
-  transition: transform 0.2s, box-shadow 0.3s;
-}
-
-.beatstore-cta .beatstore-button:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 28px #ff4de6;
-}
-.scroll-banner {
-  width: 100%;
-  overflow: hidden;
-  background-color: #ff0055;
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
-  font-family: 'Orbitron', sans-serif;
-  white-space: nowrap;
-  padding: 10px 0;
-  border-top: 3px solid white;
-  border-bottom: 3px solid white;
-  position: relative;
-  z-index: 1000;
-}
-
-.scroll-text {
-  display: inline-block;
-  padding-left: 100%;
-  animation: scroll-left 15s linear infinite;
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-.scroll-banner {
-  text-shadow: 0 0 10px #fff, 0 0 20px #ff0088, 0 0 30px #ff0088;
 }
