@@ -4,108 +4,56 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>XoH! Beats | Melodic & Emo-Rap Beat Store</title>
-  <meta name="description" content="Buy melodic, emo-rap, rage, trap & boom bap beats. Leases & exclusive rights available. Free beat on signup!" />
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Open+Sans&display=swap" rel="stylesheet" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MusicStore",
-    "name": "XoH! Beats",
-    "url": "https://xohbeats.com",
-    "sameAs": [
-      "https://www.instagram.com/xohbeats",
-      "https://www.youtube.com/@xohbeats",
-      "https://www.beatstars.com/xoh_beats"
-    ]
-  }
-  </script>
+  <meta name="description" content="Buy melodic, emo-rap, rage, trap & boom bap beats. Leases & exclusive rights available instantly." />
+  <link rel="canonical" href="https://xohbeats.com/" />
+  <meta property="og:title" content="XoH! Beats | Melodic & Emo-Rap Beat Store" />
+  <meta property="og:description" content="Industry-quality beats. Instant download. Commercial use allowed. Shop melodic, emo-rap, rage, boom bap, trap & more." />
+  <meta property="og:image" content="/assets/ogimage.png" />
+  <meta property="og:url" content="https://xohbeats.com/" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
 </head>
 <body>
-  <!-- 🔥 Promo Banner -->
-  <div class="scroll-banner">
-    <span>🔥 50% OFF ALL BEATS - LIMITED TIME ONLY 🔥</span>
-  </div>
+  <header class="main-header">
+    <h1 class="logo">XoH! Beats</h1>
+    <nav class="nav-links">
+      <a href="#beats">Beats</a>
+      <a href="#community">Community</a>
+      <a href="#about">About</a>
+      <a href="#newsletter">Subscribe</a>
+    </nav>
+  </header>
 
-  <!-- 💥 Hero Section -->
-  <section class="hero fade-in-up">
-    <h1>🎧 Emotional Beats That Speak For You</h1>
-    <p>Crafted by XoH! – inspired by Juice WRLD, J. Cole, and you.</p>
-    <a href="#beats" class="button-primary">Browse Beats Now</a>
+  <section id="beats" class="beatstore-grid">
+    <!-- Embed Airbit or HTML5 player here -->
+    <iframe src="https://airbit.com/widgets/html5/?uid=YOUR_UID&config=dark" width="100%" height="450" frameborder="0"></iframe>
   </section>
 
-  <!-- 🎵 Beat Store Section -->
-  <section id="beats" class="beatstore fade-in-up">
-    <h2>🎵 Available Beats</h2>
-    <div class="filters">
-      <select><option>All Genres</option><option>Melodic</option><option>Trap</option><option>Emo-Rap</option><option>Boom Bap</option></select>
-      <select><option>All Moods</option><option>Sad</option><option>Energetic</option><option>Dark</option></select>
-    </div>
-    <div class="beats-grid">
-      <div class="beat-card">
-        <iframe src="https://player.beatstars.com/?storeId=xxx&trackId=yyy" frameborder="0"></iframe>
-        <p class="beat-title">"Lost in Time" – Emo-Rap Type</p>
-        <div class="licensing-options">
-          <span>Basic: $20</span>
-          <span>Premium: $50</span>
-          <span>Unlimited: $80</span>
-          <span>Exclusive: Contact</span>
-        </div>
-      </div>
-      <!-- Repeat for each beat -->
-    </div>
+  <section id="community" class="community-section">
+    <h2>Join the XoH! Creative Community</h2>
+    <p>Submit your beats, leave reviews, and connect with fellow artists. Exclusive giveaways & promo codes weekly.</p>
+    <a href="beatstorecommunity.html" class="cta-button">Enter Community Hub</a>
   </section>
 
-  <!-- 📬 Email Signup -->
-  <section id="subscribe" class="subscription-section fade-in-up">
-    <h2>Claim Your Free Beat!</h2>
-    <p>Join the XOLLENT community and receive a free beat instantly.</p>
-    <form action="https://gmail.us4.list-manage.com/subscribe/post?u=e5d6b74ac9273d75bab607bcb&amp;id=957724485e" method="post" target="_blank">
-      <input type="email" name="EMAIL" placeholder="Your email address" required>
+  <section id="about" class="about-section">
+    <h2>About XoH!</h2>
+    <p>XoH! Beats is a sound universe for melodic, rage, and emo-rap producers and artists. Founded by Dre, a creative influenced by Juice WRLD & J. Cole, this is a space for meaningful music and real energy.</p>
+  </section>
+
+  <section id="newsletter" class="newsletter-signup">
+    <h3>Get Freebies, Discounts, & More</h3>
+    <form action="https://YOUR_MAILCHIMP_FORM_URL" method="post" target="_blank">
+      <input type="email" name="EMAIL" placeholder="Enter your email" required>
       <button type="submit">Subscribe</button>
     </form>
   </section>
 
-  <!-- 💬 Testimonials -->
-  <section class="testimonials fade-in-up">
-    <h2>What Artists Are Saying</h2>
-    <div class="testimonial-grid">
-      <blockquote>"XoH! Beats gave my project life!" – @rapkid</blockquote>
-      <blockquote>"Great mix, fire melodies!" – @studioflo</blockquote>
-    </div>
-  </section>
-
-  <!-- 🎧 Beat Tapes -->
-  <section class="beat-tapes fade-in-up">
-    <h2>Listen on Spotify</h2>
-    <iframe src="https://open.spotify.com/embed/album/1p5Lj7v0bIrihDTlUrZxhy" width="100%" height="152"></iframe>
-  </section>
-
-  <!-- 👤 About Section -->
-  <section id="about" class="about-section fade-in-up">
-    <h2>About XoH! Beats</h2>
-    <p>Producer since 2014. Inspired by Juice WRLD & J. Cole. Merging emotional melodies with industry bounce. Beats crafted with soul and sonic precision.</p>
-  </section>
-
-  <!-- 📞 Contact Form -->
-  <section id="contact" class="contact-section fade-in-up">
-    <h2>Let’s Connect</h2>
-    <form>
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Message"></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
-
-  <!-- 🌐 Social Links -->
-  <footer class="footer">
-    <p>Follow:
-      <a href="https://instagram.com/xohbeats">Instagram</a> |
-      <a href="https://youtube.com/@xohbeats">YouTube</a> |
-      <a href="https://beatstars.com/xoh_beats">BeatStars</a>
-    </p>
-    <p>© 2025 XoH! Beats. Built for creators. All rights reserved.</p>
+  <footer class="main-footer">
+    <p>&copy; 2025 XoH! Beats. All rights reserved.</p>
+    <p><a href="mailto:contact@xohbeats.com">contact@xohbeats.com</a></p>
   </footer>
 </body>
 </html>
