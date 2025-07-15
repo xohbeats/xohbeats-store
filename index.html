@@ -25,7 +25,7 @@
     }
     .beat-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
       padding: 2rem;
     }
@@ -34,34 +34,15 @@
       border-radius: 1rem;
       overflow: hidden;
       box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
-      text-align: left;
     }
     .cover-img {
-      width: 40%;
-      object-fit: cover;
-    }
-    .beat-details {
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex: 1;
-    }
-    .description {
-      font-size: 0.9rem;
-      color: #ccc;
-      margin: 1rem 0;
-    }
-    audio {
       width: 100%;
-      margin: 1rem 0;
+      height: 200px;
+      object-fit: cover;
     }
     h2 {
       font-size: 1.5rem;
-      margin: 0;
+      margin: 1rem 0;
     }
     button {
       background: #00ffcc;
@@ -70,7 +51,7 @@
       font-weight: bold;
       font-size: 1rem;
       padding: 0.75rem 1.5rem;
-      margin-top: 1rem;
+      margin-bottom: 1.5rem;
       cursor: pointer;
       border-radius: 2rem;
       transition: background 0.3s;
@@ -93,69 +74,11 @@
 
   <main class="beat-grid">
     <section class="beat-category">
-      <img src="images/Melodic.PNG" alt="Melodic Beats" class="cover-img">
-      <div class="beat-details">
-        <h2>Melodic</h2>
-        <p class="description">A chill and harmonic blend perfect for artists seeking melodic vibes.</p>
-        <audio controls>
-          <source src="audio/melodic.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-        <button onclick="buyNow('melodic')">BUY NOW</button>
-      </div>
+      <img src="images/Melodic.PNG" alt="5AM IN LA" class="cover-img">
+      <h2>5AM IN LA</h2>
+      <button onclick="buyNow('5AM IN LA')">BUY NOW</button>
     </section>
 
-    <section class="beat-category">
-      <img src="images/Juice Wrld.PNG" alt="Emo-Rap Beats" class="cover-img">
-      <div class="beat-details">
-        <h2>Emo-Rap</h2>
-        <p class="description">Emotional, melodic, and inspired by the sounds of Juice WRLD.</p>
-        <audio controls>
-          <source src="audio/emorap.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-        <button onclick="buyNow('emo')">BUY NOW</button>
-      </div>
-    </section>
-
-    <section class="beat-category">
-      <img src="images/Rage.PNG" alt="Rage Beats" class="cover-img">
-      <div class="beat-details">
-        <h2>Rage</h2>
-        <p class="description">Hard-hitting synths and drums to bring out your inner rage.</p>
-        <audio controls>
-          <source src="audio/rage.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-        <button onclick="buyNow('rage')">BUY NOW</button>
-      </div>
-    </section>
-
-    <section class="beat-category">
-      <img src="images/BoomBap.PNG" alt="Boom Bap Beats" class="cover-img">
-      <div class="beat-details">
-        <h2>Boom Bap</h2>
-        <p class="description">Classic kicks and snares with raw lyricist energy.</p>
-        <audio controls>
-          <source src="audio/boombap.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-        <button onclick="buyNow('boombap')">BUY NOW</button>
-      </div>
-    </section>
-
-    <section class="beat-category">
-      <img src="images/BigXThaPlug.PNG" alt="Trap Beats" class="cover-img">
-      <div class="beat-details">
-        <h2>Trap</h2>
-        <p class="description">808s and hi-hats for street and club-ready bangers.</p>
-        <audio controls>
-          <source src="audio/trap.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-        <button onclick="buyNow('trap')">BUY NOW</button>
-      </div>
-    </section>
   </main>
 
   <footer>
