@@ -3,116 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>XoH! Beats | Melodic & Emo-Rap Beat Store</title>
-  <meta name="description" content="Buy melodic, emo-rap, rage, trap & boom bap beats. Instant leases and exclusive rights." />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  <meta property="og:title" content="XoH! Beats | Melodic & Emo-Rap Beat Store" />
-  <meta property="og:description" content="Industry-quality beats for artists. Instant download. Commercial use allowed." />
-  <meta property="og:image" content="/assets/ogimage.png" />
-  <meta property="og:url" content="https://xohbeats.com/" />
-  <meta property="og:type" content="website" />
-  <link rel="canonical" href="https://xohbeats.com/" />
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+  <title>XoH! Beats Store</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #0f0f0f;
+      color: white;
+      text-align: center;
+    }
+    header {
+      padding: 2rem 1rem;
+      background: #1f1f1f;
+    }
+    .tagline {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      color: #999;
+    }
+    .beat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .beat-category {
+      background: #181818;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+    .cover-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+    button {
+      background: #00ffcc;
+      border: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+      margin-bottom: 1.5rem;
+      cursor: pointer;
+      border-radius: 2rem;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #00ccb3;
+    }
+    footer {
+      padding: 2rem;
+      background: #1f1f1f;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
-
 <body>
-  <header class="main-header">
-    <div class="container">
-      <h1 class="logo">XoH! Beats</h1>
-      <nav class="nav-links">
-        <a href="#beats">🎵 Beats</a>
-        <a href="#community">🤝 Community</a>
-        <a href="#about">🧠 About</a>
-        <a href="#newsletter">📬 Subscribe</a>
-      </nav>
-    </div>
+  <header>
+    <h1>XoH! Beats</h1>
+    <p class="tagline">Melodic • Emo-Rap • Rage • Boom Bap • Trap</p>
   </header>
 
-  <section id="beats" class="beatstore-section">
-    <div class="container">
-      <h2>🎶 Explore the Latest Beats</h2>
-      <p>Instant delivery. Commercial rights. Split-free.</p>
-      <iframe src="https://airbit.com/widgets/html5/?uid=YOUR_UID&config=dark" width="100%" height="500" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </section>
+  <main class="beat-grid">
+    <section class="beat-category">
+      <img src="images/Melodic.PNG" alt="Melodic Beats" class="cover-img">
+      <h2>Melodic</h2>
+      <button onclick="buyNow('melodic')">BUY NOW</button>
+    </section>
+    <section class="beat-category">
+      <img src="images/Juice Wrld.PNG" alt="Juice WRLD Type Beats" class="cover-img">
+      <h2>Emo-Rap</h2>
+      <button onclick="buyNow('emo')">BUY NOW</button>
+    </section>
+    <section class="beat-category">
+      <img src="images/Rage.PNG" alt="Rage Beats" class="cover-img">
+      <h2>Rage</h2>
+      <button onclick="buyNow('rage')">BUY NOW</button>
+    </section>
+    <section class="beat-category">
+      <img src="images/BoomBap.PNG" alt="Boom Bap Beats" class="cover-img">
+      <h2>Boom Bap</h2>
+      <button onclick="buyNow('boombap')">BUY NOW</button>
+    </section>
+    <section class="beat-category">
+      <img src="images/BigXThaPlug.PNG" alt="Trap Beats" class="cover-img">
+      <h2>Trap</h2>
+      <button onclick="buyNow('trap')">BUY NOW</button>
+    </section>
+  </main>
 
-  <section id="categories" class="categories-section">
-    <div class="container">
-      <h2>🧩 Shop by Category</h2>
-      <ul class="category-grid">
-        <li><a href="#melodic">Melodic</a></li>
-        <li><a href="#emo">Emo-Rap</a></li>
-        <li><a href="#rage">Rage</a></li>
-        <li><a href="#boombap">Boom Bap</a></li>
-        <li><a href="#trap">Trap</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="freebies" class="free-downloads">
-    <div class="container">
-      <h2>🔥 Free Beats Every Week</h2>
-      <p>Download free demo beats and test your flow before buying.</p>
-      <a class="cta-button" href="/downloads/freebeats.zip">Download Now</a>
-    </div>
-  </section>
-
-  <section id="community" class="community-section">
-    <div class="container">
-      <h2>🎤 Join the XoH! Artist Community</h2>
-      <p>Submit your songs, leave beat reviews, and connect with others.</p>
-      <a href="beatstorecommunity.html" class="cta-button">Enter Community Hub</a>
-    </div>
-  </section>
-
-  <section id="about" class="about-section">
-    <div class="container">
-      <h2>👨‍🎤 About XoH!</h2>
-      <p>Founded by Dre, XoH! Beats is a melodic universe for artists who value emotion and storytelling. Inspired by Juice WRLD & J. Cole, we keep it real and raw with every drop.</p>
-    </div>
-  </section>
-
-  <section id="reviews" class="reviews-section">
-    <div class="container">
-      <h2>⭐ Artist Testimonials</h2>
-      <div class="review-box">
-        <p><strong>"Insane quality. These beats helped me lock in a label placement!"</strong></p>
-        <p>- Manny West</p>
-      </div>
-      <div class="review-box">
-        <p><strong>"Exactly the vibe I was searching for. Much love XoH!"</strong></p>
-        <p>- IndieVibe</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="newsletter" class="newsletter-signup">
-    <div class="container">
-      <h2>📬 Subscribe for Drops & Freebies</h2>
-      <form action="https://YOUR_MAILCHIMP_URL" method="post" target="_blank">
-        <input type="email" name="EMAIL" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
-  </section>
-
-  <footer class="main-footer">
-    <div class="container">
-      <p>&copy; 2025 XoH! Beats. All rights reserved.</p>
-      <p><a href="mailto:contact@xohbeats.com">contact@xohbeats.com</a></p>
-      <p class="social-links">
-        <a href="https://instagram.com/xohbeats" target="_blank">Instagram</a> |
-        <a href="https://twitter.com/xohbeats" target="_blank">Twitter</a>
-      </p>
-    </div>
+  <footer>
+    <p>Payments accepted: <strong>PayPal</strong> | <strong>Cash App</strong></p>
   </footer>
 
-  <script src="scripts.js"></script>
+  <script>
+    function buyNow(category) {
+      const links = {
+        melodic: 'https://paypal.me/yourlink1',
+        emo: 'https://paypal.me/yourlink2',
+        rage: 'https://cash.app/$yourcashapp1',
+        boombap: 'https://cash.app/$yourcashapp2',
+        trap: 'https://paypal.me/yourlink3',
+      };
+      window.open(links[category], '_blank');
+    }
+  </script>
 </body>
 </html>
