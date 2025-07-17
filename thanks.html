@@ -1,85 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Thanks for Subscribing | XoH! Beats</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You for Your Purchase! | XoH! Beats</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
   <style>
     body {
       background-color: #0d0d0d;
-      color: #39ff14;
-      font-family: 'Arial Black', sans-serif;
-      text-align: center;
+      color: #00ffaa;
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
       padding: 40px 20px;
+      text-align: center;
     }
+
     h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 10px #00ffccaa;
     }
+
     p {
+      font-size: 1.2rem;
       color: #ccc;
-      font-weight: normal;
-      font-size: 16px;
-      margin-top: 10px;
+      max-width: 600px;
+      margin-bottom: 2rem;
     }
-    .button {
+
+    a.download-btn {
+      background-color: #00ffaa;
+      color: #000;
+      font-weight: 700;
+      padding: 18px 36px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      box-shadow: 0 0 20px #00ffaaaa;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
       display: inline-block;
-      background-color: #39ff14;
-      color: black;
-      padding: 14px 24px;
-      border-radius: 8px;
-      font-size: 18px;
-      font-weight: bold;
-      text-decoration: none;
-      margin: 20px 10px;
-      transition: background 0.3s ease;
     }
-    .button:hover {
-      background-color: #2ecc40;
-      color: #fff;
+
+    a.download-btn:hover {
+      background-color: #00dd99;
+      box-shadow: 0 0 30px #00ffccbb;
     }
-    .social-links a {
-      color: #39ff14;
-      margin: 0 10px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .social-links {
-      margin-top: 40px;
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <h1>🔥 You’re In! Welcome to the XoH! Beats Fam.</h1>
-  <p>Your exclusive free beat is on its way to your inbox.</p>
 
-  <!-- ✅ Download Button -->
-  <a href="https://www.mediafire.com/file/lhldop0n7w85alt/%2528FREE%2529_2023_Young_Thug_Type_Beat_-_Big_Spender_-.wav/file"
-     target="_blank"
-     rel="noopener noreferrer"
-     class="button">
-     🎧 Download Free Beat
+  <h1>Thank You for Your Purchase!</h1>
+  <p>Your exclusive download is ready. Click the button below to access your beats.</p>
+
+  <a 
+    class="download-btn" 
+    href="https://drive.google.com/drive/folders/1IiUH-eyLleV7138q_PWHOC5SA03rwOIQ?usp=sharing" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    aria-label="Download your purchased beat pack"
+  >
+    Download Your Beats
   </a>
 
-  <!-- ✅ Copy Link Button -->
-  <button id="copyLinkBtn" class="button">Copy Beat Link</button>
+  <footer>
+    Royalty-Free License Included | Support: <a href="mailto:support@xohbeats.com" style="color:#00ffaa;">support@xohbeats.com</a>
+  </footer>
 
-  <script>
-    document.getElementById('copyLinkBtn').addEventListener('click', () => {
-      const downloadUrl = 'https://www.mediafire.com/file/lhldop0n7w85alt/%2528FREE%2529_2023_Young_Thug_Type_Beat_-_Big_Spender_-.wav/file';
-      navigator.clipboard.writeText(downloadUrl).then(() => {
-        alert('✅ Beat link copied to clipboard!');
-      });
-    });
-  </script>
-
-  <!-- ✅ Social Follow Section -->
-  <div class="social-links">
-    <p>Follow me for more drops:</p>
-    <a href="https://instagram.com/xohbeats" target="_blank">Instagram</a> •
-    <a href="https://youtube.com/@xohbeats" target="_blank">YouTube</a> •
-    <a href="https://xohbeats.com" target="_blank">Main Site</a>
-  </div>
 </body>
 </html>
-
