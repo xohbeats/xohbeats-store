@@ -2,100 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>XoH! Beats Store</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
   <style>
     body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: #0f0f0f;
-      color: white;
-      text-align: center;
-    }
-    header {
-      padding: 2rem 1rem;
-      background: #1f1f1f;
-    }
-    .tagline {
+      background-color: #0d0d0d;
+      color: #fff;
       font-family: 'Orbitron', sans-serif;
-      font-size: 1.1rem;
-      color: #999;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
     }
-    .beat-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
+    .product-card {
+      max-width: 400px;
+      background: linear-gradient(145deg, #121212, #1e1e1e);
+      border-radius: 16px;
+      box-shadow: 0 0 30px #00ffaa55;
+      text-align: center;
+      padding: 20px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      text-decoration: none;
+      color: inherit;
     }
-    .beat-category {
-      background: #181818;
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px #00ffccaa;
     }
-    .cover-img {
+    .product-image {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 255, 170, 0.5);
+      margin-bottom: 1rem;
     }
     h2 {
-      font-size: 1.5rem;
-      margin: 1rem 0;
+      margin: 0 0 0.5rem 0;
+      font-size: 1.8rem;
     }
-    button {
-      background: #00ffcc;
-      border: none;
-      color: #000;
-      font-weight: bold;
+    p {
+      color: #bbb;
       font-size: 1rem;
-      padding: 0.75rem 1.5rem;
-      margin-bottom: 1.5rem;
-      cursor: pointer;
-      border-radius: 2rem;
-      transition: background 0.3s;
+      margin: 0 0 1.5rem 0;
+      line-height: 1.3;
     }
-    button:hover {
-      background: #00ccb3;
-    }
-    footer {
-      padding: 2rem;
-      background: #1f1f1f;
-      font-size: 0.9rem;
+    iframe {
+      border-radius: 12px;
+      width: 100%;
+      height: 152px;
+      box-shadow: 0 0 20px #00ffaaaa;
+      margin-bottom: 0;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>XoH! Beats</h1>
-    <p class="tagline">Melodic • Emo-Rap • Rage • Boom Bap • Trap</p>
-  </header>
 
-  <main class="beat-grid">
-    <section class="beat-category">
-      <img src="images/Melodic.PNG" alt="5AM IN LA" class="cover-img">
-      <h2>5AM IN LA</h2>
-      <button onclick="buyNow('5AM IN LA')">BUY NOW</button>
-    </section>
+  <a href="downloads/the-best-of-xohbeats.html" class="product-card" title="Go to The Best of XoH! Beats download page">
+    <img 
+      src="xohbeats-store/images/thebestofxohbeats.jpg" 
+      alt="The Best Of XoH! Beats Cover" 
+      class="product-image" 
+    />
+    <h2>The Best Of XoH! Beats</h2>
+    <p>28 Royalty-Free Beats · $28 · Upload to Spotify, Apple Music & more</p>
 
-  </main>
+    <!-- Spotify Playlist Embed -->
+    <iframe 
+      src="https://open.spotify.com/embed/album/6mwfqBo4IZoRPWfP4e9DMq?utm_source=generator" 
+      frameborder="0" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+      loading="lazy"
+    ></iframe>
+  </a>
 
-  <footer>
-    <p>Payments accepted: <strong>PayPal</strong> | <strong>Cash App</strong></p>
-  </footer>
-
-  <script>
-    function buyNow(category) {
-      const links = {
-        melodic: 'https://paypal.me/yourlink1',
-        emo: 'https://paypal.me/yourlink2',
-        rage: 'https://cash.app/$yourcashapp1',
-        boombap: 'https://cash.app/$yourcashapp2',
-        trap: 'https://paypal.me/yourlink3',
-      };
-      window.open(links[category], '_blank');
-    }
-  </script>
 </body>
 </html>
