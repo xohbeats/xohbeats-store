@@ -11,14 +11,38 @@
       color: #fff;
       font-family: 'Orbitron', sans-serif;
       margin: 0;
-      padding: 40px 20px;
+      padding: 0;
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
       min-height: 100vh;
     }
+
+    header {
+      width: 100%;
+      padding: 30px 0 10px;
+      text-align: center;
+      background: #0d0d0d;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffcc88, 0 0 20px #00ffaa44;
+      margin: 0;
+    }
+
+    main {
+      padding: 40px 20px;
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .product-card {
-      max-width: 400px;
+      width: 100%;
       background: linear-gradient(145deg, #121212, #1e1e1e);
       border-radius: 16px;
       box-shadow: 0 0 30px #00ffaa55;
@@ -29,63 +53,71 @@
       text-decoration: none;
       color: inherit;
     }
+
     .product-card:hover {
       transform: scale(1.05);
       box-shadow: 0 0 40px #00ffccaa;
     }
+
     .product-image {
       width: 100%;
+      max-width: 300px;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0, 255, 170, 0.5);
       margin-bottom: 1rem;
     }
+
     h2 {
       margin: 0 0 0.5rem 0;
       font-size: 1.8rem;
     }
+
     p {
       color: #bbb;
       font-size: 1rem;
       margin: 0 0 1.5rem 0;
       line-height: 1.3;
     }
+
     iframe {
       border-radius: 12px;
       width: 100%;
       height: 152px;
       box-shadow: 0 0 20px #00ffaaaa;
-      margin-bottom: 0;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
- <a href="downloads/the-best-of-xohbeats.html" 
-   class="product-card" 
-   title="Go to The Best of XoH! Beats download page" 
-   aria-label="Go to The Best of XoH! Beats download page">
-  
-  <img 
-    src="images/thebestofxohbeats.jpg" 
-    alt="Cover image for The Best Of XoH! Beats" 
-    class="product-image" 
-    style="width: 100%; max-width: 300px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.4);" 
-    onerror="this.onerror=null;this.src='images/placeholder.jpg';"
-  />
+  <header>
+    <h1>XoH! Beats Store</h1>
+  </header>
 
-  <h2 style="color: #fff; margin-top: 10px;">The Best Of XoH! Beats</h2>
-  <p style="color: #ccc;">28 Royalty-Free Beats · $28 · Upload to Spotify, Apple Music & more</p>
-</a>
+  <main>
+    <a href="downloads/the-best-of-xohbeats.html" 
+       class="product-card" 
+       title="Go to The Best of XoH! Beats download page" 
+       aria-label="Go to The Best of XoH! Beats download page">
+      
+      <img 
+        src="images/thebestofxohbeats.jpg" 
+        alt="Cover image for The Best Of XoH! Beats" 
+        class="product-image"
+        onerror="this.onerror=null;this.src='images/placeholder.jpg';"
+      />
 
+      <h2>The Best Of XoH! Beats</h2>
+      <p>28 Royalty-Free Beats · $28<br>Click Image to Preview & Buy</p>
+    </a>
 
-    <!-- Spotify Playlist Embed -->
     <iframe 
       src="https://open.spotify.com/embed/album/6mwfqBo4IZoRPWfP4e9DMq?utm_source=generator" 
       frameborder="0" 
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-      loading="lazy"
-    ></iframe>
-  </a>
+      loading="lazy">
+    </iframe>
+  </main>
 
 </body>
 </html>
