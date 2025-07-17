@@ -1,174 +1,81 @@
-/* ====== Root Variables ====== */
+/* styles.css for XoH! Beats Store */
+
 :root {
-  --primary-color: #00ffe7;
-  --bg-color: #0a0a0a;
-  --accent-color: #ff0077;
-  --font-main: 'Orbitron', sans-serif;
-  --text-light: #f2f2f2;
-  --text-muted: #999;
-  --section-padding: 4rem 2rem;
+  --bg-dark: #0d0d0d;
+  --text-primary: #ffffff;
+  --text-secondary: #bbbbbb;
+  --accent: #00ffaa;
+  --accent-glow: rgba(0, 255, 170, 0.5);
+  --accent-hover: #00ffcc;
 }
 
-/* ====== Global Styles ====== */
 body {
   margin: 0;
-  padding: 0;
-  font-family: var(--font-main);
-  background-color: var(--bg-color);
-  color: var(--text-light);
-  line-height: 1.6;
-}
-
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-a:hover {
-  color: var(--accent-color);
-}
-
-h1, h2, h3 {
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-.container {
-  max-width: 1140px;
-  margin: auto;
-  padding: 0 1rem;
-}
-
-/* ====== Header ====== */
-.main-header {
-  background: #111;
-  border-bottom: 1px solid var(--accent-color);
-  padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--primary-color);
-}
-
-.nav-links {
+  padding: 40px 20px;
+  font-family: 'Orbitron', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
   display: flex;
-  gap: 2rem;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.nav-links a {
-  font-size: 1rem;
-  text-transform: uppercase;
-}
-
-/* ====== Sections ====== */
-section {
-  padding: var(--section-padding);
-  border-bottom: 1px solid #1f1f1f;
-}
-
-.beatstore-section iframe {
-  border-radius: 8px;
-  box-shadow: 0 0 15px var(--primary-color);
-}
-
-.category-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-}
-
-.category-grid li a {
-  background: #111;
-  border: 1px solid var(--primary-color);
-  padding: 0.5rem 1.25rem;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-}
-
-.category-grid li a:hover {
-  background-color: var(--accent-color);
-  color: #fff;
-}
-
-/* ====== Call to Action Buttons ====== */
-.cta-button {
-  display: inline-block;
-  background: var(--primary-color);
-  color: #000;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.cta-button:hover {
-  background: var(--accent-color);
-  color: #fff;
-}
-
-/* ====== Review Boxes ====== */
-.review-box {
-  background: #111;
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  border-left: 4px solid var(--primary-color);
-}
-
-/* ====== Newsletter ====== */
-.newsletter-signup form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.newsletter-signup input[type="email"] {
-  flex: 1;
-  padding: 0.75rem;
-  border-radius: 4px;
-  border: none;
-  font-size: 1rem;
-}
-
-.newsletter-signup button {
-  background: var(--primary-color);
-  color: #000;
-  padding: 0.75rem 1.25rem;
-  border: none;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.newsletter-signup button:hover {
-  background: var(--accent-color);
-  color: #fff;
-}
-
-/* ====== Footer ====== */
-.main-footer {
-  background: #111;
-  padding: 2rem 0;
+header {
   text-align: center;
-  font-size: 0.9rem;
-  color: var(--text-muted);
+  margin-bottom: 40px;
 }
 
-.main-footer a {
-  color: var(--primary-color);
+header h1 {
+  font-size: 2.8rem;
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--accent-glow);
+  margin: 0;
 }
 
-.social-links a {
-  margin: 0 0.5rem;
-  font-weight: bold;
+.product-card {
+  max-width: 400px;
+  width: 100%;
+  background: linear-gradient(145deg, #121212, #1e1e1e);
+  border-radius: 16px;
+  box-shadow: 0 0 30px var(--accent-glow);
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px var(--accent-hover);
+}
+
+.product-image {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--accent-glow);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.3;
+}
+
+iframe {
+  border-radius: 12px;
+  width: 100%;
+  height: 152px;
+  box-shadow: 0 0 20px var(--accent-glow);
+  margin-top: 20px;
 }
