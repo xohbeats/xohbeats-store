@@ -28,9 +28,18 @@
       margin-right: auto;
     }
 
+    .product-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin: 20px auto 30px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+    }
+
     iframe {
       border-radius: 12px;
       margin-bottom: 2rem;
+      max-width: 100%;
     }
 
     .paypal-button {
@@ -68,21 +77,24 @@
 <body>
 
   <h1>The Lost Files</h1>
-  <p>🔥 37 Royalty-Free Beats for Just $37<br>Upload to Spotify, Apple Music, YouTube & more – no limits.</p>
+  <p>🔥 37 Royalty-Free Beats for Just $37<br>
+     Upload to Spotify, Apple Music, YouTube & more – no limits.</p>
+
+  <!-- Product Visualizer -->
+  <img src="/images/thelostfiles.jpg" alt="The Lost Files Cover Art" class="product-image">
 
   <!-- Spotify Preview -->
   <iframe 
-    style="border-radius:12px"
     src="https://open.spotify.com/embed/album/1SKy9nRO09ebtx6aY3O3UI?utm_source=generator"
     width="100%" 
     height="152" 
     frameBorder="0" 
-    allowfullscreen="" 
+    allowfullscreen 
     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
     loading="lazy">
   </iframe>
 
-  <!-- New PayPal Payment Link Button -->
+  <!-- PayPal Payment Link Button -->
   <a 
     href="https://www.paypal.com/ncp/payment/HWS69GQ5KSRLW" 
     target="_blank" 
