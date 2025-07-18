@@ -5,12 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Lost Files – 37 for $37</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
-
-  <!-- PayPal SDK (only include once) -->
-  <script 
-    src="https://www.paypal.com/sdk/js?client-id=BAAGJa-GLpceEnnOKLy9TZ_AEhW1X8phasHypRVdcGxHV3KwC-zxroTYNJamN47V9d1MeYcP7fTuFI2mEk&components=hosted-buttons&enable-funding=venmo&currency=USD">
-  </script>
-
   <style>
     body {
       background-color: #0d0d0d;
@@ -39,8 +33,23 @@
       margin-bottom: 2rem;
     }
 
-    .paypal-container {
-      margin: 30px auto;
+    .paypal-button {
+      display: inline-block;
+      background-color: #ffc439;
+      color: #000;
+      font-weight: bold;
+      font-family: 'Orbitron', sans-serif;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 1rem;
+      box-shadow: 0 0 10px #ffc43980;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .paypal-button:hover {
+      background-color: #e6ac00;
+      transform: scale(1.03);
     }
 
     .download-msg {
@@ -61,9 +70,8 @@
   <h1>The Lost Files</h1>
   <p>🔥 37 Royalty-Free Beats for Just $37<br>Upload to Spotify, Apple Music, YouTube & more – no limits.</p>
 
-  <!-- Updated Spotify Embed -->
+  <!-- Spotify Preview -->
   <iframe 
-    data-testid="embed-iframe"
     style="border-radius:12px"
     src="https://open.spotify.com/embed/album/1SKy9nRO09ebtx6aY3O3UI?utm_source=generator"
     width="100%" 
@@ -74,23 +82,15 @@
     loading="lazy">
   </iframe>
 
-  <!-- PayPal Button 1 -->
-  <div class="paypal-container" id="paypal-container-KBBV96DK9RFVN"></div>
+  <!-- New PayPal Payment Link Button -->
+  <a 
+    href="https://www.paypal.com/ncp/payment/HWS69GQ5KSRLW" 
+    target="_blank" 
+    class="paypal-button">
+    Buy Now with PayPal
+  </a>
 
-  <!-- PayPal Button 2 -->
-  <div class="paypal-container" id="paypal-container-HWS69GQ5KSRLW"></div>
-
-  <script>
-    paypal.HostedButtons({
-      hostedButtonId: "KBBV96DK9RFVN",
-    }).render("#paypal-container-KBBV96DK9RFVN");
-
-    paypal.HostedButtons({
-      hostedButtonId: "HWS69GQ5KSRLW",
-    }).render("#paypal-container-HWS69GQ5KSRLW");
-  </script>
-
-  <!-- Download Info Message -->
+  <!-- Download Info -->
   <div class="download-msg">
     🔒 Your download link will be sent instantly after purchase via PayPal.
   </div>
