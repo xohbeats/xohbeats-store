@@ -3,32 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Lost Files – 37 Rare Tracks</title>
+  <title>The Lost Files – 37 for $37</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css" />
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAAGJa-GLpceEnnOKLy9TZ_AEhW1X8phasHypRVdcGxHV3KwC-zxroTYNJamN47V9d1MeYcP7fTuFI2mEk&components=hosted-buttons&enable-funding=venmo&currency=USD">
+  </script>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    iframe {
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .paypal-container {
+      margin: 30px auto;
+    }
+
+    .download-msg {
+      margin-top: 30px;
+      font-size: 1rem;
+      color: #00ffaa;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <h1>The Lost Files</h1>
-    <p>37 Rare Tracks – Upload Ready</p>
-  </header>
 
-  <main class="product-detail">
-    <img src="../images/thelostfiles.jpg" alt="The Lost Files Cover" class="product-cover" />
+  <h1>The Lost Files</h1>
+  <p>🔥 37 Royalty-Free Beats for Just $37<br>Upload to Spotify, Apple Music, YouTube & more – no limits.</p>
 
-    <section class="product-info">
-      <h2>Preview on Spotify</h2>
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1SKy9nRO09ebtx6aY3O3UI?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <!-- Spotify Playlist Embed -->
+  <iframe 
+    src="https://open.spotify.com/embed/album/6mwfqBo4IZoRPWfP4e9DMq?utm_source=generator" 
+    width="100%" 
+    height="152" 
+    frameBorder="0" 
+    allowfullscreen="" 
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+    loading="lazy">
+  </iframe>
 
-      <h2>Instant Delivery After Purchase</h2>
-      <form action="../thanks.html" method="get">
-        <button type="submit" class="purchase-button">Buy Now – $20</button>
-      </form>
-    </section>
-  </main>
+  <!-- PayPal Button -->
+  <div class="paypal-container" id="paypal-container-KBBV96DK9RFVN"></div>
+  <script>
+    paypal.HostedButtons({
+      hostedButtonId: "KBBV96DK9RFVN",
+    }).render("#paypal-container-KBBV96DK9RFVN")
+  </script>
 
-  <footer class="footer">
-    <p>&copy; 2025 XoH! Beats. All rights reserved.</p>
+  <!-- Download Info Message -->
+  <div class="download-msg">
+    🔒 Your download link will be sent instantly after purchase via PayPal.
+  </div>
+
+  <footer>
+    Royalty-Free License Included | Instant Delivery via Google Drive
   </footer>
+
 </body>
 </html>
