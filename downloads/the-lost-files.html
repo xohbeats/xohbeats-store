@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Lost Files – 37 for $37</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+  <!-- PayPal SDK (only include once) -->
   <script 
     src="https://www.paypal.com/sdk/js?client-id=BAAGJa-GLpceEnnOKLy9TZ_AEhW1X8phasHypRVdcGxHV3KwC-zxroTYNJamN47V9d1MeYcP7fTuFI2mEk&components=hosted-buttons&enable-funding=venmo&currency=USD">
   </script>
+
   <style>
     body {
       background-color: #0d0d0d;
@@ -58,9 +61,11 @@
   <h1>The Lost Files</h1>
   <p>🔥 37 Royalty-Free Beats for Just $37<br>Upload to Spotify, Apple Music, YouTube & more – no limits.</p>
 
-  <!-- Spotify Playlist Embed -->
+  <!-- Updated Spotify Embed -->
   <iframe 
-    src="https://open.spotify.com/embed/album/6mwfqBo4IZoRPWfP4e9DMq?utm_source=generator" 
+    data-testid="embed-iframe"
+    style="border-radius:12px"
+    src="https://open.spotify.com/embed/album/1SKy9nRO09ebtx6aY3O3UI?utm_source=generator"
     width="100%" 
     height="152" 
     frameBorder="0" 
@@ -69,12 +74,20 @@
     loading="lazy">
   </iframe>
 
-  <!-- PayPal Button -->
+  <!-- PayPal Button 1 -->
   <div class="paypal-container" id="paypal-container-KBBV96DK9RFVN"></div>
+
+  <!-- PayPal Button 2 -->
+  <div class="paypal-container" id="paypal-container-HWS69GQ5KSRLW"></div>
+
   <script>
     paypal.HostedButtons({
       hostedButtonId: "KBBV96DK9RFVN",
-    }).render("#paypal-container-KBBV96DK9RFVN")
+    }).render("#paypal-container-KBBV96DK9RFVN");
+
+    paypal.HostedButtons({
+      hostedButtonId: "HWS69GQ5KSRLW",
+    }).render("#paypal-container-HWS69GQ5KSRLW");
   </script>
 
   <!-- Download Info Message -->
