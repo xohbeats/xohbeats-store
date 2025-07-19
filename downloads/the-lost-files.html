@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Lost Files – 37 for $37</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAAGJa-GLpceEnnOKLy9TZ_AEhW1X8phasHypRVdcGxHV3KwC-zxroTYNJamN47V9d1MeYcP7fTuFI2mEk&components=hosted-buttons&enable-funding=venmo&currency=USD">
+  </script>
   <style>
     body {
       background-color: #0d0d0d;
@@ -28,37 +31,21 @@
       margin-right: auto;
     }
 
-    .product-image {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      margin: 20px auto 30px;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+    .cover-img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 16px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 20px #00ffaa50;
     }
 
-    iframe {
-      border-radius: 12px;
-      margin-bottom: 2rem;
-      max-width: 100%;
+    .paypal-container {
+      margin: 30px auto;
     }
 
-    .paypal-button {
-      display: inline-block;
-      background-color: #ffc439;
-      color: #000;
-      font-weight: bold;
-      font-family: 'Orbitron', sans-serif;
-      text-decoration: none;
-      padding: 14px 28px;
-      border-radius: 8px;
-      font-size: 1rem;
-      box-shadow: 0 0 10px #ffc43980;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .paypal-button:hover {
-      background-color: #e6ac00;
-      transform: scale(1.03);
+    .spotify-embed {
+      margin-top: 40px;
+      margin-bottom: 20px;
     }
 
     .download-msg {
@@ -77,32 +64,33 @@
 <body>
 
   <h1>The Lost Files</h1>
-  <p>🔥 37 Royalty-Free Beats for Just $37<br>
-     Upload to Spotify, Apple Music, YouTube & more – no limits.</p>
+  <p>🔥 37 Royalty-Free Beats for Just $37<br>Upload to Spotify, Apple Music, YouTube & more – no limits.</p>
 
-  <!-- Product Visualizer -->
-  <img src="/images/thelostfiles.jpg" alt="The Lost Files Cover Art" class="product-image">
+  <!-- Product Image -->
+  <img src="../images/thelostfiles.jpg" alt="The Lost Files Cover Art" class="cover-img" />
 
-  <!-- Spotify Preview -->
-  <iframe 
-    src="https://open.spotify.com/embed/album/1SKy9nRO09ebtx6aY3O3UI?utm_source=generator"
-    width="100%" 
-    height="152" 
-    frameBorder="0" 
-    allowfullscreen 
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-    loading="lazy">
-  </iframe>
+  <!-- PayPal Button -->
+  <div class="paypal-container" id="paypal-container-HWS69GQ5KSRLW"></div>
+  <script>
+    paypal.HostedButtons({
+      hostedButtonId: "HWS69GQ5KSRLW",
+    }).render("#paypal-container-HWS69GQ5KSRLW");
+  </script>
 
-  <!-- PayPal Payment Link Button -->
-  <a 
-    href="https://www.paypal.com/ncp/payment/HWS69GQ5KSRLW" 
-    target="_blank" 
-    class="paypal-button">
-    Buy Now with PayPal
-  </a>
+  <!-- Spotify Embed -->
+  <div class="spotify-embed">
+    <iframe style="border-radius:12px" 
+      src="https://open.spotify.com/embed/album/2fUqCEKmOHxkjpYaKxAnbl?utm_source=generator&theme=0" 
+      width="100%" 
+      height="152" 
+      frameborder="0" 
+      allowtransparency="true" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+      loading="lazy">
+    </iframe>
+  </div>
 
-  <!-- Download Info -->
+  <!-- Download Info Message -->
   <div class="download-msg">
     🔒 Your download link will be sent instantly after purchase via PayPal.
   </div>
