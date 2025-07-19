@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>XoH! Beats Store</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
   <style>
-
-<link rel="stylesheet" href="styles.css" />
-    
     :root {
       --neon: #00ffcc;
       --bg: #0d0d0d;
@@ -100,6 +98,43 @@
       }
     }
 
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: var(--neon);
+      text-shadow: 0 0 15px var(--neon);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    .cta-button {
+      margin-top: 20px;
+      padding: 10px 30px;
+      font-size: 1rem;
+      background: var(--neon);
+      border: none;
+      border-radius: 25px;
+      color: #000;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #00ccaa;
+    }
+
     main {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -161,7 +196,6 @@
   </style>
 </head>
 <body>
-
   <header>
     <h1>XoH! Beats</h1>
     <div class="hamburger" onclick="toggleMenu()">
@@ -173,35 +207,39 @@
       <a href="#">Home</a>
       <a href="#lost-files">Lost Files</a>
       <a href="#best-of">Best Of</a>
-      <a href="#">Contact</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
+  <section class="hero">
+    <h1>Unlock Your Sound</h1>
+    <p>Royalty-Free Beats | Unique Collections | Instant Access</p>
+    <a href="#lost-files" class="cta-button">Browse Now</a>
+  </section>
+
   <main>
-    <!-- Product 1 -->
     <a id="lost-files" href="downloads/the-lost-files.html" class="product-card">
       <img src="images/thelostfiles.jpg" alt="The Lost Files" class="product-image" onerror="this.onerror=null;this.src='images/placeholder.jpg';">
       <h2>The Lost Files</h2>
       <p>Exclusive 37-Track Beat Tape · $37</p>
-      <iframe src="https://open.spotify.com/embed/album/1SKy9nRO09ebtx6aY3O3UI?utm_source=generator"
-              frameborder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy">
-      </iframe>
+      <iframe src="https://open.spotify.com/embed/album/1SKy9nRO09ebtx6aY3O3UI?utm_source=generator" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </a>
 
-    <!-- Product 2 -->
     <a id="best-of" href="downloads/the-best-of-xohbeats.html" class="product-card">
       <img src="images/thebestofxohbeats.jpg" alt="Best Of XoH Beats" class="product-image" onerror="this.onerror=null;this.src='images/placeholder.jpg';">
       <h2>The Best Of XoH! Beats</h2>
       <p>28 Royalty-Free Beats · $28</p>
-      <iframe src="https://open.spotify.com/embed/album/6mwfqBo4IZoRPWfP4e9DMq?utm_source=generator"
-              frameborder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy">
-      </iframe>
+      <iframe src="https://open.spotify.com/embed/album/6mwfqBo4IZoRPWfP4e9DMq?utm_source=generator" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </a>
   </main>
+
+  <section id="contact" class="hero">
+    <h2>Stay Connected</h2>
+    <form id="subscribe-form" action="https://your-mailchimp-url" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required style="padding:10px; border-radius:5px; margin-right:10px;">
+      <button type="submit" class="cta-button">Join the List</button>
+    </form>
+  </section>
 
   <footer>
     &copy; 2025 XoH! Beats — All rights reserved. | Royalty-Free Licensing Included
@@ -212,12 +250,5 @@
       document.getElementById('nav').classList.toggle('active');
     }
   </script>
-
-<script>
-  function toggleMenu() {
-    document.getElementById('nav').classList.toggle('active');
-  }
-</script>
-  
 </body>
 </html>
