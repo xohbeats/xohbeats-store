@@ -169,3 +169,22 @@ footer {
   background: #111;
   margin-top: auto;
 }
+
+.beat-title {
+  margin: 1rem auto;
+  color: #cbd5e1;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.beat-title h3 {
+  font-size: 1.5rem;
+  color: #00f7ff;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 0 8px #00f7ff50;
+}
+
+.beat-title p {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-top: 0;
+}
