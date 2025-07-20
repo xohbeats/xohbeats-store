@@ -185,6 +185,17 @@ footer {
   text-align: center;
 }
 
+.free-beat-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
 .free-beat h2 {
   font-size: 2rem;
   color: #00f7ff;
@@ -224,6 +235,7 @@ footer {
   outline: none;
   filter: drop-shadow(0 0 5px #00f7ff80);
 }
+
 
 /* Centered Download Button */
 .download-btn {
