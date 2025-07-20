@@ -11,6 +11,7 @@
       --neon: #00ffcc;
       --bg: #0d0d0d;
       --glass: rgba(13, 13, 13, 0.6);
+      --accent-glow: #00ffe7;
     }
 
     * {
@@ -24,6 +25,9 @@
       background: var(--bg);
       color: #fff;
       overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
@@ -38,6 +42,7 @@
       position: sticky;
       top: 0;
       z-index: 999;
+      flex-shrink: 0;
     }
 
     header h1 {
@@ -98,50 +103,46 @@
       }
     }
 
-    .hero {
+    /* Main background container with the skulls image */
+    .main-background {
+      position: relative;
+      background-image: url('images/skulls.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      flex-grow: 1;
+      min-height: calc(100vh - 140px); /* Adjust if header/footer height changes */
+      padding: 60px 20px;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 20px 40px;
+      justify-content: flex-start;
+      border-radius: 16px;
+      margin: 20px;
+      overflow: auto;
+      z-index: 0;
     }
 
-    .hero h1 {
-      font-size: 3rem;
-      color: var(--neon);
-      text-shadow: 0 0 15px var(--neon);
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      color: #ccc;
-    }
-
-    .cta-button {
-      margin-top: 20px;
-      padding: 10px 30px;
-      font-size: 1rem;
-      background: var(--neon);
-      border: none;
-      border-radius: 25px;
-      color: #000;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background: #00ccaa;
+    /* Dark overlay for readability */
+    .main-background::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(13, 13, 13, 0.75);
+      border-radius: 16px;
+      z-index: -1;
     }
 
     main {
+      width: 100%;
+      max-width: 1200px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 40px;
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
+      color: #fff;
+      position: relative;
+      z-index: 1;
     }
 
     .product-card {
@@ -154,6 +155,8 @@
       padding: 20px;
       text-decoration: none;
       color: #fff;
+      position: relative;
+      z-index: 1;
     }
 
     .product-card:hover {
@@ -187,141 +190,184 @@
       margin-top: 20px;
     }
 
+    /* Other styles (hero, buttons, etc.) remain unchanged */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: var(--neon);
+      text-shadow: 0 0 15px var(--neon);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    .cta-button {
+      margin-top: 20px;
+      padding: 10px 30px;
+      font-size: 1rem;
+      background: var(--neon);
+      border: none;
+      border-radius: 25px;
+      color: #000;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-button:hover {
+      background: #00ccaa;
+    }
+
+    /* Footer styles */
     footer {
       text-align: center;
       padding: 40px 20px;
       font-size: 0.9rem;
       color: #666;
+      background: var(--glass);
+      backdrop-filter: blur(8px);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer .footer-links a {
+      color: var(--neon);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer .footer-links a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <header>
-  <h1>XoH! Beats</h1>
-  <div class="hamburger" onclick="toggleMenu()">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-  </div>
-  <nav id="nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="ebook.html">Ebook</a>
-    <a href="merch.html">Merch</a>
-    <a href="donations.html">Donations</a>
-  </nav>
-</header>
+    <h1>XoH! Beats</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="ebook.html">Ebook</a>
+      <a href="merch.html">Merch</a>
+      <a href="donations.html">Donations</a>
+    </nav>
+  </header>
 
-  <section class="hero">
-    <h1>Unlock Your Sound</h1>
-    <p>Royalty-Free Beats | Unique Collections | Instant Access</p>
-    <a href="#lost-files" class="cta-button">Browse Now</a>
-  </section>
+  <div class="main-background">
+    <section class="hero">
+      <h1>Unlock Your Sound</h1>
+      <p>Royalty-Free Beats | Unique Collections | Instant Access</p>
+      <a href="#lost-files" class="cta-button">Browse Now</a>
+    </section>
 
-<section class="free-beat">
-  <h2>🎧 FREE BEAT OF THE WEEK</h2>
-  <p>Download and vibe — totally free. New beat every week!</p>
+    <section class="free-beat">
+      <h2>🎧 FREE BEAT OF THE WEEK</h2>
+      <p>Download and vibe — totally free. New beat every week!</p>
 
-  <!-- 🎵 Title Section -->
-  <img src="images/freebeat.png" alt="Free Beat Artwork" class="free-beat-image" />
-  <div class="beat-title">
-    <h3>"No Time" – (FREE) Melodic Trap Beat</h3>
-    <p>Produced by XoH! Beats x lonerboideni • BPM: 160 • Key: Gm</p>
-  </div>
-
-  <audio controls>
-    <source src="audio/free-beat.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-
-  <a href="audio/free-beat.mp3" download class="download-btn">
-    ⬇️ Download This Beat
-  </a>
-</section>
-
-<!-- Mailchimp Signup Form -->
-<div id="mc_embed_shell">
-  <div id="mc_embed_signup">
-    <form action="https://gmail.us4.list-manage.com/subscribe/post?u=e5d6b74ac9273d75bab607bcb&amp;id=957724485e&amp;f_id=00e7e9eaf0"
-      method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-      <div id="mc_embed_signup_scroll">
-        <h2>Subscribe To The Xollent Community!</h2>
-        <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-
-        <div class="mc-field-group">
-          <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
-          <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required>
-        </div>
-
-        <div id="mce-responses" class="clear foot">
-          <div class="response" id="mce-error-response" style="display:none;"></div>
-          <div class="response" id="mce-success-response" style="display:none;"></div>
-        </div>
-
-        <div style="position: absolute; left: -5000px;" aria-hidden="true">
-          <input type="text" name="b_e5d6b74ac9273d75bab607bcb_957724485e" tabindex="-1" value="">
-        </div>
-
-        <div class="clear foot">
-          <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
-        </div>
+      <!-- 🎵 Title Section -->
+      <img src="images/freebeat.png" alt="Free Beat Artwork" class="free-beat-image" />
+      <div class="beat-title">
+        <h3>"No Time" – (FREE) Melodic Trap Beat</h3>
+        <p>Produced by XoH! Beats x lonerboideni • BPM: 160 • Key: Gm</p>
       </div>
-    </form>
-  </div>
-</div>
 
-<!-- Mailchimp Scripts -->
-<script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-<script>
-  (function ($) {
-    window.fnames = new Array(); window.ftypes = new Array();
-    fnames[0] = 'EMAIL'; ftypes[0] = 'email';
-  }(jQuery));
-  var $mcj = jQuery.noConflict(true);
-</script>
+      <audio controls>
+        <source src="audio/free-beat.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
 
-  <main>
-<a id="the-producers" href="downloads/the-producers.html" class="product-card">
-  <img src="images/theproducers.jpg" alt="The Producers" class="product-image" onerror="this.onerror=null;this.src='images/theproducers.jpg';">
-  <h2>The Producers</h2>
-  <p>13-Track Beat Tape · $13</p>
-  <iframe src="https://open.spotify.com/embed/album/0pvaBg7URVIYuOKkqGMns3?utm_source=generator"
-          frameborder="0"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy">
-  </iframe>
-</a>
-    
-    <a id="lost-files" href="downloads/the-lost-files.html" class="product-card">
-      <img src="images/thelostfiles.jpg" alt="The Lost Files" class="product-image" onerror="this.onerror=null;this.src='images/placeholder.jpg';">
-      <h2>The Lost Files</h2>
-      <p>Exclusive 37-Track Beat Tape · $37</p>
-      <iframe src="https://open.spotify.com/embed/album/1SKy9nRO09ebtx6aY3O3UI?utm_source=generator" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </a>
+      <a href="audio/free-beat.mp3" download class="download-btn">
+        ⬇️ Download This Beat
+      </a>
+    </section>
 
-    <a id="best-of" href="downloads/the-best-of-xohbeats.html" class="product-card">
-      <img src="images/thebestofxohbeats.jpg" alt="Best Of XoH Beats" class="product-image" onerror="this.onerror=null;this.src='images/placeholder.jpg';">
-      <h2>The Best Of XoH! Beats</h2>
-      <p>28 Royalty-Free Beats · $28</p>
-      <iframe src="https://open.spotify.com/embed/album/6mwfqBo4IZoRPWfP4e9DMq?utm_source=generator" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </a>
-  </main>
+    <!-- Mailchimp Signup Form -->
+    <div id="mc_embed_shell">
+      <div id="mc_embed_signup">
+        <form action="https://gmail.us4.list-manage.com/subscribe/post?u=e5d6b74ac9273d75bab607bcb&amp;id=957724485e&amp;f_id=00e7e9eaf0"
+          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+            <h2>Subscribe To The Xollent Community!</h2>
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 
-  <section id="contact" class="hero">
-    <h2>Stay Connected</h2>
-    <form id="subscribe-form" action="https://your-mailchimp-url" method="POST">
-      <input type="email" name="email" placeholder="Enter your email" required style="padding:10px; border-radius:5px; margin-right:10px;">
-      <button type="submit" class="cta-button">Join the List</button>
-    </form>
-  </section>
+            <div class="mc-field-group">
+              <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+              <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required>
+            </div>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById('nav').classList.toggle('active');
-    }
-  </script>
+            <div id="mce-responses" class="clear foot">
+              <div class="response" id="mce-error-response" style="display:none;"></div>
+              <div class="response" id="mce-success-response" style="display:none;"></div>
+            </div>
 
-  <section class="social-section">
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input type="text" name="b_e5d6b74ac9273d75bab607bcb_957724485e" tabindex="-1" value="">
+            </div>
+
+            <div class="clear foot">
+              <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <main>
+      <a id="the-producers" href="downloads/the-producers.html" class="product-card">
+        <img src="images/theproducers.jpg" alt="The Producers" class="product-image" onerror="this.onerror=null;this.src='images/theproducers.jpg';">
+        <h2>The Producers</h2>
+        <p>13-Track Beat Tape · $13</p>
+        <iframe src="https://open.spotify.com/embed/album/0pvaBg7URVIYuOKkqGMns3?utm_source=generator"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+        </iframe>
+      </a>
+      
+      <a id="lost-files" href="downloads/the-lost-files.html" class="product-card">
+        <img src="images/thelostfiles.jpg" alt="The Lost Files" class="product-image" onerror="this.onerror=null;this.src='images/placeholder.jpg';">
+        <h2>The Lost Files</h2>
+        <p>Exclusive 37-Track Beat Tape · $37</p>
+        <iframe src="https://open.spotify.com/embed/album/1SKy9nRO09ebtx6aY3O3UI?utm_source=generator" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </a>
+
+      <a id="best-of" href="downloads/the-best-of-xohbeats.html" class="product-card">
+        <img src="images/thebestofxohbeats.jpg" alt="Best Of XoH Beats" class="product-image" onerror="this.onerror=null;this.src='images/placeholder.jpg';">
+        <h2>The Best Of XoH! Beats</h2>
+        <p>28 Royalty-Free Beats · $28</p>
+        <iframe src="https://open.spotify.com/embed/album/6mwfqBo4IZoRPWfP4e9DMq?utm_source=generator" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </a>
+    </main>
+
+    <section id="contact" class="hero">
+      <h2>Stay Connected</h2>
+      <form id="subscribe-form" action="https://your-mailchimp-url" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required style="padding:10px; border-radius:5px; margin-right:10px;">
+        <button type="submit" class="cta-button">Join the List</button>
+      </form>
+    </section>
+
+    <section class="social-section">
       <h2>Follow XoH! Beats</h2>
       <div class="social-icons">
         <a href="https://www.facebook.com/XoHBeats" class="social facebook" target="_blank">Facebook</a>
@@ -330,28 +376,32 @@
         <a href="https://www.beatstars.com/xoh_beats" class="social beatstars" target="_blank">BeatStars</a>
       </div>
     </section>
-
-  
-  <footer>
-  <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center; justify-content: center;">
-    <div class="footer-links" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-      <a href="index.html" style="color: var(--neon); text-decoration: none;">Home</a>
-      <a href="#lost-files" style="color: var(--neon); text-decoration: none;">Lost Files</a>
-      <a href="#the-producers" style="color: var(--neon); text-decoration: none;">The Producers</a>
-      <a href="#best-of" style="color: var(--neon); text-decoration: none;">Best Of</a>
-      <a href="#mc_embed_signup" style="color: var(--neon); text-decoration: none;">Join Newsletter</a>
-      <a href="#contact" style="color: var(--neon); text-decoration: none;">Contact</a>
-      <a href="about.html" style="color: var(--neon); text-decoration: none;">About</a>
-      <a href="ebook.html" style="color: var(--neon); text-decoration: none;">Ebook</a>
-      <a href="merch.html" style="color: var(--neon); text-decoration: none;">Merch</a>
-      <a href="donations.html" style="color: var(--neon); text-decoration: none;">Donations</a>
-    </div>
-    <p style="color: #888; font-size: 0.9rem;">
-      &copy; 2025 XoH! Beats — All rights reserved. | Royalty-Free Licensing Included
-    </p>
   </div>
-</footer>
 
-</main> 
+  <footer>
+    <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center; justify-content: center;">
+      <div class="footer-links" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <a href="index.html" style="color: var(--neon); text-decoration: none;">Home</a>
+        <a href="#lost-files" style="color: var(--neon); text-decoration: none;">Lost Files</a>
+        <a href="#the-producers" style="color: var(--neon); text-decoration: none;">The Producers</a>
+        <a href="#best-of" style="color: var(--neon); text-decoration: none;">Best Of</a>
+        <a href="#mc_embed_signup" style="color: var(--neon); text-decoration: none;">Join Newsletter</a>
+        <a href="#contact" style="color: var(--neon); text-decoration: none;">Contact</a>
+        <a href="about.html" style="color: var(--neon); text-decoration: none;">About</a>
+        <a href="ebook.html" style="color: var(--neon); text-decoration: none;">Ebook</a>
+        <a href="merch.html" style="color: var(--neon); text-decoration: none;">Merch</a>
+        <a href="donations.html" style="color: var(--neon); text-decoration: none;">Donations</a>
+      </div>
+      <p style="color: #888; font-size: 0.9rem;">
+        &copy; 2025 XoH! Beats — All rights reserved. | Royalty-Free Licensing Included
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav').classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
