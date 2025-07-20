@@ -166,7 +166,7 @@ a:hover {
 }
 
 /* Follow Section */
-.follow-section {
+.social-section {
   background: #111827;
   padding: 2.5rem 1rem;
   max-width: 600px;
@@ -176,13 +176,13 @@ a:hover {
   text-align: center;
 }
 
-.follow-section h2 {
+.social-section h2 {
   font-size: 1.75rem;
   color: var(--accent-glow);
   margin-bottom: 1rem;
 }
 
-.follow-icons {
+.social-icons {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
@@ -190,26 +190,58 @@ a:hover {
   margin-top: 1rem;
 }
 
-.follow-icons a {
-  color: var(--text-light);
-  font-size: 1.75rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+/* Base styles for all social buttons */
+.social-icons a {
+  color: #fff;
+  font-size: 1.1rem;  /* Adjust font size for text */
+  font-weight: 700;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
+  width: 110px;
   height: 48px;
-  border-radius: 50%;
+  border-radius: 24px;
   border: 2px solid var(--accent-glow);
-  box-shadow: 0 0 5px var(--accent-glow);
+  box-shadow: 0 0 8px var(--accent-glow);
   text-decoration: none;
+  background: #222; /* fallback */
+  text-align: center;
 }
 
-.follow-icons a:hover {
-  color: #0ff;
-  transform: scale(1.2);
-  box-shadow: 0 0 15px #0ff;
+/* Gradient backgrounds per platform */
+.social.facebook {
+  background: linear-gradient(45deg, #1877f2, #0f52ba);
+  border-color: #1877f2;
+  box-shadow: 0 0 12px #1877f2;
 }
+
+.social.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  border-color: #d6249f;
+  box-shadow: 0 0 12px #d6249f;
+}
+
+.social.youtube {
+  background: linear-gradient(45deg, #ff0000, #cc0000);
+  border-color: #ff0000;
+  box-shadow: 0 0 12px #ff0000;
+}
+
+.social.beatstars {
+  background: linear-gradient(45deg, #1DB954, #1ed760); /* Spotify green placeholder */
+  border-color: #1DB954;
+  box-shadow: 0 0 12px #1DB954;
+}
+
+/* Hover effect: scale + brighten + stronger glow */
+.social-icons a:hover {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+  box-shadow: 0 0 20px currentColor;
+  color: #fff;
+}
+
 
 /* Footer */
 footer {
