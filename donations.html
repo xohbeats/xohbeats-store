@@ -1,48 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Donations — XoH! Beats</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donations - XoH! Beats</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Link to your main CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom styles for this page -->
+    <style>
+        .donation-section {
+            background-color: var(--color-surface);
+            border-radius: 10px;
+            border: 1px solid var(--color-border);
+            padding: 3rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 0 30px rgba(0, 247, 255, 0.15);
+        }
+
+        .donation-section .description {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 2.5rem;
+        }
+
+        .donate-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (min-width: 500px) {
+            .donate-options {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .donate-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .donate-btn.paypal {
+            background-color: #0070ba;
+            color: #ffffff;
+            border-color: #0070ba;
+        }
+        .donate-btn.paypal:hover {
+            background-color: #005ea6;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #0070ba;
+        }
+
+        .donate-btn.cashapp {
+            background-color: #00d632;
+            color: #000000;
+            border-color: #00d632;
+        }
+        .donate-btn.cashapp:hover {
+            background-color: #00b82a;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #00d632;
+        }
+        
+        .thank-you {
+            font-size: 1.1rem;
+            color: var(--color-secondary);
+            font-weight: 600;
+            text-shadow: 0 0 8px var(--color-secondary);
+        }
+    </style>
 </head>
-<body class="dark-theme">
+<body>
 
-  <!-- 🔥 Sticky Header -->
-  <header class="site-header neon-glow sticky-header">
-    <div class="header-inner">
-      <h1>XoH! Beats</h1>
+    <!-- ======================= -->
+    <!--      HEADER & NAV       -->
+    <!-- ======================= -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">XoH! Beats</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="ebook.html">Ebook</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="donations.html" class="active">Donations</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger-menu" aria-label="Open navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="ebook.html">Ebook</a></li>
+            <li><a href="merch.html">Merch</a></li>
+            <li><a href="donations.html">Donations</a></li>
+        </ul>
     </div>
-    <p class="tagline">Melodic | Emo-Rap | Rage | Boom Bap | Trap</p>
-  </header>
 
-  <main class="wrapper">
+    <!-- ======================= -->
+    <!--      MAIN CONTENT       -->
+    <!-- ======================= -->
+    <main class="container">
+        <section class="page-hero" style="text-align: center; padding: 4rem 0;">
+            <h2>Support the Vision</h2>
+            <p>Help Fuel Independent Creativity</p>
+        </section>
 
-    <!-- 💡 Hero Section -->
-    <section class="content-box donation-hero">
-      <h2 class="section-title">🙏 Support the Vision</h2>
-      <p class="description">
-        If you’ve been vibing with my beats, eBooks, or the XOLLENT community — consider donating.
-        Every contribution helps push the vision further, fuel the music, and empower independent creativity.
-      </p>
-    </section>
+        <section class="donation-section">
+            <p class="description">
+                If you’ve been vibing with my beats, eBooks, or the XOLLENT community — consider donating. Every contribution helps push the vision further, fuel the music, and empower independent creativity.
+            </p>
+            <div class="donate-options">
+                <a href="https://www.paypal.me/xohbeats" class="donate-btn paypal" target="_blank">
+                    <i class="fab fa-paypal"></i> Donate via PayPal
+                </a>
+                <a href="https://cash.app/$xollent25" class="donate-btn cashapp" target="_blank">
+                    <i class="fas fa-dollar-sign"></i> Donate via Cash App
+                </a>
+            </div>
+            <p class="thank-you">
+                Thank you for fueling the art. Together, we go further. 💜
+            </p>
+        </section>
+    </main>
 
-    <!-- 💸 Donation Options -->
-    <section class="content-box">
-      <div class="donate-options">
-        <a href="https://www.paypal.me/xohbeats" class="donate-btn pulse" target="_blank">💳 Donate via PayPal</a>
-        <a href="https://cash.app/$xollent25" class="donate-btn pulse" target="_blank">💵 Donate via Cash App</a>
-      </div>
-      <p class="thank-you">
-        Thank you for fueling the art. Together, we go further. 💜
-      </p>
-    </section>
+    <!-- ======================= -->
+    <!--         FOOTER          -->
+    <!-- ======================= -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="ebook.html">Ebook</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; <span id="year"></span> XoH! Beats. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-  </main>
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-  <footer class="footer">
-    <p>© 2025 <span class="footer-highlight">XoH! Beats</span></p>
-  </footer>
-
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.toggle('is-active');
+        });
+    </script>
 </body>
 </html>
