@@ -1,256 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — XoH! Beats</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* === GLOWING HEADER BOX === */
-    .site-header {
-      text-align: center;
-      padding: 40px 30px;
-      background: linear-gradient(90deg, #00fff0 0%, #8a00d4 100%);
-      border-radius: 12px;
-      box-shadow: 0 0 25px #00fff0, 0 0 40px #8a00d4;
-      margin-bottom: 40px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - XoH! Beats</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
-    .site-header h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3.2rem;
-      color: #0a0a1a; /* dark text for contrast */
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-      user-select: none;
-      text-shadow:
-        0 0 8px #00fff0,
-        0 0 12px #8a00d4;
-    }
+    <!-- Link to your main CSS file -->
+    <link rel="stylesheet" href="style.css">
 
-    .site-header p {
-      color: #0a0a1a;
-      font-weight: 600;
-      font-size: 1.1rem;
-      user-select: none;
-    }
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom styles for this page can be added here or in the main CSS -->
+    <style>
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
 
-    /* Responsive Images */
-    .responsive-img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 255, 240, 0.3);
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
+        @media (min-width: 768px) {
+            .about-section {
+                grid-template-columns: 1fr 1fr;
+            }
+            .about-section.reverse {
+                grid-template-columns: 1fr 1fr;
+            }
+            .about-section.reverse .text-block {
+                order: 2;
+            }
+            .about-section.reverse .image-block {
+                order: 1;
+            }
+        }
 
-    .grid.two-col .image-block img.responsive-img {
-      max-width: 450px;
-      width: 100%;
-      height: auto;
-    }
+        .text-block h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
 
-    .producer-img {
-      max-width: 300px;
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
-      box-shadow: 0 0 20px #00fff0;
-      margin-bottom: 20px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
+        .text-block ul {
+            list-style: none;
+            padding: 0;
+        }
 
-    @media (max-width: 720px) {
-      .grid.two-col {
-        display: block;
-      }
-      .grid.two-col .image-block img.responsive-img {
-        max-width: 100%;
-      }
-      .producer-img {
-        max-width: 80vw;
-      }
-    }
-  </style>
+        .text-block ul li {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%2300f7ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>') no-repeat left center;
+            padding-left: 35px;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .image-block img {
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(0, 247, 255, 0.2);
+        }
+
+        .producer-section {
+            text-align: center;
+        }
+        
+        .producer-img {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 50%;
+            margin: 0 auto 2rem auto;
+            border: 4px solid var(--color-primary);
+            box-shadow: 0 0 30px var(--color-primary);
+        }
+
+        .producer-info p {
+            text-align: left;
+            max-width: 800px;
+        }
+
+        /* Review Section Styles */
+        .review-section {
+            background-color: var(--color-surface);
+            border-radius: 10px;
+            padding: 2rem;
+        }
+        #reviewForm {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+        #reviewForm input, #reviewForm textarea, #reviewForm select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--color-border);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            border-radius: 5px;
+            font-family: var(--font-secondary);
+        }
+        #reviewForm button {
+             background-color: var(--color-secondary);
+            color: var(--color-text-primary);
+        }
+        .review-card {
+            background-color: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .review-card strong {
+            color: var(--color-primary);
+        }
+        .review-card .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: #ff4d4d;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
 <body>
-  <header class="site-header">
-    <h1>XoH! Beats</h1>
-    <p>Melodic | Emo-Rap | Rage | Boom Bap | Trap</p>
-  </header>
 
-  <main class="container">
-    <section class="about-hero">
-      <h2>About XoH! Beats</h2>
-      <p class="subtitle">Where Emotion Meets Innovation</p>
-    </section>
-
-    <section class="content-section">
-      <div class="grid two-col">
-        <div class="text-block">
-          <h3>My Mission</h3>
-          <p>
-            To create beats that don’t just sound good, but feel good—beats that become the soundtrack
-            to your rawest emotions and boldest tracks.
-          </p>
+    <!-- ======================= -->
+    <!--      HEADER & NAV       -->
+    <!-- ======================= -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">XoH! Beats</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="ebook.html">Ebook</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger-menu" aria-label="Open navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <div class="image-block">
-          <img src="images/studio-setup.jpg" class="responsive-img" alt="Studio setup" />
+    </header>
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="ebook.html">Ebook</a></li>
+            <li><a href="merch.html">Merch</a></li>
+            <li><a href="donations.html">Donations</a></li>
+        </ul>
+    </div>
+
+    <!-- ======================= -->
+    <!--      MAIN CONTENT       -->
+    <!-- ======================= -->
+    <main class="container">
+        <section class="about-hero" style="text-align: center; padding: 4rem 0;">
+            <h2>About XoH! Beats</h2>
+            <p>Where Emotion Meets Innovation</p>
+        </section>
+
+        <section class="about-section">
+            <div class="text-block">
+                <h3>My Mission</h3>
+                <p>To create beats that don’t just sound good, but feel good—beats that become the soundtrack to your rawest emotions and boldest tracks.</p>
+            </div>
+            <div class="image-block">
+                <img src="images/studio-setup.jpg" class="responsive-img" alt="Studio setup" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/00f7ff?text=Studio+Vibes';">
+            </div>
+        </section>
+
+        <section class="about-section reverse">
+             <div class="image-block">
+                <img src="images/live-session.jpg" class="responsive-img" alt="Live beat session" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a1a/ff00e6?text=Live+Session';">
+            </div>
+            <div class="text-block">
+                <h3>What We Offer</h3>
+                <ul>
+                    <li>Melodic Trap & Emo-Rap loops</li>
+                    <li>Cinematic Rage & Boom-Bap drops</li>
+                    <li>Custom stems & exclusive rights</li>
+                    <li>XOLLENT ebooks, merch & visuals</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="producer-section">
+            <h2>Meet the Producer</h2>
+            <img src="images/meettheproducer.jpg" alt="Meet the Producer, D'Andre Spears" class="producer-img" onerror="this.onerror=null;this.src='https://placehold.co/300x300/1a1a1a/ffffff?text=XoH!';">
+            <div class="producer-info">
+                <p>Hey — I’m D’Andre Spears, but most people know me as XoH! Beats. I’ve been producing since the early days of recording with my crew DMGB in a homemade studio built from scratch. What started as raw passion turned into a real movement. Over the years, my sound has evolved — from dark, melodic trap to emo-rap, boom bap, and cinematic rage — always rooted in emotion and authenticity.</p>
+                <p>I’ve worked with rising underground artists, helped soundtrack visuals, dropped viral loops on Discord, and built a growing brand that now includes merch, ebooks, and an upcoming game. XoH! isn’t just a name — it’s a mission to create what people feel, not just hear. Appreciate you being part of that journey.</p>
+            </div>
+        </section>
+
+        <section class="review-section">
+            <h2>Leave a Review ⭐</h2>
+            <form id="reviewForm">
+                <input type="text" id="reviewerName" placeholder="Your name" required />
+                <textarea id="reviewText" placeholder="Your review" rows="4" required></textarea>
+                <select id="reviewRating">
+                    <option value="5" selected>5 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="2">2 Stars</option>
+                    <option value="1">1 Star</option>
+                </select>
+                <button type="submit" class="buy-now-btn" style="width: 100%;">Submit Review</button>
+            </form>
+            <div id="reviewsContainer">
+                <!-- Reviews will be loaded here by Firebase -->
+            </div>
+            <button id="clearReviews" style="display:none; margin-top: 1rem;" class="buy-now-btn">🧹 Admin: Clear All</button>
+        </section>
+    </main>
+
+    <!-- ======================= -->
+    <!--         FOOTER          -->
+    <!-- ======================= -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="ebook.html">Ebook</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; <span id="year"></span> XoH! Beats. All Rights Reserved.</p>
+            </div>
         </div>
-      </div>
+    </footer>
 
-      <div class="grid two-col">
-        <div class="image-block">
-          <img src="images/live-session.jpg" class="responsive-img" alt="Live beat session" />
-        </div>
-        <div class="text-block">
-          <h3>What We Offer</h3>
-          <ul>
-            <li>Melodic Trap & Emo-Rap loops</li>
-            <li>Cinematic Rage & Boom-Bap drops</li>
-            <li>Custom stems & exclusive rights</li>
-            <li>XOLLENT ebooks, merch & visuals</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <!-- Firebase SDK Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
 
-    <!-- Meet the Producer -->
-    <section class="producer-section">
-      <div class="producer-card">
-        <img src="images/meettheproducer.jpg" alt="Meet the Producer" class="producer-img" />
-        <div class="producer-info">
-          <p>
-            Hey — I’m D’Andre Spears, but most people know me as XoH! Beats. I’ve been producing since the early days of recording with my crew DMGB in a homemade studio built from scratch. What started as raw passion turned into a real movement. Over the years, my sound has evolved — from dark, melodic trap to emo-rap, boom bap, and cinematic rage — always rooted in emotion and authenticity.
-          </p>
-          <p>
-            I’ve worked with rising underground artists, helped soundtrack visuals, dropped viral loops on Discord, and built a growing brand that now includes merch, ebooks, and an upcoming game. XoH! isn’t just a name — it’s a mission to create what people feel, not just hear. Appreciate you being part of that journey.
-          </p>
-          <ul class="social-links">
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">YouTube</a></li>
-            <li><a href="#">SoundCloud</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-    <!-- Interactive Review Section -->
-    <section class="survey-section">
-      <h2>Leave a Review ⭐</h2>
-      <form id="reviewForm">
-        <input type="text" id="reviewerName" placeholder="Your name" required />
-        <textarea id="reviewText" placeholder="Your review" required></textarea>
-        <label
-          >Rating:
-          <select id="reviewRating">
-            <option value="1">1 Star</option>
-            <option value="2">2 Stars</option>
-            <option value="3">3 Stars</option>
-            <option value="4">4 Stars</option>
-            <option value="5" selected>5 Stars</option>
-          </select>
-        </label>
-        <button type="submit">Submit Review</button>
-      </form>
-
-      <div id="reviewsContainer"></div>
-      <button id="clearReviews" style="display:none">🧹 Admin: Clear All</button>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 XoH! Beats</p>
-  </footer>
-
-  <!-- Firebase SDK Scripts -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
-
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyBBERa-jV15ZNbRas64pCWIPWg4_ppp_1o",
-      authDomain: "xohreviews.firebaseapp.com",
-      projectId: "xohreviews",
-      storageBucket: "xohreviews.firebasestorage.app",
-      messagingSenderId: "848040429034",
-      appId: "1:848040429034:web:1ae2a5c233385296999e93",
-      measurementId: "G-J8X6JHM9LV",
-    };
-
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-
-    const form = document.getElementById("reviewForm");
-    const container = document.getElementById("reviewsContainer");
-    const clearBtn = document.getElementById("clearReviews");
-
-    function renderReview(doc) {
-      const div = document.createElement("div");
-      div.classList.add("review-card");
-      div.innerHTML = `
-        <strong>${doc.data().name}</strong> <br>
-        ⭐ ${doc.data().rating} — ${doc.data().text}<br>
-        <small>${new Date(doc.data().timestamp?.seconds * 1000).toLocaleString()}</small>
-        <button data-id="${doc.id}" class="delete-btn">❌</button>
-      `;
-      container.appendChild(div);
-    }
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const name = document.getElementById("reviewerName").value.trim();
-      const text = document.getElementById("reviewText").value.trim();
-      const rating = parseInt(document.getElementById("reviewRating").value);
-
-      if (name && text && rating) {
-        await db.collection("reviews").add({
-          name,
-          text,
-          rating,
-          timestamp: new Date(),
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.toggle('is-active');
         });
-        form.reset();
-      }
-    });
+        
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBBERa-jV15ZNbRas64pCWIPWg4_ppp_1o",
+  authDomain: "xohreviews.firebaseapp.com",
+  projectId: "xohreviews",
+  storageBucket: "xohreviews.firebasestorage.app",
+  messagingSenderId: "848040429034",
+  appId: "1:848040429034:web:1ae2a5c233385296999e93",
+  measurementId: "G-J8X6JHM9LV"
+};
 
-    db.collection("reviews")
-      .orderBy("timestamp", "desc")
-      .onSnapshot((snapshot) => {
-        container.innerHTML = "";
-        snapshot.forEach((doc) => renderReview(doc));
-      });
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
 
-    container.addEventListener("click", async (e) => {
-      if (e.target.classList.contains("delete-btn")) {
-        const pass = prompt("Enter admin key:");
-        if (pass === "xohbeats") {
-          await db.collection("reviews").doc(e.target.dataset.id).delete();
+        const form = document.getElementById("reviewForm");
+        const container = document.getElementById("reviewsContainer");
+        const clearBtn = document.getElementById("clearReviews");
+
+        function renderReview(doc) {
+            const div = document.createElement("div");
+            div.classList.add("review-card");
+            const data = doc.data();
+            const date = data.timestamp?.seconds ? new Date(data.timestamp.seconds * 1000).toLocaleString() : 'Just now';
+            
+            div.innerHTML = `
+                <strong>${data.name}</strong> - ⭐ ${data.rating}
+                <p style="margin-top: 0.5rem; color: var(--color-text-secondary);">${data.text}</p>
+                <small style="color: #666;">${date}</small>
+                <button data-id="${doc.id}" class="delete-btn">×</button>
+            `;
+            container.appendChild(div);
         }
-      }
-    });
 
-    clearBtn.addEventListener("click", async () => {
-      const confirm = prompt("Admin key to clear all:");
-      if (confirm === "xohbeats") {
-        const snap = await db.collection("reviews").get();
-        snap.forEach((doc) => doc.ref.delete());
-      }
-    });
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const name = document.getElementById("reviewerName").value.trim();
+            const text = document.getElementById("reviewText").value.trim();
+            const rating = parseInt(document.getElementById("reviewRating").value);
 
-    // Show clear button if admin
-    document.addEventListener("keydown", (e) => {
-      if (e.ctrlKey && e.key === "A") {
-        const check = prompt("Admin key:");
-        if (check === "xohbeats") {
-          clearBtn.style.display = "block";
-        }
-      }
-    });
-  </script>
+            if (name && text && rating) {
+                try {
+                    await db.collection("reviews").add({
+                        name,
+                        text,
+                        rating,
+                        timestamp: new Date(),
+                    });
+                    form.reset();
+                } catch (error) {
+                    console.error("Error adding review: ", error);
+                    alert("Could not submit review. Please check your Firebase security rules.");
+                }
+            }
+        });
+
+        db.collection("reviews")
+            .orderBy("timestamp", "desc")
+            .onSnapshot((snapshot) => {
+                container.innerHTML = "";
+                snapshot.forEach((doc) => renderReview(doc));
+            }, (error) => {
+                console.error("Error fetching reviews: ", error);
+                if (error.code === 'permission-denied') {
+                    alert("Firebase permission error: Could not load reviews. Please check your Firestore security rules in the Firebase console.");
+                }
+            });
+
+        container.addEventListener("click", async (e) => {
+            if (e.target.classList.contains("delete-btn")) {
+                const pass = prompt("Enter admin key to delete:");
+                if (pass === "xohbeats") { // Replace with a more secure check
+                    try {
+                       await db.collection("reviews").doc(e.target.dataset.id).delete();
+                    } catch (error) {
+                       console.error("Error deleting review:", error);
+                       alert("Could not delete review. Your Firebase security rules might be preventing this.");
+                    }
+                } else if (pass) {
+                    alert("Incorrect key.");
+                }
+            }
+        });
+
+        clearBtn.addEventListener("click", async () => {
+            const confirm = prompt("Admin key to clear all reviews:");
+            if (confirm === "xohbeats") { // Replace with a more secure check
+                try {
+                    const snap = await db.collection("reviews").get();
+                    const batch = db.batch();
+                    snap.forEach((doc) => batch.delete(doc.ref));
+                    await batch.commit();
+                } catch (error) {
+                    console.error("Error clearing reviews:", error);
+                    alert("Could not clear reviews. Your Firebase security rules might be preventing this.");
+                }
+            } else if (confirm) {
+                alert("Incorrect key.");
+            }
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.ctrlKey && e.key.toLowerCase() === "a") {
+                e.preventDefault(); // Prevent default select-all behavior
+                const check = prompt("Admin key:");
+                if (check === "xohbeats") { // Replace with a more secure check
+                    clearBtn.style.display = "block";
+                }
+            }
+        });
+    </script>
 </body>
 </html>
