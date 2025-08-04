@@ -1,180 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>XOH! Beats Merch</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <style>
-    body {
-      background-color: #0d0d0f;
-      color: #f5f5ff;
-      font-family: 'Helvetica Neue', sans-serif;
-      margin: 0;
-    }
-    header {
-      position: sticky;
-      top: 0;
-      background: #14141a;
-      padding: 1em;
-      z-index: 1000;
-      text-align: center;
-      border-bottom: 1px solid #292933;
-    }
-    header nav a {
-      margin: 0 1em;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    header nav a:hover {
-      color: #7456ff;
-    }
-    .toggle-theme {
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      cursor: pointer;
-      color: #fff;
-    }
-    .filter-controls {
-      text-align: center;
-      padding: 1em;
-    }
-    .filter-controls select {
-      background: #1b1b23;
-      color: #fff;
-      padding: 0.6em;
-      border: 1px solid #292933;
-      border-radius: 6px;
-    }
-    .merch-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2em;
-      padding: 2em;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .product-card {
-      background: #171717;
-      border: 1px solid #2a2a2a;
-      border-radius: 12px;
-      overflow: hidden;
-      padding: 1em;
-      text-align: center;
-      transition: 0.3s;
-    }
-    .product-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 12px #7456ff;
-    }
-    .product-card img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .product-card h2 {
-      font-size: 1.1rem;
-      margin: 0.5em 0 0.3em;
-    }
-    .product-card p {
-      font-size: 0.95rem;
-      margin: 0.2em 0;
-      color: #ccc;
-    }
-    .product-card .price {
-      color: #00fff0;
-      font-weight: bold;
-      margin: 0.5em 0;
-    }
-    .product-card a {
-      display: inline-block;
-      margin-top: 0.5em;
-      padding: 0.5em 1.2em;
-      background: #7456ff;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: 0.3s;
-    }
-    .product-card a:hover {
-      background: #8b6aff;
-      box-shadow: 0 0 10px #8b6aff;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merch - XoH! Beats</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Link to your main CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom styles for this page -->
+    <style>
+        .filter-controls {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .filter-controls label {
+            margin-right: 1rem;
+            color: var(--color-text-secondary);
+        }
+
+        .filter-controls select {
+            background-color: var(--color-surface);
+            color: var(--color-text-primary);
+            padding: 0.6rem 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            font-family: var(--font-secondary);
+            font-weight: 600;
+        }
+
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Using the same beat-card style for consistency */
+        .product-card {
+            background-color: var(--color-surface);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px var(--color-primary);
+        }
+
+        .product-card .product-image img {
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .product-card .product-info {
+            padding: 1.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-card h4 {
+            font-family: var(--font-secondary);
+            color: var(--color-text-primary);
+            text-shadow: none;
+            font-size: 1.3rem;
+        }
+        
+        .product-card .price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin: 0.5rem 0 1.5rem 0;
+        }
+
+        .product-card .buy-btn {
+            display: inline-block;
+            margin-top: auto;
+            background-color: var(--color-primary);
+            color: var(--color-background);
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .product-card .buy-btn:hover {
+            background-color: var(--color-secondary);
+            transform: scale(1.05);
+        }
+
+    </style>
 </head>
 <body>
-  <header>
-    <div class="toggle-theme">☀️/🌙</div>
-    <nav>
-      <a href="/index.html">Home</a>
-      <a href="/merch.html" class="active">Merch</a>
-    </nav>
-  </header>
 
-  <div class="filter-controls">
-    <label for="filter">Filter by Type: </label>
-    <select id="filter">
-      <option value="all">All</option>
-      <option value="Tee">Tee</option>
-      <option value="Cap">Cap</option>
-      <option value="Hoodie">Hoodie</option>
-    </select>
-  </div>
+    <!-- ======================= -->
+    <!--      HEADER & NAV       -->
+    <!-- ======================= -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">XoH! Beats</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="ebook.html">Ebook</a></li>
+                    <li><a href="merch.html" class="active">Merch</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger-menu" aria-label="Open navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="ebook.html">Ebook</a></li>
+            <li><a href="merch.html">Merch</a></li>
+            <li><a href="donations.html">Donations</a></li>
+        </ul>
+    </div>
 
-  <section class="merch-grid" id="merchGrid"></section>
+    <!-- ======================= -->
+    <!--      MAIN CONTENT       -->
+    <!-- ======================= -->
+    <main class="container">
+        <section class="page-hero" style="text-align: center; padding: 4rem 0;">
+            <h2>Official Merch</h2>
+            <p>Wear the Vibe</p>
+        </section>
 
-  <footer>
-    <p>© 2025 XOH! Beats — Powered by XOLLENT</p>
-  </footer>
+        <div class="filter-controls">
+            <label for="filter">Filter by Type:</label>
+            <select id="filter">
+                <option value="all">All</option>
+                <option value="Tee">Tee</option>
+                <option value="Hoodie">Hoodie</option>
+                <option value="Cap">Cap</option>
+            </select>
+        </div>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 800, once: true });
+        <section class="merch-grid" id="merchGrid">
+            <!-- Product Card 1 -->
+            <div class="product-card" data-category="Tee">
+                <div class="product-image">
+                    <img src="images/merch-tee.jpg" alt="XoH! Beats Tee" onerror="this.onerror=null;this.src='https://placehold.co/400x400/1a1a1a/ffffff?text=XoH!+Tee';">
+                </div>
+                <div class="product-info">
+                    <h4>XoH! Classic Tee</h4>
+                    <p class="price">$24.99</p>
+                    <a href="#" class="buy-btn" target="_blank">View Product</a>
+                </div>
+            </div>
 
-    const toggleTheme = document.querySelector('.toggle-theme');
-    toggleTheme.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-    });
+            <!-- Product Card 2 -->
+            <div class="product-card" data-category="Hoodie">
+                <div class="product-image">
+                    <img src="images/merch-hoodie.jpg" alt="XoH! Beats Hoodie" onerror="this.onerror=null;this.src='https://placehold.co/400x400/1a1a1a/ffffff?text=XoH!+Hoodie';">
+                </div>
+                <div class="product-info">
+                    <h4>"XOLLENT" Hoodie</h4>
+                    <p class="price">$49.99</p>
+                    <a href="#" class="buy-btn" target="_blank">View Product</a>
+                </div>
+            </div>
 
-    async function loadMerch() {
-      const merchGrid = document.getElementById('merchGrid');
-      try {
-        const res = await fetch('/api/products');
-        const products = await res.json();
-        renderProducts(products);
-      } catch (err) {
-        merchGrid.innerHTML = '<p style="color:red">Failed to load merch.</p>';
-        console.error(err);
-      }
-    }
+            <!-- Product Card 3 -->
+            <div class="product-card" data-category="Cap">
+                <div class="product-image">
+                    <img src="images/merch-cap.jpg" alt="XoH! Beats Cap" onerror="this.onerror=null;this.src='https://placehold.co/400x400/1a1a1a/ffffff?text=XoH!+Cap';">
+                </div>
+                <div class="product-info">
+                    <h4>XoH! Beats Dad Cap</h4>
+                    <p class="price">$19.99</p>
+                    <a href="#" class="buy-btn" target="_blank">View Product</a>
+                </div>
+            </div>
+            
+             <!-- Product Card 4 -->
+            <div class="product-card" data-category="Tee">
+                <div class="product-image">
+                    <img src="images/merch-tee-2.jpg" alt="XoH! Beats Glitch Tee" onerror="this.onerror=null;this.src='https://placehold.co/400x400/1a1a1a/ffffff?text=Glitch+Tee';">
+                </div>
+                <div class="product-info">
+                    <h4>Glitch Logo Tee</h4>
+                    <p class="price">$24.99</p>
+                    <a href="#" class="buy-btn" target="_blank">View Product</a>
+                </div>
+            </div>
 
-    function renderProducts(products, filter = 'all') {
-      const grid = document.getElementById('merchGrid');
-      grid.innerHTML = '';
-      products
-        .filter(p => filter === 'all' || p.name.includes(filter))
-        .forEach((p, i) => {
-          grid.innerHTML += `
-            <div class="product-card" data-aos="fade-up" data-aos-delay="${i * 100}">
-              <img src="${p.thumbnail_url}" alt="${p.name}" />
-              <h2>${p.name}</h2>
-              <p class="price">$19.99</p>
-              <a href="https://xollent.printful.com/product/${p.id}" target="_blank">Buy Now</a>
-            </div>`;
+        </section>
+    </main>
+
+    <!-- ======================= -->
+    <!--         FOOTER          -->
+    <!-- ======================= -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="ebook.html">Ebook</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; <span id="year"></span> XoH! Beats. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.toggle('is-active');
         });
-      AOS.refresh();
-    }
 
-    document.getElementById('filter').addEventListener('change', async e => {
-      const res = await fetch('/api/products');
-      const products = await res.json();
-      renderProducts(products, e.target.value);
-    });
+        // Merch Filter Logic
+        const filterSelect = document.getElementById('filter');
+        const productCards = document.querySelectorAll('.product-card');
 
-    window.addEventListener('DOMContentLoaded', loadMerch);
-  </script>
+        filterSelect.addEventListener('change', (e) => {
+            const selectedCategory = e.target.value;
+
+            productCards.forEach(card => {
+                const cardCategory = card.dataset.category;
+                
+                if (selectedCategory === 'all' || selectedCategory === cardCategory) {
+                    card.style.display = 'flex'; // Show card
+                } else {
+                    card.style.display = 'none'; // Hide card
+                }
+            });
+        });
+    </script>
 </body>
 </html>
