@@ -1,84 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ebooks — XoH! Beats</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    .ebook-section {
-      background-color: #0a0a0a;
-      color: #f0f0f0;
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 800px;
-      margin: 2rem auto;
-      box-shadow: 0 0 15px #8f00ff44;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebooks - XoH! Beats</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
-    .ebook-section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
+    <!-- Link to your main CSS file -->
+    <link rel="stylesheet" href="style.css">
 
-    .ebook-title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-top: 1rem;
-    }
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom styles for this page -->
+    <style>
+        .ebook-card {
+            background-color: var(--color-surface);
+            border-radius: 10px;
+            border: 1px solid var(--color-border);
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+            box-shadow: 0 0 25px rgba(0, 247, 255, 0.1);
+        }
 
-    .ebook-description {
-      margin: 0.5rem 0 1rem;
-      line-height: 1.6;
-    }
+        @media (min-width: 768px) {
+            .ebook-card {
+                grid-template-columns: 300px 1fr;
+                padding: 3rem;
+            }
+        }
 
-    .ebook-link {
-      display: inline-block;
-      margin-top: 0.5rem;
-      color: #0ff;
-      text-decoration: underline;
-      font-weight: bold;
-    }
+        .ebook-cover img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            margin: 0 auto;
+        }
 
-    .coming-soon-banner {
-      margin-top: 2rem;
-      padding: 1rem;
-      background: linear-gradient(90deg, #ff0080, #7928ca);
-      color: #fff;
-      text-align: center;
-      font-weight: bold;
-      border-radius: 8px;
-      font-size: 1.1rem;
-    }
-  </style>
+        .ebook-info h3 {
+            font-size: 2.2rem;
+            font-family: var(--font-primary);
+            color: var(--color-primary);
+        }
+
+        .ebook-info .author {
+            color: var(--color-text-secondary);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .ebook-info p {
+            margin-bottom: 2rem;
+        }
+
+        .ebook-link-btn {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: var(--color-background);
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .ebook-link-btn:hover {
+            background-color: var(--color-secondary);
+            transform: scale(1.05);
+        }
+
+        .coming-soon-banner {
+            margin-top: 4rem;
+            padding: 1rem;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            color: var(--color-background);
+            text-align: center;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            animation: pulse 2s infinite;
+        }
+    </style>
 </head>
 <body>
-  <header class="site-header">
-    <h1>XoH! Beats</h1>
-    <p>Melodic | Emo-Rap | Rage | Boom Bap | Trap</p>
-  </header>
 
-  <main>
-    <section class="ebook-section">
-      <h2>🎧 Official eBook Release</h2>
+    <!-- ======================= -->
+    <!--      HEADER & NAV       -->
+    <!-- ======================= -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">XoH! Beats</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="ebook.html" class="active">Ebook</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger-menu" aria-label="Open navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="ebook.html">Ebook</a></li>
+            <li><a href="merch.html">Merch</a></li>
+            <li><a href="donations.html">Donations</a></li>
+        </ul>
+    </div>
 
-      <div class="ebook-title">Audio Essentials: A Beginner’s Guide to EQ, Compression & Reverb</div>
-      <div class="ebook-description">
-        <em>(XoH! Beats Edition)</em> by D'Andre Spears<br>
-        Everything you need to know about the core building blocks of pro audio, broken down for up-and-coming producers, artists, and engineers.
-      </div>
-      <a class="ebook-link" href="https://www.amazon.com/dp/B0FDSXX3LK?ref_=quick_view_ref_tag" target="_blank">
-        📖 Available Now on Kindle
-      </a>
+    <!-- ======================= -->
+    <!--      MAIN CONTENT       -->
+    <!-- ======================= -->
+    <main class="container">
+        <section class="page-hero" style="text-align: center; padding: 4rem 0;">
+            <h2>Official Ebook Release</h2>
+            <p>Knowledge for the Modern Producer</p>
+        </section>
 
-      <div class="coming-soon-banner">
-        🚨 More eBooks Coming Soon — Stay Tuned!
-      </div>
-    </section>
-  </main>
+        <section class="ebook-card">
+            <div class="ebook-cover">
+                <img src="images/ebook-cover.jpg" alt="Audio Essentials Ebook Cover" onerror="this.onerror=null;this.src='https://placehold.co/400x600/1a1a1a/ffffff?text=Ebook+Cover';">
+            </div>
+            <div class="ebook-info">
+                <h3>Audio Essentials</h3>
+                <p class="author">A Beginner’s Guide to EQ, Compression & Reverb by D'Andre Spears</p>
+                <p>Everything you need to know about the core building blocks of pro audio, broken down for up-and-coming producers, artists, and engineers.</p>
+                <a class="ebook-link-btn" href="https://www.amazon.com/dp/B0FDSXX3LK?ref_=quick_view_ref_tag" target="_blank">
+                    <i class="fab fa-amazon"></i> Available on Kindle
+                </a>
+            </div>
+        </section>
 
-  <footer>
-    <p>© 2025 XoH! Beats</p>
-  </footer>
+        <div class="coming-soon-banner">
+            🚨 More eBooks Coming Soon — Stay Tuned!
+        </div>
+    </main>
+
+    <!-- ======================= -->
+    <!--         FOOTER          -->
+    <!-- ======================= -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="ebook.html">Ebook</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="donations.html">Donations</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; <span id="year"></span> XoH! Beats. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.toggle('is-active');
+        });
+    </script>
 </body>
 </html>
